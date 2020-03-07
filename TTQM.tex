@@ -123,6 +123,15 @@ We hence arrive at our first result, the transmission probability $T = \frac{|F|
 	T = [1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}]^{-1}
 .\] 
 
+and, by writing $F$ in polar form $F = |F|e^{i\theta}$, the phase change across the barrier:
+i
+\begin{align}
+	F &\propto 4k^2\kappa^2 \cosh{\kappa d}e^{-ikd}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d}e^{-ikd} \\
+	  &\implies \Delta \phi := arg(F) = \arctan\left(\frac{\operatorname{Im}(F)}{\operatorname{Re}(F)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \\
+	  &\implies Fe^{ikx}\rvert_{x=d}-e^{ikx}\rvert_{x=0} = |F|e^{i\Delta \phi}e^{ik(d-d)}-1 \\
+	  \text{and so the phase change} = \Delta \phi
+\end{align}
+
 It is clear now why we left the coefficient A explicit, but from now on it will be set to A = 1.
 
 Rearranging (\ref{cont11}) for $F$, we can compare with the final result in (\ref{cont0}) and factorise out $T^\frac{1}{2}$:
@@ -143,7 +152,7 @@ Expanding the left hand side into real and imaginary parts and comparing coeffic
 	\tan{\Delta\phi} = \frac{(k^2-\kappa^2)\tanh(\kappa d)}{2k\kappa}
 \] 
 
-The result for B follows along similar lines and results for C and D follow immediately from equations (\ref{cont7}) and (\ref{cont8}).
+The result for B follows along similar lines and results for C and D follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
 
 
 \end{document}

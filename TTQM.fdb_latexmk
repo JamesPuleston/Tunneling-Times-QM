@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1583509797 "TTQM.tex" "TTQM.pdf" "TTQM" 1583509798
+["pdflatex"] 1583581663 "TTQM.tex" "TTQM.pdf" "TTQM" 1583581663
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -54,9 +54,9 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1583024959 4259635 5fdeaa5c45a077d32cf05fa8ee7ff861 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "TTQM.aux" 1583509798 424 bfd08b8af08d1a470d05674300e608b5 "pdflatex"
-  "TTQM.tex" 1583509797 8218 a3f0a67e37e534bd75c505ee339788f3 ""
+  "TTQM.aux" 1583581663 424 bfd08b8af08d1a470d05674300e608b5 "pdflatex"
+  "TTQM.tex" 1583581662 8937 a48194dd9f321600e2ec902beac21b4c ""
   (generated)
+  "TTQM.pdf"
   "TTQM.aux"
   "TTQM.log"
-  "TTQM.pdf"
