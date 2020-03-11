@@ -4,12 +4,140 @@
 \usepackage{amsmath}
 \usepackage{braket}
 \usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
+}
+\graphicspath{{./Mathematica/}}
 \title{Tunnelling Times in Quantum Mechanics}
 \author{James Puleston}
 
 \begin{document}
 
 \maketitle
+
+\section{Time in Quantum Mechanics}
+
+\subsection{Time in Classical Mechanics}
+In the Hamiltonian formulation of classical mechanics, a system with $n$ degrees of freedom possesses $2n$ independent first-order differential equations in terms of $2n$ independent variables. These variables are the coordinates of the \textit{phase space} of the system, and the $2n$ equations of motion describe the evolution of system in the phase space. $n$ of the independent variables are conventionally chosen to be the generalised coordinates $q_i$ and the other $n$ set to be the conjugate momenta $p_i$, which obey the Poisson bracket relations: \cite{Goldstein}
+
+\begin{equation}
+	\{q_i, p_j\}=\delta_{ij} \quad \{q_i, q_j\}=\{p_i,p_j\}=0, \quad i,j=\{1,\dots,n\}
+	\label{conjugatevars}
+\end{equation}
+
+\noindent The time evolution of the canonical variables is governed by the Hamiltonian $H = H(q_i, p_i)$:
+
+\begin{equation}
+	\frac{dq_i}{dt} = \{q_i, H\} \quad \frac{dp_i}{dt} = \{p_i, H\}
+	\label{timeevolution}
+\end{equation}
+
+\noindent For an infinitesimal variation in time, $\delta t = \delta \tau$, the associated variation in the dynamical variables is:
+
+\begin{equation}
+	\delta q_i = \{q_i, H\}\delta\tau \quad \delta p_i = \{p_i, H\}\delta\tau
+	\label{timetranslation}
+\end{equation}
+
+\noindent $q_i$ and $p_i$ are generalised variables; they are not necessarily positions and momenta, but in the case of a dynamical system comprised of a collection of point particles, the canonical variables are usually the particles' positions $(\boldsymbol{q_i})$ and momenta $(\boldsymbol{p_i})$. 
+
+In classical mechanics, physical systems are embedded in a 4-dimensional continuous space-time background, the points of which are assigned coordinates $(t,x,y,z) = (t, \boldsymbol{x})$.
+It is essential that the \textit{definitions} of these two spaces and their associated coordinates are not conflated. In particular we must distinguish the position variable $\boldsymbol{q}$ from the space-time coordinate $\boldsymbol{x}$. The former defines a point in the phase space of the system (when accompanied by its associated momentum $\boldsymbol{p}$) and is a property of a point particle, whereas the latter is the coordinate of a fixed point in the space-time background in which the dynamical system is embedded. Note we can still introduce both sets of quantities in to equations and relate them, as equations (\ref{timeevolution}) and (\ref{timetranslation}) show.
+
+Immediately this raises the question of whether there exists physical systems that possess a dynamical variable that \textit{resembles} the time coordinate of space-time. Such systems are called \textit{clocks}, more precisely defined as physical systems with a dynamical "clock" or "time" variable that behaves similarly to the space-time time coordinate $t$ under time translations. For example, under time translation in which the space-time coordinates transform as:
+
+\begin{equation}
+\boldsymbol{x} \rightarrow \boldsymbol{x} \quad t \rightarrow t+\tau
+\label{timetranslation2}
+\end{equation}
+
+\noindent a \textit{linear} clock variable $\theta$ and its conjugate momentum $\eta$ transform as:
+
+\begin{equation}
+	\eta \rightarrow \eta \quad \theta \rightarrow \theta + \tau
+	\label{timetranslation3}
+\end{equation}
+
+\noindent Comparing with (\ref{timetranslation}) we see in the infinitesimal case of (\ref{timetranslation3}):
+
+\begin{equation}
+	\delta\eta=\{\eta, H\}\delta\tau \quad \delta\theta = \{\theta, H\}\delta\tau
+	\label{timetranslation4}
+\end{equation}
+
+\noindent which implies
+
+\begin{equation}
+	\{\eta, H\}=0 \quad \{\theta, H\}=1
+	\label{timetranslation5}
+\end{equation}
+
+\noindent The equation of motion given by (\ref{timeevolution}), $\frac{d\theta}{dt}=1$ has solution $\theta=t+t_0$.
+
+\subsection{Time in Quantum Mechanics}
+We use canonical quantisation to evolve the Hamiltonian formalism of classical mechanics into a quantum theory. Under this process, dynamical variables are promoted to operators ("quantised"), and Poisson brackets replaced by commutation relations according to:
+
+\begin{equation}
+\{,\} \rightarrow \frac{1}{i\hbar}[,]
+\end{equation}
+
+\noindent Following this prescription, (\ref{conjugatevars}) becomes:
+
+\begin{equation}
+	[q_i,p_j]=i\hbar\delta_{ij} \quad [q_i,q_j]=[p_i,p_j]=0
+\end{equation}
+
+
+
+\section{Constructing a Quantum Clock}
+
+We construct a clock with an odd number, $N=2j+1$, of states represented by the wavefunctions \[
+	u_m(\theta) = (2\pi)^{-\frac{1}{2}}e^{im\theta}, m = -j,\dots, j \text{ and } 0 \leq \theta \leq 2\pi
+\] 
+
+We can construct an alternative orthogonal basis for the clock's wavefunctions
+
+\begin{align}
+	v_k(\theta) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\theta-\frac{2\pi k}{N})}]^m \quad \tilde{m} = m+j \\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\theta-\frac{2\pi k}{N})}]^{\tilde{m}-j} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\theta-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\theta-\frac{2\pi k}{N})}]^{\tilde{m}} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\theta-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\left(\frac{1-(e^{i(\theta-\frac{2\pi k}{N})})^N}{1-e^{i(\theta-\frac{2\pi k}{N})}}\right) \\
+		    &= (2\pi N)^{-\frac{1}{2}}\frac{\sin{\frac{N}{2}(\theta-\frac{2\pi k}{N})}}{\sin{\frac{1}{2}(\theta-\frac{2\pi k}{N})}} \\
+		    \text{for } k = 0,\dots,N-1.
+\end{align}
+
+For large N these functions have a sharp peak at $\theta = \frac{2\pi k}{N}$ which we visualise as pointing to the $k^{th}$ hour with angle uncertainty $\pm \frac{\pi}{N}$:
+
+\begin{center}
+\includegraphics{plot1.pdf}
+\end{center}
+
+We can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
+
+The clock's Hamiltonian is $H_c = \omega J$ where $\omega = \frac{2\pi}{N\tau}$ and $J=-i\hbar \frac{\partial}{\partial\theta}$
+
+The wavefunctions $u_m$ are eigenfunctions of the Hamiltonian:
+\[
+H_cu_m = m\hbar\omega u_m
+\] 
+
+whence expanding the time evolution operator as a Taylor series gives:
+
+\begin{align}
+	e^{-\frac{iH_ct}{\hbar}}u_m &= e^{-im\omega t}u_m = (2\pi)^{-\frac{1}{2}}e^{im(\theta-\omega t)} \\
+\text{and hence} \\
+	\implies e^{-\frac{iH_c\tau}{\hbar}}v_k &= N^{-\frac{1}{2}}\sum_{m}e^{-\frac{2\pi ikm}{N}}e^{-\frac{2\pi im}{N}}u_m \\
+						       &= N^{-\frac{1}{2}}\sum_{m}e^{-2\pi i \frac{m}{N}(k+1)}u_m \\
+						       &= v_{k+1}
+\end{align}
 
 \section{Larmor Precession}
 
@@ -154,5 +282,9 @@ Expanding the left hand side into real and imaginary parts and comparing coeffic
 
 The result for B follows along similar lines and results for C and D follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
 
+\begin{thebibliography}{100}
+\bibitem{Goldstein}
+Goldstein
 
+\end{thebibliography}
 \end{document}
