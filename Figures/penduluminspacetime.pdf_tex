@@ -51,7 +51,7 @@
   \begin{picture}(1,1)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{penduluminspacetime.pdf}}%
     \put(0.93643608,0.07276062){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x$}}}%
-    \put(0.0746503,0.91659225){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z$}}}%
+    \put(0.08315476,0.91564728){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z$}}}%
     \put(0.69925598,0.6907515){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{penduluminspacetime.pdf}}%
     \put(0.4806741,0.63274918){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\theta$}}}%

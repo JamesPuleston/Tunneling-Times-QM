@@ -51,7 +51,7 @@ In the Hamiltonian formulation of classical mechanics, a system with $n$ degrees
 In classical mechanics, physical systems are embedded in a 4-dimensional continuous space-time background, the points of which are assigned coordinates $(t,x,y,z) = (t, \boldsymbol{x})$.
 It is essential that the \textit{definitions} of these two spaces and their associated coordinates are not conflated. In particular we must distinguish the position variable $\boldsymbol{q}$ from the space-time coordinate $\boldsymbol{x}$. The former defines a point in the phase space of the system (when accompanied by its associated momentum $\boldsymbol{p}$) and is a property of a point particle, whereas the latter is the coordinate of a fixed point in the space-time background in which the dynamical system is embedded. Note we can still introduce both sets of quantities in to equations and relate them, as equations (\ref{timeevolution}) and (\ref{timetranslation}) show.
 
-Immediately this raises the question of whether there exists physical systems that possess a dynamical variable that \textit{resembles} the time coordinate of space-time. Such systems are called \textit{clocks}, more precisely defined as physical systems with a dynamical "clock" or "time" variable that behaves similarly to the space-time time coordinate $t$ under time translations. For example, under time translation in which the space-time coordinates transform as:
+Immediately this raises the question of whether there exists physical systems that possess a dynamical variable that \textit{resembles} the time coordinate of space-time. Such systems are called \textit{clocks}, more precisely defined as physical systems with a dynamical `clock' or `time' variable that behaves similarly to the space-time time coordinate $t$ under time translations. For example, under time translation in which the space-time coordinates transform as:
 
 \begin{equation}
 \boldsymbol{x} \rightarrow \boldsymbol{x} \quad t \rightarrow t+\tau
@@ -82,7 +82,7 @@ Immediately this raises the question of whether there exists physical systems th
 \noindent The equation of motion given by (\ref{timeevolution}), $\frac{d\theta}{dt}=1$ has solution $\theta=t+t_0$.
 
 \subsection{Time in Quantum Mechanics}
-We use canonical quantisation to evolve the Hamiltonian formalism of classical mechanics into a quantum theory. Under this process, dynamical variables are promoted to operators ("quantised"), and Poisson brackets replaced by commutation relations according to:
+In quantum mechanics we describe a system of $N$ particles using a wave function which represents the quantum state of the system. The domain of a time-dependent wave functions $\psi(\boldsymbol{q_1},\dots,\boldsymbol{q_N}, t)$ is $\mathbb{R}^{3N}\times\mathbb{R}$, where $\mathbb{R}^{3N}$ is the \textit{configuration space} of the system. All possible quantum states reside in a Hilbert space referred to as the \textit{state space} of quantum mechanics. We use canonical quantisation to evolve the Hamiltonian formalism of classical mechanics into a quantum theory. Under this process, dynamical variables are promoted to operators on Hilbert space (`quantised'), and Poisson brackets replaced by commutation relations according to:
 
 \begin{equation}
 \{,\} \rightarrow \frac{1}{i\hbar}[,]
@@ -93,6 +93,14 @@ We use canonical quantisation to evolve the Hamiltonian formalism of classical m
 \begin{equation}
 	[q_i,p_j]=i\hbar\delta_{ij} \quad [q_i,q_j]=[p_i,p_j]=0
 \end{equation}
+
+The time variable does not undergo canonical quantisation - it remains a c-number that acts as a parameter in the theory. This raises the question of why time and position are treated differently in quantum mechanics, namely why position is promoted to an operator while time is not. Pauli offers a proof for why a time operator is forbidden in quantum mechanics:
+
+
+
+
+Here we note the important point that the wave function is dependent on the dynamical variables $\boldsymbol{q_i}$ of the configuration space, not the space coordinates $\boldsymbol{x}$ of the embedding space-time. 
+
 
 
 
