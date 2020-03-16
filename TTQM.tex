@@ -5,6 +5,7 @@
 \usepackage{braket}
 \usepackage{bbold}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
@@ -82,29 +83,80 @@ Immediately this raises the question of whether there exists physical systems th
 \noindent The equation of motion given by (\ref{timeevolution}), $\frac{d\theta}{dt}=1$ has solution $\theta=t+t_0$.
 
 \subsection{Time in Quantum Mechanics}
-In quantum mechanics we describe a system of $N$ particles using a wave function which represents the quantum state of the system. The domain of a time-dependent wave functions $\psi(\boldsymbol{q_1},\dots,\boldsymbol{q_N}, t)$ is $\mathbb{R}^{3N}\times\mathbb{R}$, where $\mathbb{R}^{3N}$ is the \textit{configuration space} of the system. All possible quantum states reside in a Hilbert space referred to as the \textit{state space} of quantum mechanics. We use canonical quantisation to evolve the Hamiltonian formalism of classical mechanics into a quantum theory. Under this process, dynamical variables are promoted to operators on Hilbert space (`quantised'), and Poisson brackets replaced by commutation relations according to:
+\textcolor{red}{3 definitions for time in QM?}
+In quantum mechanics the state of a particle is encoded in a vector $\ket{\psi}$ in Hilbert space $\mathcal{H}$. Introducing a 1-dimensional continuum position basis to $\mathcal{H}, \{\ket{q}\}, q \in \mathbb{R}$, the state vector $\ket{\psi}$ can be expanded as the integral:
+
+\begin{equation}
+	\ket{\psi} = \int_{\mathbb{R}}dq\psi(q)\ket{q}
+\end{equation}
+
+\noindent where $\psi(q)$ is the wave function of the particle. More generally, to describe a system in 3 dimensions requires a wave function $\psi(q_x,q_y,q_z)$. It is important to note that the domain of the wave function is the \textit{configuration space} of the system, $\mathbb{R}^3$, whose coordinates are the generalised coordinates $q_i$ of the system. It is common in elementary quantum mechanics literature for elements of the domain of the wave function to be expressed as $(x,y,z), \text{ i.e. } \psi = \psi(x,y,z)$. This is clearly in notational conflict with the denotation of coordinates of points of the background space-time in which the quantum system resides. 
+
+Measurable quantities or `observables' are represented by operators on $\mathcal{H}$:
+
+\begin{equation}
+	\mathcal{O}: \mathcal{H} \rightarrow \mathcal{H}
+\end{equation}
+
+Such operators arise through a procedure called canonical quantisation, which prescribes that \textit{dynamical variables} of the Hamiltonian formalism are promoted to operators on $\mathcal{H}$ and their Poisson bracket relations replaced by commutation relations according to:
 
 \begin{equation}
 \{,\} \rightarrow \frac{1}{i\hbar}[,]
 \end{equation}
 
-\noindent Following this prescription, (\ref{conjugatevars}) becomes:
+One notable omission in this process is the promotion of the time coordinate $t$ to an operator. Given the emphasis placed on distinguishing between space-time coordinates and dynamical variables, the reason is clear: time t is a \textit{space-time coordinate}, and canonical quantisation prescribes that \textit{dynamical variables} are promoted to operators. However this raises the question of whether a time operator exists in quantum mechanics. Resolution to this problem has been historically hindered by a `proof' offered by Wolfgang Pauli showing that the introduction of a time operator in quantum mechanics is forbidden. It proceeds roughly along the following lines:
 
-\begin{equation}
-	[q_i,p_j]=i\hbar\delta_{ij} \quad [q_i,q_j]=[p_i,p_j]=0
-\end{equation}
+\textcolor{red}{Add Pauli proof c.f. Butterfield On Time in Quantum Physics}
 
-The time variable does not undergo canonical quantisation - it remains a c-number that acts as a parameter in the theory. This raises the question of why time and position are treated differently in quantum mechanics, namely why position is promoted to an operator while time is not. Pauli offers a proof for why a time operator is forbidden in quantum mechanics:
-
-
-
-
-Here we note the important point that the wave function is dependent on the dynamical variables $\boldsymbol{q_i}$ of the configuration space, not the space coordinates $\boldsymbol{x}$ of the embedding space-time. 
-
-
-
+Observing that this issue arose from attempts to erroneously quantise the \textit{space-time} coordinate t, the problem becomes void and progress can be made by considering the quantisation of timelike \textit{dynamical variables} of physical systems, namely clocks in analogue with the case in classical mechanics mentioned above. 
 
 \section{Constructing a Quantum Clock}
+
+In this section I present a theoretical model of a continuous cyclic quantum clock. The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
+
+\begin{equation}
+	\hat{\Phi} = \phi \quad \hat{L} = -i \frac{d}{d\phi}
+\end{equation}
+
+\noindent as is familiar from the theory of angular momentum in quantum mechanics. These operators act on a Hilbert space of square integrable functions of $\phi$ with domain $[0,2\pi]$ as:
+
+\begin{equation}
+	\hat{\Phi} f(\phi) = \phi f(\phi) \quad \hat{L} f(\phi) = -i \frac{d}{d\phi}f(\phi)
+\end{equation}
+
+These operators have eigenvalue equations 
+
+\begin{equation}
+	\hat{\Phi}\ket{\phi} = \phi\ket{\phi}, \phi \in [0,2\pi] \\
+	\hat{L}\ket{m} = m\ket{m}, m = 0, \pm 1, \pm 2,\dots
+\end{equation}
+
+\noindent in which the eigenvectors form complete orthonormal sets such that:
+
+\begin{equation}
+	\braket{\phi|\phi'} = \delta(\phi-\phi ') \quad \braket{m|m'} = \delta_{mm'}
+\end{equation}
+
+\noindent Recalling from the theory of angular momentum in quantum mechanics that the $\hat{L}_z = -i \frac{d}{d\phi}$ operator has eigenfunctions $\propto e^{im\phi}$, $\ket{m}$ has wave function $\braket{\phi|m}= Ae^{im\phi}$ where $A$ is calculated using the normalisation condition to be $(2\pi)^{-\frac{1}{2}}$.
+
+\noindent As $\{\ket{m}\}$ form a complex set, $\ket{\phi}$ can be expressed as:
+
+\begin{equation}
+	\ket{\phi} = (2\pi)^{-\frac{1}{2}}\sum_{-\infty}^{\infty}e^{-im\phi}\ket{m}
+\end{equation}
+
+\noindent Introducing the Hamiltonian $\hat{H}=\omega \hat{L}$, the time evolution operator $U(t) = e^{-iHt}$ acts as:
+
+\begin{align}
+\hat{L}e^{-im\phi}\ket{m} &= e^{-im\phi}\hat{L}\ket{m} \text{ by linearity of } \hat{L} \\
+				  &= me^{-im\phi}\ket{m} \\
+\implies e^{iHt}\ket{\phi} &= \sum_{n=0}^{\infty}\frac{(-i\omega t)}{n!}^n \hat{L}^n (2\pi)^{-\frac{1}{2}}\sum_{m=-\infty}^{\infty}e^{-im\phi}\ket{m} \\
+			   &= (2\pi)^{-\frac{1}{2}}\sum_{n=0}^{\infty}\sum_{m=-\infty}^{\infty} \frac{(-i\omega mt)}{n!}^n e^{-im\phi} \ket{m} \\
+				   &= (2\pi)^{-\frac{1}{2}}\sum_{m=-\infty}^{\infty}e^{-i\omega mt}e^{-im\phi}\ket{m} \\
+				   &= \ket{\phi+\omega t}
+\end{align}
+
+\noindent by setting $\omega = 1, \space \phi$ plays exactly the same role as a time variable $t$.
 
 We construct a clock with an odd number, $N=2j+1$, of states represented by the wavefunctions \[
 	u_m(\theta) = (2\pi)^{-\frac{1}{2}}e^{im\theta}, m = -j,\dots, j \text{ and } 0 \leq \theta \leq 2\pi
