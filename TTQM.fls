@@ -44,6 +44,10 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xifthen/xifthen.sty
@@ -64,11 +68,6 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/transparent.sty
@@ -143,8 +142,8 @@ INPUT ./Mathematica/plot1.pdf
 INPUT ./Mathematica/plot1.pdf
 INPUT TTQM.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
