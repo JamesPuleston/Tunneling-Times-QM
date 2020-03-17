@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1584478654 "TTQM.tex" "TTQM.pdf" "TTQM" 1584478654
+["pdflatex"] 1584487773 "TTQM.tex" "TTQM.pdf" "TTQM" 1584487774
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -102,12 +102,12 @@
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "Figures/doublesumdiagram.pdf" 1584475825 6094 580acd926c61b2bdef313468e25fc29f ""
   "Figures/doublesumdiagram.pdf_tex" 1584475825 3521 53c70f1be5c917e8de43f89a7f15bd3d ""
-  "Figures/potentialbarrier.pdf" 1584478652 1637 50a34cb9f7c069e8cfa4167a044399af ""
-  "Figures/potentialbarrier.pdf_tex" 1584478652 2577 464e7fe7ba4049e4f9946d619204293f ""
+  "Figures/potentialbarrier.pdf" 1584484565 1637 50a34cb9f7c069e8cfa4167a044399af ""
+  "Figures/potentialbarrier.pdf_tex" 1584484565 2577 9f26d736f80f6d83d2d8e7b5ac00f528 ""
   "Mathematica/plot1.pdf" 1584454465 81768 c28032fe200864f72211e83c56ecb58b ""
-  "TTQM.aux" 1584478654 2605 0287578b2dc00261a08e76524f20c491 "pdflatex"
-  "TTQM.tex" 1584478639 34618 4c9e9cf497a84f53bfcd4a7eb8b49a31 ""
+  "TTQM.aux" 1584487774 2796 dd4a513fba236f886dc8265e753858b9 "pdflatex"
+  "TTQM.tex" 1584487772 39095 308332435572b7aefeb8b94e1a1318e3 ""
   (generated)
-  "TTQM.pdf"
-  "TTQM.aux"
   "TTQM.log"
+  "TTQM.aux"
+  "TTQM.pdf"

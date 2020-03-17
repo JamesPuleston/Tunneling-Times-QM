@@ -52,8 +52,8 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{potentialbarrier.pdf}}%
     \put(0.49325893,0.05480672){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{potentialbarrier.pdf}}%
-    \put(0.92415176,0.06047597){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
-    \put(0.43089283,0.47436009){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$v(y)$}}}%
+    \put(0.93473511,0.06047597){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y$}}}%
+    \put(0.43089283,0.47436009){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$V(y)$}}}%
     \put(0.62555061,0.06047627){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\frac{d}{2}$}}}%
     \put(0.50270832,0.07937489){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
     \put(0.37041668,0.10583333){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%

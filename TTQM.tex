@@ -117,8 +117,18 @@ Observing that this issue arose from attempts to erroneously quantise the \texti
 
 In this section I survey a number of contenders for calculating the tunnelling time through a barrier. The first of these are theoretical definitions of the time taken to tunnel through a barrier, whereas the remainder are theoretical constructions of quantum clocks that can be used to measure tunnelling times.
 
-\subsection{Phase Times}
-Consider a one-dimensional scattering configuration given by the potential barrier \textcolor{red}{Insert quantum barrier calculation from below. Use Buttiker as reference, adjust all other sources accordingly.}
+\subsection{Tunnelling Through a Quantum Barrier}
+\noindent \textcolor{red}{I use Buttiker as the reference barrier, adjusting all other sources accordingly.}
+
+\noindent Consider the case of scattering in one dimension with particles of mass $m$, velocity $v(k) = \frac{\hbar k}{m}$ and kinetic energy $E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis and interact with a rectangular barrier:
+
+\begin{equation}
+	V = 
+	\begin{cases}
+	V_0 & -\frac{d}{2}<y<\frac{d}{2}\\
+		0 & \text{otherwise}
+	\end{cases}
+\end{equation}
 
 \begin{figure}[ht]
     \centering
@@ -127,9 +137,75 @@ Consider a one-dimensional scattering configuration given by the potential barri
     \label{fig:potentialbarrier}
 \end{figure}
 
+\noindent The wave function is of the form:
+\begin{equation}
+	\psi = 
+	\begin{cases}
+		e^{iky} + Ae^{-iky} & y \leq -\frac{d}{2} \\
+		Be^{\kappa y} + Ce^{-\kappa y} & -\frac{d}{2} \leq y \leq \frac{d}{2} \\
+		De^{iky} & y \geq \frac{d}{2}
+	\end{cases}
+\end{equation}
 
+\noindent The coefficient of the incident wave is set to one, corresponding to one particle per unit length in the incident beam. Note there is no $e^{-iky}$ term on the right of the barrier, as no particles are reflected after being transmitted through the barrier.
 
-Consider a wave packet sharply localised in momentum (k) space incident on the barrier. The incident wave packet has a peak $y_p(t)$ where the phase of the wave has an extremum when differentiated with respect to $k$:
+\noindent It is instructive to calculate the wave function coefficients A, B, C, D using the continuity of the wave function and its first derivative at the barrier boundaries. This is a lengthy calculation but the results are used so frequently that it is necessary to include a derivation. The results are stated here and derived below:
+
+\begin{align}
+	D &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd} & A &= R^{\frac{1}{2}}e^{-\frac{i\pi}{2}}e^{i\Delta\phi}e^{-ikd} \nonumber \\
+	B &= \frac{\kappa+ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{-\kappa d}{2}}D & C &= \frac{\kappa-ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{\kappa d}{2}}D \label{cont0}
+\end{align}
+where $T$ is the transmission probability and $R = 1-T$ is the reflection probability.
+
+\noindent First I introduce a new coordinate system so that the boundaries of our barrier become 0, d. Then, denoting our wave functions before, inside and after the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
+
+\begin{align}
+	\psi_{1} &= e^{iky} + Ae^{-iky} & \psi_{1}^{'} &= ike^{iky} - ikAe^{-iky} \\
+	\psi_{2} &= Be^{-\kappa y} + Ce^{\kappa y} & \psi_{2}^{'} &= -\kappa Be^{-\kappa y} + \kappa Ce^{\kappa y} \\
+	\psi_{3} &= De^{iky} & \psi_{3}^{'} &= ikDe^{iky}
+\end{align}
+
+\noindent Imposing continuity of the wave function and its first derivative at the barrier boundaries:
+\begin{align}
+	\psi_{1}(0) = \psi_{2}(0) &\implies 1+A = B+C \label{cont1}\\
+	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ik - ikA = -\kappa B + \kappa C \label{cont2}\\
+	\psi_{2}(d) = \psi_{3}(d) &\implies Be^{-\kappa d} + Ce^{\kappa d} = De^{ikd} \label{cont3}\\
+	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Be^{-\kappa d} + \kappa Ce^{\kappa d} = ikD e^{ikd} \label{cont4}
+\end{align}
+
+\begin{align}
+	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ik = B(ik-\kappa)+C(ik+\kappa) \label{cont5}\\
+	ik(\ref{cont1})-(\ref{cont2}) &\implies 2ikA = B(ik+\kappa)+C(ik-\kappa) \label{cont6}\\
+	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa Be^{\kappa d} = De^{ikd}(\kappa-ik) \label{cont7}\\
+	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = De^{ikd}(\kappa+ik) \label{cont8}
+\end{align}
+
+\noindent Inserting equations (\ref{cont7}) and (\ref{cont8}) into equation (\ref{cont5}) one arrives at:
+
+\begin{align}
+	2ik &= -\frac{(ik-\kappa)^2}{2\kappa}De^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2p}De^{(ik-\kappa)d} \label{cont9} \\
+	\implies 4\kappa ike^{-ikd} &= D[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \label{cont10}\\
+				     &= D[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] \label{cont11}
+\end{align}
+
+\noindent Hence one arrives at the first result, the transmission probability $T = |D|^2$:
+\begin{equation}
+	T = [1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}]^{-1}
+	\label{transmissionprobability}
+\end{equation}
+
+\noindent and by writing $D$ in polar form $D = |D|e^{i\theta}$, the phase change across the barrier:
+
+\begin{align}
+	D &\propto 4k^2\kappa^2 \cosh{\kappa d}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d} \\
+	  &\implies \Delta \phi := arg(D) = \arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \label{phasechange}
+\end{align}
+
+\noindent Rearranging (\ref{cont11}) for $D$ yields the final result in (\ref{cont0}). The result for A follows along similar lines and results for B and C follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
+
+\subsection{Phase Times}
+
+\noindent Consider a wave packet sharply localised in momentum ($k$) space incident on the barrier. Accounting for time evolution under the time evolution operator $U(t)=e^{-\frac{iEt}{\hbar}}$, the incident wave packet has a peak $y_p(t)$ where the phase of the wave has an extremum when differentiated with respect to $k$:
 
 \begin{equation}
 	-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)=0
@@ -143,7 +219,7 @@ Consider a wave packet sharply localised in momentum (k) space incident on the b
 	\label{transmittedpeak}
 \end{equation}
 
-\noindent Solving equations (\ref{incidentpeak}) and (\ref{transmittedpeak}) for $t$ at $y_p(t) = -\frac{d}{2} \text{ and } \frac{d}{2}$ respectively, one finds the traversal time across the barrier for the transmitted wave to be:
+\noindent Solving equations (\ref{incidentpeak}) and (\ref{transmittedpeak}) for $t$ at $y_p(t) = -\frac{d}{2} \text{ and } \frac{d}{2}$ respectively, one finds the traversal time of the peak across the barrier for the transmitted wave to be:
 
 \begin{equation}
 	\tau_\phi = \hbar \frac{d\Delta\phi}{dE} = \frac{m}{\hbar k}\frac{d\Delta\phi}{dk}
@@ -152,7 +228,7 @@ Consider a wave packet sharply localised in momentum (k) space incident on the b
 
 \noindent An identical result is obtained for a wave packet reflected from the barrier.
 
-\noindent This can be calculated explicitly using equation (??):
+\noindent This can be calculated explicitly using equation (\ref{phasechange}):
 
 \begin{align}
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{\hbar k}\frac{d}{dk}\left(\arctan{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]}\right) \\
@@ -166,9 +242,7 @@ Consider a wave packet sharply localised in momentum (k) space incident on the b
 
 \textcolor{red}{check this, you were tired...}
 
-\noindent B{\"u}ttiker defines this as the phase-delay time of the scattering process.
-
-Hauge and St{\o}vneng take an alternative approach and introduce an interval $(x_1, x_2)$ containing the barrier (i.e. $x_1<b,x_2>a$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
+\noindent B{\"u}ttiker defines this as the phase-delay time of the scattering process. Hauge and St{\o}vneng take an alternative approach and introduce an interval $(x_1, x_2)$ containing the barrier (i.e. $x_1<b,x_2>a$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
 
 \begin{equation}
 	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right]
@@ -205,8 +279,6 @@ Hauge and St{\o}vneng take an alternative approach and introduce an interval $(x
 
 \noindent Substituting in equations (\ref{transmittedphaseshift}) and (\ref{reflectedphaseshift}) to these results recovers (\ref{buttikerphasetime}).
 
-\textcolor{red}{Discussion of why its not correct to attribute these to time spent in barrier?}
-
 \subsection{Dwell Time}
 
 The dwell time $\tau_D$ is defined as the ratio of the number of particles within the barrier to the incident flux, $\tau_D = \frac{N}{j}$. Clearly this does not distinguish between the scattering channels (reflected or transmitted), so the dwell time is the time a particle spends in the barrier region, averaged over scattering channels.
@@ -217,23 +289,14 @@ The dwell time $\tau_D$ is defined as the ratio of the number of particles withi
 	N&=\int_{\frac{-d}{2}}^{\frac{d}{2}}|\psi|^2dy \\
 	|\psi|^2 &= \frac{T}{4\kappa^2}\left[(\kappa+ik)(\kappa-ik)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+(\kappa+ik)^2+(\kappa-ik)^2\right] \\
 		 &= \frac{T}{4\kappa^2}\left[(\kappa^2+k^2)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+2(\kappa^2-k^2)\right] \\
-	\implies N &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation ?? for T}
-		 N &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
-\end{align}
-
-\noindent and for the incident flux with $\psi = e^{iky}$:
-
-\begin{align}
+	\implies N &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation (\ref{transmissionprobability}) for $T$:}
+		 N &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\\ \intertext{and for the incident flux with $\psi = e^{iky}$:
+}
 	j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{\partial \psi^{*}}{\partial y}\right) \\ 
-	&= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k)
-\end{align}
-
-\noindent such that:
-
-\begin{equation}
-	\tau_D = \frac{1}{v(k)}\frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+	  &= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k) \\ \intertext{such that:}
+	\tau_D &= \frac{1}{v(k)}\frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
 	\label{dwelltime}
-\end{equation}
+\end{align}
 
 \noindent The phase times $\tau_T \text{ and } \tau_R$ represent conditional averages over mutually exclusive events (a particle cannot both reflect and transmit). The dwell time $\tau_D$ is the average over all scattering channels, and hence the conditional averages must obey the probabilistic rule:
 
@@ -242,8 +305,6 @@ The dwell time $\tau_D$ is defined as the ratio of the number of particles withi
 \end{equation}
 
 \noindent where $T \text{ and } R = 1-T$ are transmission and reflection probabilities respectively. Comparison of equations (\ref{phasedelaytime}) and (\ref{dwelltime}) show this consistency check is not satisfied. Resolution of this issue comes from noticing that attaching \textit{physical significance} to the time in (\ref{phasedelaytime}) is incorrect, as it requires the assumption that motion outside of the barrier is that of a free particle. This is valid on the transmitted side of the barrier, however during approach to the barrier the incoming wave packet interferes with the reflected wave packet and hence motion can no longer be assumed to be free.
-
-
 
 \subsection{Continuous Cyclic Quantum Clock}
 
@@ -259,7 +320,7 @@ In this section I present a theoretical model of a continuous cyclic quantum clo
 	\hat{\Phi} f(\phi) = \phi f(\phi) \quad \hat{L} f(\phi) = -i \frac{d}{d\phi}f(\phi)
 \end{equation}
 
-These operators have eigenvalue equations 
+\noindent These operators have eigenvalue equations 
 
 \begin{equation}
 	\hat{\Phi}\ket{\phi} = \phi\ket{\phi}, \phi \in [0,2\pi] \quad \hat{L}\ket{m} = m\ket{m}, m = 0, \pm 1, \pm 2,\dots
@@ -298,7 +359,7 @@ These operators have eigenvalue equations
 \noindent by setting $\omega = 1, \space \phi$ plays exactly the same role as a time variable $t$.
 
 \subsection{Discrete Cyclic Quantum Clock}
-A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$. Hence the clock has an odd number $N = 2j+1$ states represented by wave functions
+A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$, as presented by Peres in [...]. Hence the clock has an odd number $N = 2j+1$ of states represented by wave functions
 
 \begin{equation}
 	u_m(\phi) = (2\pi)^{-\frac{1}{2}}e^{im\phi}, m = -j,\dots, j \text{ and } 0 \leq \phi \leq 2\pi
@@ -460,6 +521,8 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 
 \section{Larmor Precession}
 
+\noindent \textcolor{red}{Work in progress: please ignore for now}
+
 We consider the case of scattering in one dimension with particles of mass $m$, spin $\frac{1}{2}$ and kinetic energy $
 E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis with spins polarised with the x-axis and interact with a rectangular barrier,
 
@@ -530,7 +593,7 @@ This is a lengthy calculation but the results are used so frequently that it is 
 
 \begin{align}
 	F &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd} & B &= R^{\frac{1}{2}}e^{-\frac{i\pi}{2}}e^{i\Delta\phi}e^{-ikd} \nonumber \\
-	C &= \frac{\kappa+ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{-\kappa d}{2}}F & D &= \frac{\kappa-ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{\kappa d}{2}}F \label{cont0}
+	C &= \frac{\kappa+ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{-\kappa d}{2}}F & D &= \frac{\kappa-ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{\kappa d}{2}}F
 \end{align}
 where $T$ is t:he transmission probability and $R = 1-T$ is the reflection probability.
 
@@ -544,38 +607,38 @@ First we introduce a new coordinate system so that the boundaries of our barrier
 
 Imposing continuity of the wavefunction and its first derivative at the barrier boundaries:
 \begin{align}
-	\psi_{1}(0) = \psi_{2}(0) &\implies A+B = C+D \label{cont1}\\
-	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ikA - ikB = -\kappa C + \kappa D \label{cont2}\\
-	\psi_{2}(d) = \psi_{3}(d) &\implies Ce^{-\kappa d} + De^{\kappa d} = Fe^{ikd} \label{cont3}\\
-	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Ce^{-\kappa d} + \kappa De^{\kappa d} = ikF e^{ikd} \label{cont4}
+	\psi_{1}(0) = \psi_{2}(0) &\implies A+B = C+D \\
+	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ikA - ikB = -\kappa C + \kappa D \\
+	\psi_{2}(d) = \psi_{3}(d) &\implies Ce^{-\kappa d} + De^{\kappa d} = Fe^{ikd} \\
+	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Ce^{-\kappa d} + \kappa De^{\kappa d} = ikF e^{ikd} 
 \end{align}
 
 \begin{align}
-	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ikA = C(ik-\kappa)+D(ik+\kappa) \label{cont5}\\
-	ik(\ref{cont1})-(\ref{cont2}) &\implies 2ikB = C(ik+\kappa)+D(ik-\kappa) \label{cont6}\\
-	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = Fe^{ikd}(\kappa-ik) \label{cont7}\\
-	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa De^{\kappa d} = Fe^{ikd}(\kappa+ik) \label{cont8}
+	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ikA = C(ik-\kappa)+D(ik+\kappa) \\
+	ik(\ref{cont1})-(\ref{cont2}) &\implies 2ikB = C(ik+\kappa)+D(ik-\kappa) \\
+	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = Fe^{ikd}(\kappa-ik)\\
+	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa De^{\kappa d} = Fe^{ikd}(\kappa+ik) 
 \end{align}
 
 Inserting equations (\ref{cont7}) and (\ref{cont8}) into equation (\ref{cont5}) we arrive at:
 
 \begin{align}
-	2ikA &= -\frac{(ik-\kappa)^2}{2\kappa}Fe^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2p}Fe^{(ik-\kappa)d} \label{cont9} \\
-	\implies 4\kappa ikAe^{-ikd} &= F[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \label{cont10}\\
-				     &= F[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] \label{cont11}
+	2ikA &= -\frac{(ik-\kappa)^2}{2\kappa}Fe^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2p}Fe^{(ik-\kappa)d} \\
+	\implies 4\kappa ikAe^{-ikd} &= F[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \\
+				     &= F[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] 
 \end{align}
 
-We hence arrive at our first result, the transmission probability $T = \frac{|F|^2}{|A|^2}$:
+One arrive at the first result, the transmission probability $T = \frac{|F|^2}{|A|^2}$:
 \[
 	T = [1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}]^{-1}
 .\] 
 
-and, by writing $F$ in polar form $F = |F|e^{i\theta}$, the phase change across the barrier:
+and, by writing $D$ in polar form $D = |D|e^{i\theta}$, the phase change across the barrier:
 i
 \begin{align}
-	F &\propto 4k^2\kappa^2 \cosh{\kappa d}e^{-ikd}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d}e^{-ikd} \\
-	  &\implies \Delta \phi := arg(F) = \arctan\left(\frac{\operatorname{Im}(F)}{\operatorname{Re}(F)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \\
-	  &\implies Fe^{ikx}\rvert_{x=d}-e^{ikx}\rvert_{x=0} = |F|e^{i\Delta \phi}e^{ik(d-d)}-1 \\
+	D &\propto 4k^2\kappa^2 \cosh{\kappa d}e^{-ikd}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d}e^{-ikd} \\
+	  &\implies \Delta \phi := arg(D) = \arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \\
+	  &\implies De^{ikx}\rvert_{x=d}-e^{ikx}\rvert_{x=0} = |D|e^{i\Delta \phi}e^{ik(d-d)}-1 \\
 	  \text{and so the phase change} = \Delta \phi
 \end{align}
 
