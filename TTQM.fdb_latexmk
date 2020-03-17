@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1584461033 "TTQM.tex" "TTQM.pdf" "TTQM" 1584461034
+["pdflatex"] 1584478654 "TTQM.tex" "TTQM.pdf" "TTQM" 1584478654
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -43,6 +43,7 @@
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb" 1248133631 39386 0bb525d495ceab21fe797301a586e0d7 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb" 1290383964 25452 d4e98a3bf6b13d4b7dcffd6302990a65 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb" 1290383964 25570 857e8ef1d068e88b2d8db4f6176e0f5c ""
@@ -99,10 +100,14 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1583024959 4259635 5fdeaa5c45a077d32cf05fa8ee7ff861 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
+  "Figures/doublesumdiagram.pdf" 1584475825 6094 580acd926c61b2bdef313468e25fc29f ""
+  "Figures/doublesumdiagram.pdf_tex" 1584475825 3521 53c70f1be5c917e8de43f89a7f15bd3d ""
+  "Figures/potentialbarrier.pdf" 1584478652 1637 50a34cb9f7c069e8cfa4167a044399af ""
+  "Figures/potentialbarrier.pdf_tex" 1584478652 2577 464e7fe7ba4049e4f9946d619204293f ""
   "Mathematica/plot1.pdf" 1584454465 81768 c28032fe200864f72211e83c56ecb58b ""
-  "TTQM.aux" 1584461034 2090 14345f772d32c431e3557b7cd7b790e5 "pdflatex"
-  "TTQM.tex" 1584461032 30592 d5d86a036a84240717b9cc9b190a91db ""
+  "TTQM.aux" 1584478654 2605 0287578b2dc00261a08e76524f20c491 "pdflatex"
+  "TTQM.tex" 1584478639 34618 4c9e9cf497a84f53bfcd4a7eb8b49a31 ""
   (generated)
+  "TTQM.pdf"
   "TTQM.aux"
   "TTQM.log"
-  "TTQM.pdf"

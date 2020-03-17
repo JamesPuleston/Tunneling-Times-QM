@@ -13,7 +13,7 @@
 \usepackage{transparent}
 
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
+    \def\svgwidth{10cm}
     \import{./Figures/}{#1.pdf_tex}
 }
 \graphicspath{{./Mathematica/}}
@@ -119,6 +119,15 @@ In this section I survey a number of contenders for calculating the tunnelling t
 
 \subsection{Phase Times}
 Consider a one-dimensional scattering configuration given by the potential barrier \textcolor{red}{Insert quantum barrier calculation from below. Use Buttiker as reference, adjust all other sources accordingly.}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{potentialbarrier}
+    \caption{The quantum potential barrier}
+    \label{fig:potentialbarrier}
+\end{figure}
+
+
 
 Consider a wave packet sharply localised in momentum (k) space incident on the barrier. The incident wave packet has a peak $y_p(t)$ where the phase of the wave has an extremum when differentiated with respect to $k$:
 
@@ -298,7 +307,7 @@ A discrete cyclic quantum clock can be modelled by limiting the sum in equation 
 \noindent One can construct an alternative orthogonal basis for the clock's wave functions
 
 \begin{align}
-	v_k(\phi) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \\
+	v_k(\phi) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \label{vkexpansion}\\
 		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\phi-\frac{2\pi k}{N})}]^m \quad \tilde{m} = m+j \\
 		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}-j} \\
 		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}} \\
@@ -314,12 +323,19 @@ A discrete cyclic quantum clock can be modelled by limiting the sum in equation 
 
 \noindent One can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
 
-\noindent The clock's Hamiltonian is $H_c = \omega J$ where $\omega = \frac{2\pi}{N\tau}$ and $J=-i\hbar \frac{\partial}{\partial\phi}$.
+\noindent The clock's Hamiltonian is:
+
+\begin{equation}
+	H_c = \omega J \text{ where } \omega = \frac{2\pi}{N\tau} \text{ and } J=-i\hbar \frac{\partial}{\partial\phi}
+	\label{clockhamiltonian}
+\end{equation}
 
 \noindent The wave functions $u_m$ are eigenfunctions of the Hamiltonian:
-\[
-H_cu_m = m\hbar\omega u_m
-\] 
+
+\begin{equation}
+	H_cu_m = m\hbar\omega u_m
+	\label{clockwavefunctions}
+\end{equation}
 
 \noindent whence expanding the time evolution operator as a Taylor series gives:
 
@@ -355,15 +371,92 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 				   &= i\hbar \frac{d\ket{\psi}}{dt}
 \end{align}
 
-\noindent Applying $\bra{\phi(E')}$ to both sides and using the orthogonality conditions yields the final result.
+\noindent Taking the inner product with $\bra{\phi(E')}$ on both sides and using the orthogonality conditions yields the final result.
 
 \noindent $a_0$ is given by the Weisskopf-Wigner ansatz, $a_0 = e^{-\frac{\gamma t}{\hbar}}$. Substitution into (\ref{aODE}) and taking the limit as $t \rightarrow \infty$ yields:
 
 \begin{equation}
-	\lim_{t\to\infty}a(E) = \frac{V(E)}{(E-E_0+i\gamma)}
+	\lim_{t\to\infty}a(E) = \frac{V(E)}{E-E_0+i\gamma}
 \end{equation}
 
 \noindent and 
+
+\begin{equation}
+	\lim_{t\to\infty}\psi(t) = \int dE\,\frac{V(E)\phi(E)e^{-\frac{iEt}{\hbar}}}{E-E_0+i\gamma}
+\end{equation}
+
+\noindent Normalisation of the wave function implies:
+
+\begin{equation}
+	\int dE\,\frac{|V(E)|^2}{(E-E_0)^2+\gamma^2}=1
+	\label{atomdecaynormalisation}
+\end{equation}
+
+\noindent Utilising the identity:
+
+\begin{equation}
+	\delta(E-E_0) = \frac{1}{\pi} \lim_{\gamma\to 0}\frac{\gamma}{(E-E_0)^2+\gamma^2} \approx \frac{\gamma}{\pi} \frac{1}{(E-E_0)^2+\gamma^2}
+\end{equation}
+
+\noindent in (\ref{atomdecaynormalisation}) yields $\gamma = \pi|V(E_0)|^2$.
+
+\noindent Coupling the atom to a clock using the clock Hamiltonian in (\ref{clockhamiltonian}):
+
+\begin{equation}
+	H = H_a+P_0\omega J
+\end{equation}
+
+\noindent and setting the initial state of the clock to $v_0 = \frac{1}{\sqrt{N}}\sum u_n$ as in (\ref{vkexpansion}), $J$ can be replaced by the numerical constant $n\hbar$ by virtue of the eigenvalue equation (\ref{clockwavefunctions}). Note this shifts the energy of the initial state $E_0 \rightarrow E_0 + n\hbar\omega$.
+
+\noindent In the limit of large $t$ the combined state of the atom and clock is:
+
+\begin{equation}
+	\psi = N^{-\frac{1}{2}}\sum u_n \int dE \, \frac{V(E)\phi(E)e^{-\frac{iEt}{\hbar}}}{E-E_0-n\hbar\omega+i\gamma}
+\end{equation}
+
+\noindent Peres subsequently derives the density matrix representing the state of the clock:
+
+\begin{equation}
+	\rho = Tr_a(\ket{\psi}\bra{\psi}) = \frac{1}{N}\sum \frac{\ket{u_n}\bra{u_m}}{1+i\alpha(n-m)}
+\end{equation}
+
+\noindent where $Tr_a$ indicates the trace is to be taken over the atom degrees of freedom only, and $\alpha = \frac{\hbar\omega}{2\gamma}$ is the angle through which the pointer turns during an average atom lifetime $\frac{\hbar}{2\gamma}$. From this the probability $\langle P_k \rangle$ of finding the clock stopped at time $t_k = k\tau \stackrel{(\ref{clockhamiltonian})}{=} \frac{2\pi k}{N\omega}$ is given by:
+
+\begin{align}
+	Tr(\rho P_k) &= \frac{1}{N}\sum_{m,n} \frac{\braket{v_k|u_n}\braket{u_m|v_k}}{1+i\alpha(n-m)} \\
+		     &\stackrel{(\ref{vkexpansion})}{=} \frac{1}{N^2}\sum_{m,n=-j}^j \frac{e^{\frac{2\pi ik(n-m)}{N}}}{1+i\alpha(n-m)}
+\end{align}
+
+\noindent The double summation can be evaluated as follows: Let $p=n-m \text{ and } q=n+m$. The summation becomes:
+
+\begin{equation}
+	Tr(\rho P_k) = \frac{1}{N^2}\sum_{p=-2j}^{2j}\sum_{q=q_1(p)}^{q_2(p)}\frac{e^{i\theta p}}{1+i\alpha p}
+\end{equation}
+
+\noindent where $\theta = \frac{2\pi k}{N}, q_1 \text{ and } q_2$ are bounds that can be determined as follows:
+
+\begin{figure}[ht]
+    \centering
+    \incfig{doublesumdiagram}
+    \caption{Bounds of the double sum in $p,q$ coordinates}
+    \label{fig:doublesumdiagram}
+\end{figure}
+
+\noindent For fixed $p$, demonstrated by the dashed line in Figure \ref{fig:doublesumdiagram}, the upper and lower bounds can be read off to be:
+
+\begin{equation}
+	q_1(p)=-2j+|p| \quad q_2(p)=2j-|p|
+\end{equation}
+
+\noindent Next noting that for fixed $p$ of given parity, all $q \in \{q_1(p),\dots,q_2(p)\}$ have the same parity and hence:
+
+\begin{align}
+	Tr(\rho P_k) &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}\sum_{q=-2j+|p|}^{2j-|p|}1 \\
+		     &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}\left[\frac{2j-|p|-(-2j+|p|)}{2}+1\right] \\
+		     &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{(N-|p|)e^{i\theta p}}{1+i\alpha p} \approx \frac{1}{N}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}
+\end{align}
+
+\noindent This result can be recognised as the Fourier series expansion of $\frac{2\pi e^{-\frac{\theta}{\alpha}}}{N\alpha\left(1-e^{-\frac{2\pi}{\alpha}}\right)}$, and hence the clocks stop (atoms decay) according to the exponential decay law as expected.
 
 \section{Larmor Precession}
 

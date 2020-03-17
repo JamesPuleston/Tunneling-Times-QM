@@ -1,0 +1,72 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'doublesumdiagram.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{283.46456693bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{doublesumdiagram.pdf}}%
+    \put(0.90903275,0.49136891){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$n$}}}%
+    \put(1.09802078,0.5216071){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.49136903,1.0110863){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0\unitlength}\raggedright \end{minipage}}}%
+    \put(0.31938988,0.95438988){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04913692\unitlength}\raggedright \end{minipage}}}%
+    \put(0.4902351,0.91470235){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{doublesumdiagram.pdf}}%
+    \put(0.54166199,0.72784947){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m+n=2j-|n-m|$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{doublesumdiagram.pdf}}%
+    \put(0.35454166,0.02248952){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m+n=-2j+|n-m|$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{doublesumdiagram.pdf}}%
+    \put(0.35321873,0.3717394){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$|n-m|$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{doublesumdiagram.pdf}}%
+    \put(0.52652084,0.17594777){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$j-|n-m|$}}}%
+    \put(0.78845833,0.27781239){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.8334375,0.06614583){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$n-m=2j$}}}%
+    \put(0.03106725,0.91474812){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$n-m=-2j$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{doublesumdiagram.pdf}}%
+    \put(0.66145836,0.31485402){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$n-m=const$}}}%
+  \end{picture}%
+\endgroup%
