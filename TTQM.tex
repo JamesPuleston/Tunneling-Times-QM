@@ -138,7 +138,10 @@ Consider a wave packet sharply localised in momentum (k) space incident on the b
 
 \begin{equation}
 	\tau_\phi = \hbar \frac{d\Delta\phi}{dE} = \frac{m}{\hbar k}\frac{d\Delta\phi}{dk}
+	\label{buttikerphasetime}
 \end{equation}
+
+\noindent An identical result is obtained for a wave packet reflected from the barrier.
 
 \noindent This can be calculated explicitly using equation (??):
 
@@ -146,27 +149,96 @@ Consider a wave packet sharply localised in momentum (k) space incident on the b
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{\hbar k}\frac{d}{dk}\left(\arctan{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]}\right) \\
 					       &=\frac{m}{\hbar k}\frac{1}{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]^2+1}\frac{1}{2}\frac{d}{dk}\left(\frac{k^2-\kappa^2}{k\kappa}\tanh{\kappa d}\right) \\ \intertext{The derivative term evaluates to:}
 					       &\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\tanh{\kappa d} + d\left(-\frac{k^2}{\kappa^2}+1\right)\sech^2{\kappa d}\\ \intertext{Hence}
-	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{2\hbar k}\frac{4k^2\kappa^2\sech^2{\kappa d}}{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\sinh{\kappa d}\cosh{\kappa d}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\\
+	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{2\hbar k}\frac{4k^2\kappa^2\sech^2{\kappa d}}{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\sinh{\kappa d}\cosh{\kappa d}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\}\\
 					       &=\frac{2mk\kappa^2}{\hbar}\frac{1}{k_0^4\sinh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\frac{\sinh{2\kappa d}}{2}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\} \\ \intertext{The term in \{\dots\} is easily shown to be:}
-					       & \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{k^2\kappa d}{k^2\kappa^3}(\kappa^2-k^2) \\ \intertext{yielding the final result:}
-	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+	\{\dots\} &= \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{d}{\kappa}(\kappa^2-k^2) \\ \intertext{yielding the final result:}
+	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}} \label{phasedelaytime}
 \end{align}
 
 \textcolor{red}{check this, you were tired...}
 
-Buttiker defines this as the phase-delay time.
+\noindent B{\"u}ttiker defines this as the phase-delay time of the scattering process.
 
-\noindent Hauge and Stovneng extend this result to define the total 
+Hauge and St{\o}vneng take an alternative approach and introduce an interval $(x_1, x_2)$ containing the barrier (i.e. $x_1<b,x_2>a$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
+
+\begin{equation}
+	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right]
+	\label{transmittedphaseshift}
+\end{equation}
+
+\noindent with analogous definitions for the reflected wave packet:
+
+\begin{equation}
+	\delta y_R = d-\frac{d\Delta\phi}{dk} \quad \delta\tau_R=-\frac{1}{v(k)} \left[d-\frac{d\Delta\phi}{dk}\right]
+	\label{reflectedphaseshift}
+\end{equation}
+
+\noindent They subsequently define the total phase time for transmission:
+
+\begin{equation}
+	\tau_T(x_1,x_2;k) = \frac{1}{v(k)}[x_2-x_1+\delta y_T]
+\end{equation}
+
+\noindent and similarly the total phase time for reflection:
+
+\begin{equation}
+	\tau_R(x_1,x_2;k) = \frac{1}{v(k)}[-2x_1-\delta y_R]
+\end{equation}
+
+\noindent where the minus sign before the spatial delay is picked up due to the wave packet travelling in the opposite direction.
+
+\noindent By linearly extrapolating the interval $(x_1,x_2) \rightarrow (-\frac{d}{2},\frac{d}{2})$, one defines the \textit{extrapolated phase times}:
+
+\begin{align}
+	\Delta\tau_T(-\frac{d}{2},\frac{d}{2};k) &= \frac{1}{v(k)}[d+\delta y_T] \\
+	\Delta\tau_R(-\frac{d}{2},\frac{d}{2};k) &= \frac{1}{v(k)}[d-\delta y_R]
+\end{align}
+
+\noindent Substituting in equations (\ref{transmittedphaseshift}) and (\ref{reflectedphaseshift}) to these results recovers (\ref{buttikerphasetime}).
+
+\textcolor{red}{Discussion of why its not correct to attribute these to time spent in barrier?}
+
+\subsection{Dwell Time}
+
+The dwell time $\tau_D$ is defined as the ratio of the number of particles within the barrier to the incident flux, $\tau_D = \frac{N}{j}$. Clearly this does not distinguish between the scattering channels (reflected or transmitted), so the dwell time is the time a particle spends in the barrier region, averaged over scattering channels.
+
+\noindent One finds for the number of particles in the barrier:
+
+\begin{align}
+	N&=\int_{\frac{-d}{2}}^{\frac{d}{2}}|\psi|^2dy \\
+	|\psi|^2 &= \frac{T}{4\kappa^2}\left[(\kappa+ik)(\kappa-ik)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+(\kappa+ik)^2+(\kappa-ik)^2\right] \\
+		 &= \frac{T}{4\kappa^2}\left[(\kappa^2+k^2)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+2(\kappa^2-k^2)\right] \\
+	\implies N &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation ?? for T}
+		 N &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{align}
+
+\noindent and for the incident flux with $\psi = e^{iky}$:
+
+\begin{align}
+	j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{\partial \psi^{*}}{\partial y}\right) \\ 
+	&= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k)
+\end{align}
+
+\noindent such that:
+
+\begin{equation}
+	\tau_D = \frac{1}{v(k)}\frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+	\label{dwelltime}
+\end{equation}
+
+\noindent The phase times $\tau_T \text{ and } \tau_R$ represent conditional averages over mutually exclusive events (a particle cannot both reflect and transmit). The dwell time $\tau_D$ is the average over all scattering channels, and hence the conditional averages must obey the probabilistic rule:
+
+\begin{equation}
+	\tau_D = T\tau_T+R\tau_R
+\end{equation}
+
+\noindent where $T \text{ and } R = 1-T$ are transmission and reflection probabilities respectively. Comparison of equations (\ref{phasedelaytime}) and (\ref{dwelltime}) show this consistency check is not satisfied. Resolution of this issue comes from noticing that attaching \textit{physical significance} to the time in (\ref{phasedelaytime}) is incorrect, as it requires the assumption that motion outside of the barrier is that of a free particle. This is valid on the transmitted side of the barrier, however during approach to the barrier the incoming wave packet interferes with the reflected wave packet and hence motion can no longer be assumed to be free.
 
 
 
+\subsection{Continuous Cyclic Quantum Clock}
 
-
-
-
-\section{Constructing a Quantum Clock}
-
-In this section I present a theoretical model of a continuous cyclic quantum clock. The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
+In this section I present a theoretical model of a continuous cyclic quantum clock as provided by Hilgevoord. The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
 
 \begin{equation}
 	\hat{\Phi} = \phi \quad \hat{L} = -i \frac{d}{d\phi}
@@ -181,8 +253,7 @@ In this section I present a theoretical model of a continuous cyclic quantum clo
 These operators have eigenvalue equations 
 
 \begin{equation}
-	\hat{\Phi}\ket{\phi} = \phi\ket{\phi}, \phi \in [0,2\pi] \\
-	\hat{L}\ket{m} = m\ket{m}, m = 0, \pm 1, \pm 2,\dots
+	\hat{\Phi}\ket{\phi} = \phi\ket{\phi}, \phi \in [0,2\pi] \quad \hat{L}\ket{m} = m\ket{m}, m = 0, \pm 1, \pm 2,\dots
 \end{equation}
 
 \noindent in which the eigenvectors form complete orthonormal sets such that:
@@ -191,12 +262,17 @@ These operators have eigenvalue equations
 	\braket{\phi|\phi'} = \delta(\phi-\phi ') \quad \braket{m|m'} = \delta_{mm'}
 \end{equation}
 
-\noindent Recalling from the theory of angular momentum in quantum mechanics that the $\hat{L}_z = -i \frac{d}{d\phi}$ operator has eigenfunctions $\propto e^{im\phi}$, $\ket{m}$ has wave function $\braket{\phi|m}= Ae^{im\phi}$ where $A$ is calculated using the normalisation condition to be $(2\pi)^{-\frac{1}{2}}$.
+\noindent Recalling from the theory of angular momentum in quantum mechanics that the $\hat{L}_z = -i \frac{d}{d\phi}$ operator has eigenfunctions $\propto e^{im\phi}$, $\ket{m}$ has wave function $\braket{\phi|m}= Ae^{im\phi}$ where $A$ is calculated using the normalisation condition to be $(2\pi)^{-\frac{1}{2}}$:
+
+\begin{equation}
+	u_m(\phi) := \braket{\phi|m} = (2\pi)^{-\frac{1}{2}}e^{im\phi}
+\end{equation}
 
 \noindent As $\{\ket{m}\}$ form a complex set, $\ket{\phi}$ can be expressed as:
 
 \begin{equation}
-	\ket{\phi} = (2\pi)^{-\frac{1}{2}}\sum_{-\infty}^{\infty}e^{-im\phi}\ket{m}
+	\ket{\phi} = (2\pi)^{-\frac{1}{2}}\sum_{m=-\infty}^{\infty}e^{-im\phi}\ket{m}
+	\label{phiexpansion}
 \end{equation}
 
 \noindent Introducing the Hamiltonian $\hat{H}=\omega \hat{L}$, the time evolution operator $U(t) = e^{-iHt}$ acts as:
@@ -212,46 +288,82 @@ These operators have eigenvalue equations
 
 \noindent by setting $\omega = 1, \space \phi$ plays exactly the same role as a time variable $t$.
 
-We construct a clock with an odd number, $N=2j+1$, of states represented by the wavefunctions \[
-	u_m(\theta) = (2\pi)^{-\frac{1}{2}}e^{im\theta}, m = -j,\dots, j \text{ and } 0 \leq \theta \leq 2\pi
-\] 
+\subsection{Discrete Cyclic Quantum Clock}
+A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$. Hence the clock has an odd number $N = 2j+1$ states represented by wave functions
 
-We can construct an alternative orthogonal basis for the clock's wavefunctions
+\begin{equation}
+	u_m(\phi) = (2\pi)^{-\frac{1}{2}}e^{im\phi}, m = -j,\dots, j \text{ and } 0 \leq \phi \leq 2\pi
+\end{equation}
+
+\noindent One can construct an alternative orthogonal basis for the clock's wave functions
 
 \begin{align}
-	v_k(\theta) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \\
-		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\theta-\frac{2\pi k}{N})}]^m \quad \tilde{m} = m+j \\
-		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\theta-\frac{2\pi k}{N})}]^{\tilde{m}-j} \\
-		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\theta-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\theta-\frac{2\pi k}{N})}]^{\tilde{m}} \\
-		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\theta-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\left(\frac{1-(e^{i(\theta-\frac{2\pi k}{N})})^N}{1-e^{i(\theta-\frac{2\pi k}{N})}}\right) \\
-		    &= (2\pi N)^{-\frac{1}{2}}\frac{\sin{\frac{N}{2}(\theta-\frac{2\pi k}{N})}}{\sin{\frac{1}{2}(\theta-\frac{2\pi k}{N})}} \\
-		    \text{for } k = 0,\dots,N-1.
+	v_k(\phi) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\phi-\frac{2\pi k}{N})}]^m \quad \tilde{m} = m+j \\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}-j} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\left(\frac{1-(e^{i(\phi-\frac{2\pi k}{N})})^N}{1-e^{i(\phi-\frac{2\pi k}{N})}}\right) \\
+		    &= (2\pi N)^{-\frac{1}{2}}\frac{\sin{\frac{N}{2}(\phi-\frac{2\pi k}{N})}}{\sin{\frac{1}{2}(\phi-\frac{2\pi k}{N})}} \text{ for } k = 0,\dots,N-1.
 \end{align}
 
-For large N these functions have a sharp peak at $\theta = \frac{2\pi k}{N}$ which we visualise as pointing to the $k^{th}$ hour with angle uncertainty $\pm \frac{\pi}{N}$:
+\noindent For large $N$ these functions have a sharp peak at $\phi = \frac{2\pi k}{N}$ which we visualise as pointing to the $k^{th}$ hour with angle uncertainty $\pm \frac{\pi}{N}$:
 
 \begin{center}
 \includegraphics{plot1.pdf}
 \end{center}
 
-We can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
+\noindent One can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
 
-The clock's Hamiltonian is $H_c = \omega J$ where $\omega = \frac{2\pi}{N\tau}$ and $J=-i\hbar \frac{\partial}{\partial\theta}$
+\noindent The clock's Hamiltonian is $H_c = \omega J$ where $\omega = \frac{2\pi}{N\tau}$ and $J=-i\hbar \frac{\partial}{\partial\phi}$.
 
-The wavefunctions $u_m$ are eigenfunctions of the Hamiltonian:
+\noindent The wave functions $u_m$ are eigenfunctions of the Hamiltonian:
 \[
 H_cu_m = m\hbar\omega u_m
 \] 
 
-whence expanding the time evolution operator as a Taylor series gives:
+\noindent whence expanding the time evolution operator as a Taylor series gives:
 
 \begin{align}
 	e^{-\frac{iH_ct}{\hbar}}u_m &= e^{-im\omega t}u_m = (2\pi)^{-\frac{1}{2}}e^{im(\theta-\omega t)} \\
-\text{and hence} \\
 	\implies e^{-\frac{iH_c\tau}{\hbar}}v_k &= N^{-\frac{1}{2}}\sum_{m}e^{-\frac{2\pi ikm}{N}}e^{-\frac{2\pi im}{N}}u_m \\
 						       &= N^{-\frac{1}{2}}\sum_{m}e^{-2\pi i \frac{m}{N}(k+1)}u_m \\
 						       &= v_{k+1}
 \end{align}
+
+\subsection{Application: Atomic Decay}
+One can apply the construction of the quantum clock to model atomic decay. The atom-clock system has Hamiltonian $H=H_a+P_0H_c$ where $H_a$ is the Hamiltonian of the atom, $H_c$ the Hamiltonian of the clock and $P_0$ the projection operator for the atom's undecayed state, such that the clock stops running when the atom decays. $H_a$ is of the form $H_a=H_0+V$ where $H_0$ has a continuous spectrum $H_0\phi(E) = E\phi(E) \quad E>E_{min}$, plus one discrete eigenstate $\phi_0$ with energy $E_0>E_{min}$. The non vanishing matrix elements of $V$ are denoted $V(E) := \braket{\phi(E)|V|\phi_0}$, which is assumed to be almost constant in $E$ over a large domain on both sides of $E_0$.
+
+\noindent The wave function for the atom can be expressed as:
+
+\begin{equation}
+	\psi = a_0\phi_0e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)\phi(E)e^{-\frac{iEt}{\hbar}}
+\end{equation}
+
+\noindent Application of the Schr{\"o}dinger equation for the atom yields:
+
+\begin{equation}
+	i\hbar \dot{a}(E) = V(E)a_0e^{\frac{i(E-E_0)t}{\hbar}}
+	\label{aODE}
+\end{equation}
+
+\noindent Proof:
+
+\begin{align}
+	\ket{\psi} &= a_0\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\,a(E)\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \\
+	\implies (H_0+V)\ket{\psi} &= a_0E_0\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)E\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \\ 
+				   &+a_0V\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)V\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \nonumber\\
+				   &= i\hbar \frac{d\ket{\psi}}{dt}
+\end{align}
+
+\noindent Applying $\bra{\phi(E')}$ to both sides and using the orthogonality conditions yields the final result.
+
+\noindent $a_0$ is given by the Weisskopf-Wigner ansatz, $a_0 = e^{-\frac{\gamma t}{\hbar}}$. Substitution into (\ref{aODE}) and taking the limit as $t \rightarrow \infty$ yields:
+
+\begin{equation}
+	\lim_{t\to\infty}a(E) = \frac{V(E)}{(E-E_0+i\gamma)}
+\end{equation}
+
+\noindent and 
 
 \section{Larmor Precession}
 

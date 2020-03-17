@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1584407480 "TTQM.tex" "TTQM.pdf" "TTQM" 1584407480
+["pdflatex"] 1584461033 "TTQM.tex" "TTQM.pdf" "TTQM" 1584461034
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -99,9 +99,9 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1583024959 4259635 5fdeaa5c45a077d32cf05fa8ee7ff861 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Mathematica/plot1.pdf" 1583601174 76666 67f3eab5f52742e28fcf86162e90a4f7 ""
-  "TTQM.aux" 1584407480 1495 939f47066a50f60153f8517fea291852 "pdflatex"
-  "TTQM.tex" 1584407479 23846 e4cba6bfda4af724051c077c06d58cbe ""
+  "Mathematica/plot1.pdf" 1584454465 81768 c28032fe200864f72211e83c56ecb58b ""
+  "TTQM.aux" 1584461034 2090 14345f772d32c431e3557b7cd7b790e5 "pdflatex"
+  "TTQM.tex" 1584461032 30592 d5d86a036a84240717b9cc9b190a91db ""
   (generated)
   "TTQM.aux"
   "TTQM.log"
