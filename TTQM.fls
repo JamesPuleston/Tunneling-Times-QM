@@ -137,6 +137,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/bbold/Ubbold.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/bbold/bbold10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/bbold/bbold7.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/bbold/bbold5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT ./Mathematica/plot1.pdf
 INPUT ./Mathematica/plot1.pdf
 INPUT ./Mathematica/plot1.pdf

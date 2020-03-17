@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\DeclareMathOperator{\sech}{sech}
 \usepackage{braket}
 \usepackage{bbold}
 \usepackage{graphicx}
@@ -92,6 +93,8 @@ In quantum mechanics the state of a particle is encoded in a vector $\ket{\psi}$
 
 \noindent where $\psi(q)$ is the wave function of the particle. More generally, to describe a system in 3 dimensions requires a wave function $\psi(q_x,q_y,q_z)$. It is important to note that the domain of the wave function is the \textit{configuration space} of the system, $\mathbb{R}^3$, whose coordinates are the generalised coordinates $q_i$ of the system. It is common in elementary quantum mechanics literature for elements of the domain of the wave function to be expressed as $(x,y,z), \text{ i.e. } \psi = \psi(x,y,z)$. This is clearly in notational conflict with the denotation of coordinates of points of the background space-time in which the quantum system resides. 
 
+\textcolor{red}{should I then implement this in the following equations}
+
 Measurable quantities or `observables' are represented by operators on $\mathcal{H}$:
 
 \begin{equation}
@@ -109,6 +112,57 @@ One notable omission in this process is the promotion of the time coordinate $t$
 \textcolor{red}{Add Pauli proof c.f. Butterfield On Time in Quantum Physics}
 
 Observing that this issue arose from attempts to erroneously quantise the \textit{space-time} coordinate t, the problem becomes void and progress can be made by considering the quantisation of timelike \textit{dynamical variables} of physical systems, namely clocks in analogue with the case in classical mechanics mentioned above. 
+
+\section{Tunnelling Time Candidates}
+
+In this section I survey a number of contenders for calculating the tunnelling time through a barrier. The first of these are theoretical definitions of the time taken to tunnel through a barrier, whereas the remainder are theoretical constructions of quantum clocks that can be used to measure tunnelling times.
+
+\subsection{Phase Times}
+Consider a one-dimensional scattering configuration given by the potential barrier \textcolor{red}{Insert quantum barrier calculation from below. Use Buttiker as reference, adjust all other sources accordingly.}
+
+Consider a wave packet sharply localised in momentum (k) space incident on the barrier. The incident wave packet has a peak $y_p(t)$ where the phase of the wave has an extremum when differentiated with respect to $k$:
+
+\begin{equation}
+	-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)=0
+	\label{incidentpeak}
+\end{equation}
+
+\noindent This contrasts with the peak of the transmitted wave packet which satisfies:
+
+\begin{equation}
+	\frac{d\Delta\phi}{dk}-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)-d=0
+	\label{transmittedpeak}
+\end{equation}
+
+\noindent Solving equations (\ref{incidentpeak}) and (\ref{transmittedpeak}) for $t$ at $y_p(t) = -\frac{d}{2} \text{ and } \frac{d}{2}$ respectively, one finds the traversal time across the barrier for the transmitted wave to be:
+
+\begin{equation}
+	\tau_\phi = \hbar \frac{d\Delta\phi}{dE} = \frac{m}{\hbar k}\frac{d\Delta\phi}{dk}
+\end{equation}
+
+\noindent This can be calculated explicitly using equation (??):
+
+\begin{align}
+	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{\hbar k}\frac{d}{dk}\left(\arctan{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]}\right) \\
+					       &=\frac{m}{\hbar k}\frac{1}{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]^2+1}\frac{1}{2}\frac{d}{dk}\left(\frac{k^2-\kappa^2}{k\kappa}\tanh{\kappa d}\right) \\ \intertext{The derivative term evaluates to:}
+					       &\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\tanh{\kappa d} + d\left(-\frac{k^2}{\kappa^2}+1\right)\sech^2{\kappa d}\\ \intertext{Hence}
+	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{2\hbar k}\frac{4k^2\kappa^2\sech^2{\kappa d}}{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\sinh{\kappa d}\cosh{\kappa d}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\\
+					       &=\frac{2mk\kappa^2}{\hbar}\frac{1}{k_0^4\sinh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\frac{\sinh{2\kappa d}}{2}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\} \\ \intertext{The term in \{\dots\} is easily shown to be:}
+					       & \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{k^2\kappa d}{k^2\kappa^3}(\kappa^2-k^2) \\ \intertext{yielding the final result:}
+	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{align}
+
+\textcolor{red}{check this, you were tired...}
+
+Buttiker defines this as the phase-delay time.
+
+\noindent Hauge and Stovneng extend this result to define the total 
+
+
+
+
+
+
 
 \section{Constructing a Quantum Clock}
 
