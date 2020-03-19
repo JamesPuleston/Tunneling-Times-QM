@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1584578422 "TTQM.tex" "TTQM.pdf" "TTQM" 1584578423
+["pdflatex"] 1584581787 "TTQM.tex" "TTQM.pdf" "TTQM" 1584581788
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -116,9 +116,9 @@
   "Figures/potentialbarrierplusfield.pdf" 1584548799 1300 900efce4a197bdb34179fcacde514ba1 ""
   "Figures/potentialbarrierplusfield.pdf_tex" 1584548799 2364 ca860a94b3c70a4ab34caebcf8399ee4 ""
   "Mathematica/plot1.pdf" 1584454465 81768 c28032fe200864f72211e83c56ecb58b ""
-  "TTQM.aux" 1584578423 3348 504c66f1d747c21519b3b332cb8edc84 "pdflatex"
-  "TTQM.tex" 1584578421 48052 cf93be785ea054f80e8981f3625abb8e ""
+  "TTQM.aux" 1584581788 3491 347e409a507bebca99f9cd6205acf902 "pdflatex"
+  "TTQM.tex" 1584581786 50107 e08bebf6b6c3e13bc8dc35287fa87056 ""
   (generated)
-  "TTQM.log"
-  "TTQM.pdf"
   "TTQM.aux"
+  "TTQM.pdf"
+  "TTQM.log"

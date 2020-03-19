@@ -555,12 +555,12 @@ In this section I consider the quantum barrier experiment as in section \ref{sec
 
 \noindent In the limit $\boldsymbol{B_0} \propto \omega_L \text{ is small}, \kappa_{\pm}$ can be approximated as:
 
-\begin{align*}
+\begin{align}
    \kappa_{\pm} &= \left(k^{2}_{0}-k^{2} \mp \frac{m \omega_{L}}{\hbar}\right)^{\frac{1}{2}}\\	
 		&= \kappa \left(1 \mp \frac{m \omega_{L}}{\hbar \kappa^{2}}\right)^{\frac{1}{2}}\\
 		&\approx \kappa \left(1 \mp \frac{m \omega_{L}}{2\hbar \kappa^{2}}\right)\\
-		&= \kappa \mp \frac{m \omega_{L}}{2\hbar \kappa}
-\end{align*}
+		&= \kappa \mp \frac{m \omega_{L}}{2\hbar \kappa} \label{smallfieldkappa}
+\end{align}
 
 \noindent As $\kappa_{+} < \kappa_{-}$, particles with spin aligned with the magnetic field penetrate more easily than particles with spin anti-aligned with the field, reflected in the transmission probability:
 
@@ -621,7 +621,7 @@ For particles with spin aligned(anti-aligned) with the magnetic field:
 The transmitted particles have spinor:
 
 \begin{equation}
-	\psi = (|D_{+}|^2+|D_{-}|^2)
+	\psi_T = (|D_{+}|^2+|D_{-}|^2)
 	\begin{pmatrix}
 		D_{+}\\
 		D_{-}\\
@@ -650,15 +650,16 @@ The transmitted particles have spinor:
 \noindent one finds for the expectation values of spin for the transmitted particles:
 
 \begin{align}
-	\langle S_z \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_z|\psi}=\frac{\hbar}{2}\frac{|D_+|^2+|D_-|^2}{|D_+|^2+|D_-|^2} \\
-	\langle S_y \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_y|\psi}=i\frac{\hbar}{2}\frac{D_+D_-^*-D_+^*D_-}{|D_+|^2+|D_-|^2} \\
-	\langle S_x \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_x|\psi}=\frac{\hbar}{2}\frac{D_+D_-^*+D_+^*D_-}{|D_+|^2+|D_-|^2}
+	\langle S_z \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_z|\psi_T}=\frac{\hbar}{2}\frac{|D_+|^2+|D_-|^2}{|D_+|^2+|D_-|^2} \\
+	\langle S_y \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_y|\psi_T}=i\frac{\hbar}{2}\frac{D_+D_-^*-D_+^*D_-}{|D_+|^2+|D_-|^2} \\
+	\langle S_x \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_x|\psi_T}=\frac{\hbar}{2}\frac{D_+D_-^*+D_+^*D_-}{|D_+|^2+|D_-|^2}
 \end{align}
 
 \noindent Using (\ref{cont0}) and the adjustments for the magnetic field outlined above, one finds:
 
 \begin{equation}
 	\langle S_z \rangle_T = \frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}
+	\label{szT}
 \end{equation}
 
 
@@ -667,7 +668,8 @@ Follows immediately from the fact that $T=|D|^2$.
 \end{proof}
 
 \begin{equation}
-	\langle S_y \rangle_T = -\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-} 	
+	\langle S_y \rangle_T = -\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}
+	\label{syT}
 \end{equation}
 
 \begin{proof}
@@ -680,11 +682,12 @@ Follows immediately from the fact that $T=|D|^2$.
 
 \begin{equation}
 	\langle S_x \rangle_T = \hbar \cos{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}
+	\label{sxT}
 \end{equation}
 
 \noindent follows along similar lines to the case of $\langle S_y \rangle_T$.
 
-\noindent Using (\ref{transmissionprobability}) one sees that $T_+ \propto e^{-2\kappa_+d} \text{ and } T_- \propto e^{-2\kappa_-d}$. As $\kappa_- > \kappa_+$, for a sufficiently opaque barrier ($k_0d \gg 1$), $T_+ \gg T_-$, and therefore:
+\noindent These derivations have utilised no assumptions about the strength of the field, so hold for arbitrary magnetic field. Using (\ref{transmissionprobability}) one sees that $T_+ \propto e^{-2\kappa_+d} \text{ and } T_- \propto e^{-2\kappa_-d}$. As $\kappa_- > \kappa_+$, for a sufficiently opaque barrier ($k_0d \gg 1$), $T_+ \gg T_-$, and therefore:
 
 \begin{equation}
 	\langle S_z \rangle_T \approx \frac{\hbar}{2} \quad \langle S_y \rangle_T = \langle S_x \rangle_T \approx 0
@@ -692,7 +695,17 @@ Follows immediately from the fact that $T=|D|^2$.
 
 \noindent Hence the transmitted beam is almost exclusively polarised parallel to the magnetic field.
 
-\noindent By similar arguments, one arrives at the analogous results for the reflected wave:
+\noindent By similar arguments, with the spinor:
+
+\begin{equation}
+	\psi_R = (|A_{+}|^2+|A_{-}|^2)
+	\begin{pmatrix}
+		A_{+}\\
+		A_{-}\\
+	\end{pmatrix}
+\end{equation}
+
+\noindent one arrives at the analogous results for the reflected wave:
 
 \begin{align}
 	\langle S_z \rangle_R &= \frac{\hbar}{2}\frac{R_+-R_-}{R_++R_-}\\
@@ -709,6 +722,40 @@ Follows immediately from the fact that $T=|D|^2$.
 \noindent and hence $\langle S_z \rangle_R + \langle S_z \rangle_T = 0$, the statement of conservation of angular momentum. 
 
 \subsubsection{Infinitesimal Field}
+In this section I report the study of polarisation of the transmitted and reflected waves in the limit of an infinitesimal field. Using (\ref{smallfieldkappa}), one finds the result:
+
+\begin{align}
+	T_+-T_- &= T(\kappa_+)-T(\kappa_-)\\
+		&= \frac{T(k-\frac{m\omega_L}{2\hbar\kappa})-T(k+\frac{m\omega_L}{2\hbar\kappa})}{\frac{m\omega_L}{\hbar\kappa}}\times \frac{m\omega_L}{\hbar\kappa} \\
+		&=-\left(\frac{m\omega_L}{\hbar\kappa}\right)\frac{\partial T}{\partial \kappa} \label{netT}
+\end{align}
+
+\noindent In equation (\ref{netT}) the Larmor frequency $\omega_L$ is multiplied by a time $\frac{m}{\hbar\kappa}\frac{\partial T}{\partial \kappa}$. This motivates the definition of the characteristic times $\tau_z, \tau_y, \tau_x$ such that:
+
+\begin{align}
+	\langle S_z \rangle_T &= \frac{\hbar}{2}\omega_L\tau_z \\
+	\langle S_y \rangle_T &= -\frac{\hbar}{2}\omega_L\tau_y \\
+	\langle S_x \rangle_T &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_x^2}{2}\right)
+\end{align}
+
+\noindent Using equations (\ref{szT}),(\ref{syT}) and (\ref{sxT}) and the approximation $T_++T_- \approx 2T$, one can derive explicit results for the characteristic times:
+
+\begin{equation}
+	\tau_z = -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa}
+\end{equation}
+
+\begin{proof}
+\begin{align}
+	\langle S_z \rangle_T &\stackrel{(\ref{szT})}{=}\frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}\\
+	&\approx \frac{\hbar}{4}\frac{T_+-T_-}{T}\\
+	&\stackrel{(\ref{netT})}{=}-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{4}\frac{1}{T}\frac{\partial T}{\partial \kappa} \\
+	&=-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{2}\frac{\partial\ln{T^{\frac{1}{2}}}}{d\kappa} \\
+	&=\frac{\hbar}{2}\omega_L\tau_z
+\end{align}
+\end{proof}
+
+
+
 
 We consider the case of scattering in one dimension with particles of mass $m$, spin $\frac{1}{2}$ and kinetic energy $
 E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis with spins polarised with the x-axis and interact with a rectangular barrier,
