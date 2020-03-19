@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \DeclareMathOperator{\sech}{sech}
 \usepackage{braket}
 \usepackage{bbold}
@@ -118,6 +119,7 @@ Observing that this issue arose from attempts to erroneously quantise the \texti
 In this section I survey a number of contenders for calculating the tunnelling time through a barrier. The first of these are theoretical definitions of the time taken to tunnel through a barrier, whereas the remainder are theoretical constructions of quantum clocks that can be used to measure tunnelling times.
 
 \subsection{Tunnelling Through a Quantum Barrier}
+\label{section:quantumbarrier}
 \noindent \textcolor{red}{I use Buttiker as the reference barrier, adjusting all other sources accordingly.}
 
 \noindent Consider the case of scattering in one dimension with particles of mass $m$, velocity $v(k) = \frac{\hbar k}{m}$ and kinetic energy $E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis and interact with a rectangular barrier:
@@ -145,7 +147,9 @@ In this section I survey a number of contenders for calculating the tunnelling t
 		Be^{\kappa y} + Ce^{-\kappa y} & -\frac{d}{2} \leq y \leq \frac{d}{2} \\
 		De^{iky} & y \geq \frac{d}{2}
 	\end{cases}
+	\label{wavefunction}
 \end{equation}
+\noindent where $k = \frac{\sqrt{2mE}}{\hbar}$, $\kappa := \frac{\sqrt{2m(V_0-E)}}{\hbar} = \sqrt{k_0^2-k^2} \text{ where } k_0 = \frac{\sqrt{2mV_0}}{\hbar}$. 
 
 \noindent The coefficient of the incident wave is set to one, corresponding to one particle per unit length in the incident beam. Note there is no $e^{-iky}$ term on the right of the barrier, as no particles are reflected after being transmitted through the barrier.
 
@@ -190,7 +194,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 
 \noindent Hence one arrives at the first result, the transmission probability $T = |D|^2$:
 \begin{equation}
-	T = [1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}]^{-1}
+	T = \left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}
 	\label{transmissionprobability}
 \end{equation}
 
@@ -201,7 +205,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 	  &\implies \Delta \phi := arg(D) = \arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \label{phasechange}
 \end{align}
 
-\noindent Rearranging (\ref{cont11}) for $D$ yields the final result in (\ref{cont0}). The result for A follows along similar lines and results for B and C follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
+\noindent Rearranging (\ref{cont11}) for $D$ yields the final result in (\ref{cont0}). The result for $A$ follows along similar lines and results for $B \text{ and } C$ follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
 
 \subsection{Phase Times}
 
@@ -236,7 +240,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 					       &\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\tanh{\kappa d} + d\left(-\frac{k^2}{\kappa^2}+1\right)\sech^2{\kappa d}\\ \intertext{Hence}
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{2\hbar k}\frac{4k^2\kappa^2\sech^2{\kappa d}}{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\sinh{\kappa d}\cosh{\kappa d}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\}\\
 					       &=\frac{2mk\kappa^2}{\hbar}\frac{1}{k_0^4\sinh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\frac{\sinh{2\kappa d}}{2}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\} \\ \intertext{The term in \{\dots\} is easily shown to be:}
-	\{\dots\} &= \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{d}{\kappa}(\kappa^2-k^2) \\ \intertext{yielding the final result:}
+	\{\dots\} &= \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{d}{\kappa}(\kappa^2-k^2) \text{ where } k_0^2 := k^2+\kappa^2\\ \intertext{yielding the final result:}
 	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}} \label{phasedelaytime}
 \end{align}
 
@@ -407,7 +411,7 @@ A discrete cyclic quantum clock can be modelled by limiting the sum in equation 
 						       &= v_{k+1}
 \end{align}
 
-\subsection{Application: Atomic Decay}
+\subsubsection{Application: Atomic Decay}
 One can apply the construction of the quantum clock to model atomic decay. The atom-clock system has Hamiltonian $H=H_a+P_0H_c$ where $H_a$ is the Hamiltonian of the atom, $H_c$ the Hamiltonian of the clock and $P_0$ the projection operator for the atom's undecayed state, such that the clock stops running when the atom decays. $H_a$ is of the form $H_a=H_0+V$ where $H_0$ has a continuous spectrum $H_0\phi(E) = E\phi(E) \quad E>E_{min}$, plus one discrete eigenstate $\phi_0$ with energy $E_0>E_{min}$. The non vanishing matrix elements of $V$ are denoted $V(E) := \braket{\phi(E)|V|\phi_0}$, which is assumed to be almost constant in $E$ over a large domain on both sides of $E_0$.
 
 \noindent The wave function for the atom can be expressed as:
@@ -519,9 +523,192 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 
 \noindent This result can be recognised as the Fourier series expansion of $\frac{2\pi e^{-\frac{\theta}{\alpha}}}{N\alpha\left(1-e^{-\frac{2\pi}{\alpha}}\right)}$, and hence the clocks stop (atoms decay) according to the exponential decay law as expected.
 
-\section{Larmor Precession}
+\subsection{Larmor Precession}
+In this section I consider the quantum barrier experiment as in section \ref{section:quantumbarrier}, but now with the additional constraints that the particles carry spin $s=\frac{1}{2}$ polarised in the x-direction, and with the presence of a small magnetic field $\boldsymbol{B_0}$ parallel with the z-axis and confined to the width of the barrier:
 
-\noindent \textcolor{red}{Work in progress: please ignore for now}
+\begin{figure}[ht]
+    \centering
+    \incfig{potentialbarrierplusfield}
+    \caption{Experimental set up of a quantum barrier with a magnetic field constrained inside.}
+    \label{fig:potentialbarrierfield}
+\end{figure}
+
+\noindent The magnetic field engenders on the particles in the barrier a Larmor precession of frequency $\omega_L = \frac{g\mu B_0}{\hbar}$, where $g$ is the gyromagnetic ratio and $\mu$ is the magnetic moment. This changes the spin of the particles to be polarised in the x-y plane such that:
+
+\begin{equation}
+	\langle S_x \rangle \approx \frac{\hbar}{2} \quad \langle S_y \rangle \approx -\frac{\hbar}{2}\omega_L\tau_y
+\end{equation}
+
+\noindent The presence of the magnetic field and barrier also induces a component of spin in the z-direction, although through an alternative mechanism: Recall from the theory of spin in quantum mechanics that particles with spin in the x-direction can be represented as a linear combination of particles in the $\pm \text{z}$ direction:
+
+\begin{equation}
+	\ket{x; \pm} = \frac{1}{\sqrt{2}}\ket{z;+} \pm \frac{1}{\sqrt{2}}\ket{z;-}
+\end{equation}
+
+\noindent with z-components $\pm \frac{\hbar}{2}$ each with probability $\frac{1}{2}$. Inside the barrier the magnetic field induces a Zeeman shift $\pm \frac{\hbar\omega_L}{2}$ to the energies of the particles, giving rise to different exponential decays of the wave functions inside the barrier (\ref{wavefunction})\footnote{Note I ignore the exponentially growing term in (\ref{wavefunction}) because it is multiplied by a suppressive pre-factor $e^{-\frac{\kappa d}{2}}$ in equation (\ref{cont0}).}:
+
+\begin{equation}
+	\kappa_{\pm}=(k_0^2-k^2\mp \frac{m\omega_L}{\hbar})^{\frac{1}{2}}
+\end{equation}
+
+\noindent where $\kappa_{+}(\kappa_{-})$ corresponds to particles with spin z parallel(antiparallel) to the magnetic field.
+
+\noindent In the limit $\boldsymbol{B_0} \propto \omega_L \text{ is small}, \kappa_{\pm}$ can be approximated as:
+
+\begin{align*}
+   \kappa_{\pm} &= \left(k^{2}_{0}-k^{2} \mp \frac{m \omega_{L}}{\hbar}\right)^{\frac{1}{2}}\\	
+		&= \kappa \left(1 \mp \frac{m \omega_{L}}{\hbar \kappa^{2}}\right)^{\frac{1}{2}}\\
+		&\approx \kappa \left(1 \mp \frac{m \omega_{L}}{2\hbar \kappa^{2}}\right)\\
+		&= \kappa \mp \frac{m \omega_{L}}{2\hbar \kappa}
+\end{align*}
+
+\noindent As $\kappa_{+} < \kappa_{-}$, particles with spin aligned with the magnetic field penetrate more easily than particles with spin anti-aligned with the field, reflected in the transmission probability:
+
+\begin{align}
+	T &\stackrel{(\ref{transmissionprobability})}{=} \left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}\\
+	  &\approx \left[\frac{(k^2+\kappa^2)^2}{4k^2\kappa^2}\frac{e^{2\kappa d}}{4}\right]^{-1} \\
+	&= \frac{16k^2\kappa^2}{k^2+\kappa^2}e^{-2\kappa d} \\
+	\implies T_{\pm} &= Te^{\pm\omega_L \tau_z} 
+\end{align}
+
+\noindent where $\tau_z = \frac{md}{\hbar\kappa}$ is the time a particle with velocity $v(k) = \frac{\hbar k}{m}$ takes to traverse the barrier. Hence the barrier with the magnetic field induces a net z-component of spin polarisation aligned with the field, quantified the ratio of excess flux to total flux:
+
+\begin{equation}
+	\langle S_z \rangle = \frac{\hbar}{2}\frac{T_{+}-T_{-}}{T_{+}+T_{-}} = \frac{\hbar}{2}\tanh{\omega_L\tau_z}
+\end{equation}
+
+\noindent The polarisation of the transmitted and reflected particles for all incident energies can be calculated. To do so one must solve the scattering problem with the Hamiltonian:
+
+\begin{equation}
+	H = 
+	\begin{cases}
+	\left(\frac{p^2}{2m} + V_0\right)\mathbb{1}-\left(\frac{\hbar \omega_L}{2}\right) \sigma_z & |y| \leq \frac{d}{2}\\
+	\left(\frac{p^2}{2m}\right)\mathbb{1} & |y| \geq \frac{d}{2}
+	\end{cases}
+	\end{equation}
+where $\mathbb{1}$ is the $2 \times 2$ identity matrix and $\sigma_{x}, \sigma_{y}, \sigma_{z}$ are the Pauli spin matrices.
+
+\noindent $H$ acts on spinors
+\begin{align}
+	\psi &= \begin{pmatrix}
+		\psi_{+}(y) \\
+		\psi_{-}(y)
+		\end{pmatrix}
+\end{align}
+
+As usual $|\psi_{\pm}(y)|^{2}dy$ is the probability of finding a particle \textit{upon measurement} with spin $\pm \frac{\hbar}{2}$ in the interval $y, y+dy$. I emphasise 'upon measurement' here as this is an important point of distinction between the orthodox and pilot-wave interpretations addressed in this essay. The incident beam is polarised in the x-direction:
+\begin{align}
+	\psi = \frac{1}{\sqrt{2}}
+	\begin{pmatrix}
+	1\\
+	1
+	\end{pmatrix}
+	e^{iky}
+\end{align}
+i.e. $\psi$ is an eigenvector of $S_{x}$
+
+\noindent $H$ is diagonal in the spinor basis so one can solve the scattering problem for particles with spin $\frac{\hbar}{2}$ and $-\frac{\hbar}{2}$ separately. This amounts to solving the quantum barrier in (\ref{wavefunction}) with the following adjustments:
+
+For particles with spin aligned(anti-aligned) with the magnetic field:
+
+\begin{itemize}
+	\item $\kappa \to \kappa_{+}(\kappa_{-})$
+	\item $V_0 \to V_0+(-)\frac{\hbar \omega_L}{2}$
+	\item $A,B,C,D \text{ in } (\ref{cont0}) \to A_{+(-)},B_{+(-)},C_{+(-)},D_{+(-)} \text{ by replacing } \kappa \to \kappa_{+}(\kappa_{-})$
+\end{itemize}
+
+\subsubsection{The Strong-Field Limit}
+The transmitted particles have spinor:
+
+\begin{equation}
+	\psi = (|D_{+}|^2+|D_{-}|^2)
+	\begin{pmatrix}
+		D_{+}\\
+		D_{-}\\
+	\end{pmatrix}
+\end{equation}
+
+\noindent Recalling the Pauli sigma matrices:
+\begin{equation}
+	\sigma_x = 
+	\begin{pmatrix}
+		0&1\\
+		1&0
+	\end{pmatrix} \quad
+	\sigma_y = 
+	\begin{pmatrix}
+		0&-i\\
+		i&0
+	\end{pmatrix} \quad
+	\sigma_z =
+	\begin{pmatrix}
+		1&0\\
+		0&-1
+	\end{pmatrix}
+\end{equation}
+
+\noindent one finds for the expectation values of spin for the transmitted particles:
+
+\begin{align}
+	\langle S_z \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_z|\psi}=\frac{\hbar}{2}\frac{|D_+|^2+|D_-|^2}{|D_+|^2+|D_-|^2} \\
+	\langle S_y \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_y|\psi}=i\frac{\hbar}{2}\frac{D_+D_-^*-D_+^*D_-}{|D_+|^2+|D_-|^2} \\
+	\langle S_x \rangle_T &= \frac{\hbar}{2}\braket{\psi|\sigma_x|\psi}=\frac{\hbar}{2}\frac{D_+D_-^*+D_+^*D_-}{|D_+|^2+|D_-|^2}
+\end{align}
+
+\noindent Using (\ref{cont0}) and the adjustments for the magnetic field outlined above, one finds:
+
+\begin{equation}
+	\langle S_z \rangle_T = \frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}
+\end{equation}
+
+
+\begin{proof}
+Follows immediately from the fact that $T=|D|^2$.
+\end{proof}
+
+\begin{equation}
+	\langle S_y \rangle_T = -\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-} 	
+\end{equation}
+
+\begin{proof}
+\begin{align}
+	\langle S_y \rangle_T &= i\frac{\hbar}{2}\left(\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\right)\left(e^{i(\Delta\phi_+-\Delta\phi_-)}-e^{-i(\Delta\phi_+-\Delta\phi_-)}\right) \\
+			    &= i\frac{\hbar}{2}\left(\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\right)(2i\sin{(\Delta\phi_+-\Delta\phi_-)}) \\
+			    &=-\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}
+\end{align}
+\end{proof}
+
+\begin{equation}
+	\langle S_x \rangle_T = \hbar \cos{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}
+\end{equation}
+
+\noindent follows along similar lines to the case of $\langle S_y \rangle_T$.
+
+\noindent Using (\ref{transmissionprobability}) one sees that $T_+ \propto e^{-2\kappa_+d} \text{ and } T_- \propto e^{-2\kappa_-d}$. As $\kappa_- > \kappa_+$, for a sufficiently opaque barrier ($k_0d \gg 1$), $T_+ \gg T_-$, and therefore:
+
+\begin{equation}
+	\langle S_z \rangle_T \approx \frac{\hbar}{2} \quad \langle S_y \rangle_T = \langle S_x \rangle_T \approx 0
+\end{equation}
+
+\noindent Hence the transmitted beam is almost exclusively polarised parallel to the magnetic field.
+
+\noindent By similar arguments, one arrives at the analogous results for the reflected wave:
+
+\begin{align}
+	\langle S_z \rangle_R &= \frac{\hbar}{2}\frac{R_+-R_-}{R_++R_-}\\
+	\langle S_y \rangle_R &= -\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(R_+R_-)^{\frac{1}{2}}}{R_++R_-}\\
+	\langle S_x \rangle_R &= \hbar \cos{(\Delta\phi_+-\Delta\phi_-)}\frac{(R_+R_-)^{\frac{1}{2}}}{R_++R_-}
+\end{align}
+
+\noindent Using the statement of particle conservation $R_+-R_-=-(T_+-T_-)$, one finds that:
+
+\begin{equation}
+	\langle S_z \rangle_R = -\langle S_z \rangle_T \frac{T_++T_-}{R_++R_-} 
+\end{equation}
+
+\noindent and hence $\langle S_z \rangle_R + \langle S_z \rangle_T = 0$, the statement of conservation of angular momentum. 
+
+\subsubsection{Infinitesimal Field}
 
 We consider the case of scattering in one dimension with particles of mass $m$, spin $\frac{1}{2}$ and kinetic energy $
 E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis with spins polarised with the x-axis and interact with a rectangular barrier,

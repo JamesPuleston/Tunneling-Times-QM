@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.1)  17 MAR 2020 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.1)  19 MAR 2020 00:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -105,6 +105,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks28
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/braket/braket.sty) (/usr/local/texlive/2019/texmf-dist/tex/latex/bbold/bbold.sty
 Package: bbold 1994/04/06 Bbold symbol package
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -147,12 +158,12 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count104
 \calc@Adimen=\dimen122
 \calc@Bdimen=\dimen123
-\calc@Askip=\skip46
-\calc@Bskip=\skip47
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count105
-\calc@Cskip=\skip48
+\calc@Cskip=\skip51
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
@@ -174,8 +185,8 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box29
-\AM@global@opts=\toks23
-\AM@toc@title=\toks24
+\AM@global@opts=\toks29
+\AM@toc@title=\toks30
 \c@AM@survey=\count106
 \AM@templatesizebox=\box30
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/transparent.sty
@@ -185,18 +196,18 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )) (./TTQM.aux)
 \openout1 = `TTQM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -239,12 +250,12 @@ LaTeX Font Info:    ... okay on input line 23.
 \scratchbox=\box31
 \nofMPsegments=\count108
 \nofMParguments=\count109
-\everyMPshowfont=\toks25
+\everyMPshowfont=\toks31
 \MPscratchCnt=\count110
 \MPscratchDim=\dimen127
 \MPnumerator=\count111
 \makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks26
+\everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -284,7 +295,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+bbold on input line 88.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 89.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/bbold/Ubbold.fd) [2] (./Figures/potentialbarrier.pdf_tex
 <./Figures/potentialbarrier.pdf, id=23, page=1, 284.52756pt x 142.26378pt>
 File: ./Figures/potentialbarrier.pdf Graphic file (type pdf)
@@ -300,50 +311,56 @@ Package pdftex.def Info: ./Figures/potentialbarrier.pdf , page2 used on input li
 
 pdfTeX warning: pdflatex (file ./Figures/potentialbarrier.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 241.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 245.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 241.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 245.
  [5] [6] [7]
 <./Mathematica/plot1.pdf, id=47, 361.35pt x 153.57375pt>
 File: ./Mathematica/plot1.pdf Graphic file (type pdf)
 <use ./Mathematica/plot1.pdf>
-Package pdftex.def Info: ./Mathematica/plot1.pdf  used on input line 382.
+Package pdftex.def Info: ./Mathematica/plot1.pdf  used on input line 386.
 (pdftex.def)             Requested size: 361.34912pt x 153.57336pt.
  [8 <./Mathematica/plot1.pdf>] [9] (./Figures/doublesumdiagram.pdf_tex
-<./Figures/doublesumdiagram.pdf, id=144, page=1, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=145, page=1, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 1>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-<./Figures/doublesumdiagram.pdf, id=145, page=2, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=146, page=2, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 2>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-<./Figures/doublesumdiagram.pdf, id=146, page=3, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=147, page=3, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 3>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-<./Figures/doublesumdiagram.pdf, id=147, page=4, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=148, page=4, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 4>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-<./Figures/doublesumdiagram.pdf, id=148, page=5, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=149, page=5, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 5>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page5 used on input line 64.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-<./Figures/doublesumdiagram.pdf, id=149, page=6, 284.52756pt x 284.52756pt>
+<./Figures/doublesumdiagram.pdf, id=150, page=6, 284.52756pt x 284.52756pt>
 File: ./Figures/doublesumdiagram.pdf Graphic file (type pdf)
 <use ./Figures/doublesumdiagram.pdf, page 6>
 Package pdftex.def Info: ./Figures/doublesumdiagram.pdf , page6 used on input line 69.
 (pdftex.def)             Requested size: 284.52756pt x 284.5529pt.
-) [10] [11 <./Figures/doublesumdiagram.pdf> <./Figures/doublesumdiagram.pdf
+) [10] (./Figures/potentialbarrierplusfield.pdf_tex
+<./Figures/potentialbarrierplusfield.pdf, id=155, page=1, 239.53374pt x 186.6576pt>
+File: ./Figures/potentialbarrierplusfield.pdf Graphic file (type pdf)
+<use ./Figures/potentialbarrierplusfield.pdf, page 1>
+Package pdftex.def Info: ./Figures/potentialbarrierplusfield.pdf , page1 used on input line 52.
+(pdftex.def)             Requested size: 284.52756pt x 221.72083pt.
+) [11 <./Figures/doublesumdiagram.pdf> <./Figures/doublesumdiagram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/doublesumdiagram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Figures/doublesumdiagram.pdf
@@ -358,20 +375,21 @@ pdfTeX warning: pdflatex (file ./Figures/doublesumdiagram.pdf): PDF inclusion: m
 > <./Figures/doublesumdiagram.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/doublesumdiagram.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [12] [13] [14] (./TTQM.aux) ) 
+>] [12 <./Figures/potentialbarrierplusfield.pdf>] [13] [14] [15] [16] [17] (./TTQM.aux) ) 
 Here is how much of TeX's memory you used:
- 4121 strings out of 492616
- 59509 string characters out of 6129482
- 149413 words of memory out of 5000000
- 7929 multiletter control sequences out of 15000+600000
- 12379 words of font info for 45 fonts, out of 8000000 for 9000
+ 4205 strings out of 492616
+ 60804 string characters out of 6129482
+ 150646 words of memory out of 5000000
+ 8004 multiletter control sequences out of 15000+600000
+ 12746 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,14n,35p,849b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on TTQM.pdf (14 pages, 328586 bytes).
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb>
+Output written on TTQM.pdf (17 pages, 399153 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 273 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
