@@ -32,6 +32,12 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/braket/braket.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/braket/braket.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/bbold/bbold.sty
@@ -54,8 +60,6 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/import/import.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xifthen/xifthen.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xifthen/xifthen.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
@@ -179,6 +183,9 @@ INPUT ./Figures/potentialbarrierplusfield.pdf
 INPUT ./Figures/potentialbarrierplusfield.pdf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/bbold/bbold8.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/bbold/bbold6.tfm
+INPUT ./Mathematica/plot3.pdf
+INPUT ./Mathematica/plot3.pdf
+INPUT ./Mathematica/plot3.pdf
 INPUT TTQM.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb

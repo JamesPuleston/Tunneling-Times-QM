@@ -3,6 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{mathtools}
 \DeclareMathOperator{\sech}{sech}
 \usepackage{braket}
 \usepackage{bbold}
@@ -382,9 +383,11 @@ A discrete cyclic quantum clock can be modelled by limiting the sum in equation 
 
 \noindent For large $N$ these functions have a sharp peak at $\phi = \frac{2\pi k}{N}$ which we visualise as pointing to the $k^{th}$ hour with angle uncertainty $\pm \frac{\pi}{N}$:
 
-\begin{center}
+\begin{figure}[ht]
+\centering
 \includegraphics{plot1.pdf}
-\end{center}
+\caption{hello}
+\end{figure}
 
 \noindent One can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
 
@@ -715,9 +718,13 @@ Follows immediately from the fact that $T=|D|^2$.
 
 \noindent Using the statement of particle conservation $R_+-R_-=-(T_+-T_-)$, one finds that:
 
-\begin{equation}
-	\langle S_z \rangle_R = -\langle S_z \rangle_T \frac{T_++T_-}{R_++R_-} 
-\end{equation}
+\begin{subequations}\label{stsrrelations}
+\begin{flalign}
+	\langle S_z \rangle_R &= -\langle S_z \rangle_T \frac{T_++T_-}{R_++R_-}&\\
+	\langle S_y \rangle_R &= \langle S_y \rangle_T \left(\frac{R_+R_-}{T_+T_-}\right)^{\frac{1}{2}}\frac{T_++T_-}{R_++R_-} \\
+	\langle S_x \rangle_R &= \langle S_x \rangle_T \left(\frac{R_+R_-}{T_+T_-}\right)^{\frac{1}{2}}\frac{T_++T_-}{R_++R_-}
+\end{flalign}
+\end{subequations}
 
 \noindent and hence $\langle S_z \rangle_R + \langle S_z \rangle_T = 0$, the statement of conservation of angular momentum. 
 
@@ -730,30 +737,114 @@ In this section I report the study of polarisation of the transmitted and reflec
 		&=-\left(\frac{m\omega_L}{\hbar\kappa}\right)\frac{\partial T}{\partial \kappa} \label{netT}
 \end{align}
 
-\noindent In equation (\ref{netT}) the Larmor frequency $\omega_L$ is multiplied by a time $\frac{m}{\hbar\kappa}\frac{\partial T}{\partial \kappa}$. This motivates the definition of the characteristic times $\tau_z, \tau_y, \tau_x$ such that:
+\noindent In equation (\ref{netT}) the Larmor frequency $\omega_L$ is multiplied by a time $\frac{m}{\hbar\kappa}\frac{\partial T}{\partial \kappa}$. This motivates the definition of the characteristic times $\tau_{zT}, \tau_{yT}, \tau_{xT}$ such that:
 
-\begin{align}
-	\langle S_z \rangle_T &= \frac{\hbar}{2}\omega_L\tau_z \\
-	\langle S_y \rangle_T &= -\frac{\hbar}{2}\omega_L\tau_y \\
-	\langle S_x \rangle_T &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_x^2}{2}\right)
+\begin{subequations}  \label{characteristictransmissiontimes}
+	\begin{align}	\langle S_z \rangle_T &= \frac{\hbar}{2}\omega_L\tau_{zT} \\
+		\langle S_y \rangle_T &= -\frac{\hbar}{2}\omega_L\tau_{yT} \\
+		\langle S_x \rangle_T &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_{xT}^2}{2}\right)
 \end{align}
+\end{subequations}
 
-\noindent Using equations (\ref{szT}),(\ref{syT}) and (\ref{sxT}) and the approximation $T_++T_- \approx 2T$, one can derive explicit results for the characteristic times:
+\noindent Using equations (\ref{szT}), (\ref{syT}) and (\ref{sxT}) and the approximation $T_++T_- \approx 2T$, one can derive explicit results for the characteristic times:
 
 \begin{equation}
-	\tau_z = -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa}
+	\tau_{zT} = -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa} \label{tauz}
 \end{equation}
 
 \begin{proof}
 \begin{align}
-	\langle S_z \rangle_T &\stackrel{(\ref{szT})}{=}\frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}\\
+	\langle S_z \rangle_T &\stackrel{\mathclap{(\ref{szT})}}{=}\,\frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}\\
 	&\approx \frac{\hbar}{4}\frac{T_+-T_-}{T}\\
-	&\stackrel{(\ref{netT})}{=}-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{4}\frac{1}{T}\frac{\partial T}{\partial \kappa} \\
+	&\stackrel{\mathclap{(\ref{netT})}}{=}\,-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{4}\frac{1}{T}\frac{\partial T}{\partial \kappa} \\
 	&=-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{2}\frac{\partial\ln{T^{\frac{1}{2}}}}{d\kappa} \\
-	&=\frac{\hbar}{2}\omega_L\tau_z
+	&=\frac{\hbar}{2}\omega_L\tau_{zT}
 \end{align}
 \end{proof}
 
+\begin{equation}
+	\tau_{yT} = -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial\Delta\phi}{\partial\kappa} \label{tauy}
+\end{equation}
+
+\begin{proof}
+\begin{align}
+	\langle S_y \rangle_T &\stackrel{\mathclap{(\ref{syT})}}{=}\,-\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\\
+	\sin{(\Delta\phi_+-\Delta\phi_-)} &\approx \Delta\phi_+-\Delta\phi_- \approx \Delta(\Delta\phi) \text{ where } \Delta\phi := \phi_+-\phi_-\\
+	\implies \langle S_y \rangle_T &\approx -\frac{\hbar}{2}\Delta(\Delta\phi) \text{ as } \frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-} \approx \frac{1}{2} \\
+	\Delta\kappa &:= \kappa_+-\kappa_- = -\frac{m\omega_L}{\hbar\kappa} \\
+\implies \langle S_y \rangle_T &= -\frac{\partial\Delta\phi}{\partial\kappa}\left(\frac{m\omega_L}{\hbar\kappa}\right) \\
+			       &=-\frac{\hbar}{2}\omega_L\tau_{yT}
+\end{align}
+\end{proof}
+
+\begin{subequations}\label{taux}
+\begin{align}
+	\tau_{xT} &= \left(\frac{m}{\hbar\kappa}\right)\left[\left(\frac{\partial\Delta\phi}{\partial\kappa}\right)^2+\left(\frac{\partial\ln{T^{\frac{1}{2}}}}{\partial\kappa}\right)^2\right]^{\frac{1}{2}}\label{tauxpart1} \\
+	       &=\left(\frac{m}{\hbar\kappa}\right)\left|D^{-1}\frac{\partial D}{\partial\kappa}\right| \label{tauxpart2}
+\end{align}
+\end{subequations}
+
+\begin{proof} Equation (\ref{tauxpart1}) can be proven using similar methods to above but can be proven more easily by noting that since $\langle S_x \rangle^2 + \langle S_y \rangle^2 + \langle S_z \rangle^2 = \frac{\hbar^2}{4}$ then $\tau_{xT} = (\tau_{yT}^2+\tau_{zT}^2)^\frac{1}{2}$. Equation (\ref{tauxpart2}) follows simply using the form of $D$ in (\ref{cont0}).
+\end{proof}
+
+\noindent The derivatives in (\ref{tauz}), (\ref{tauy}) can be evaluated explicitly to give:
+
+\begin{equation}
+	\tau_{zT} = \frac{mk_0^2}{\hbar\kappa^2}\frac{(\kappa^2-k^2)\sinh^2{\kappa d}+\left(\frac{\kappa d k_0^2}{2}\right)\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{equation}
+
+\begin{proof}
+\begin{flalign}
+	\tau_{zT} &\stackrel{\mathclap{(\ref{tauz})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa} &\\
+	\ln{T^{\frac{1}{2}}}&=\frac{m}{2\hbar\kappa}\frac{\partial}{\partial\kappa}\ln{\left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]} \\
+			    &=\frac{m}{2\hbar\kappa}\left[1+\frac{k_0^4\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}\frac{1}{4k^2}\frac{\partial}{\partial\kappa}\left[\frac{k_0^4\sinh^2{\kappa d}}{\kappa^2}\right]\\ \intertext{the derivative term evaluates to:}
+	\frac{\partial}{\partial\kappa}[\dots]&=2\left(-\frac{k^4}{\kappa^3}+\kappa\right)\sinh^2{\kappa d}+\left(\frac{k^4}{\kappa^2}+2k^2+\kappa^2\right)d\sinh{2\kappa d} \\
+	\implies \tau_{zT} &= \frac{m}{2\hbar} \frac{\kappa}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\left[2\frac{\kappa^4-k^4}{\kappa^3}\sinh^2{\kappa d}+\frac{k^4\kappa+2k^2\kappa^3+\kappa^5}{\kappa^3}d\sinh{2\kappa d}\right] \\
+			&= \frac{m}{\hbar\kappa^2} \frac{1}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\left[(\kappa^2-k^2)k_0^2\sinh^2{\kappa d}+\frac{1}{2}k_0^4\kappa d\sinh{2\kappa d}\right] \\
+			&= \frac{mk_0^2}{\hbar\kappa^2}\frac{(\kappa^2-k^2)\sinh^2{\kappa d}+\frac{1}{2}k_0^2\kappa d\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{flalign}
+\end{proof}
+
+\begin{equation}
+	\tau_{yT} = \frac{mk}{\hbar\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{equation}
+
+\begin{proof}
+\begin{flalign}
+	\tau_{yT} &\stackrel{\mathclap{(\ref{tauy})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial\Delta\phi}{\partial\kappa} &\\
+	       &=-\frac{m}{\hbar\kappa}\frac{1}{1+\left(\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right)^2} \frac{\partial}{\partial\kappa}\left[\left(\frac{k}{2\kappa}-\frac{\kappa}{2k}\right)\tanh{\kappa d}\right] \\
+	       &=-\frac{m}{\hbar\kappa}\frac{4k^2\kappa^2}{4k^2\kappa^2+(k^2-\kappa^2)^2\tanh^2{\kappa d}}\left[-\left(\frac{k}{2\kappa^2}+\frac{1}{2k}\right)\tanh{\kappa d}+\left(\frac{k}{2\kappa}-\frac{\kappa}{2k}\right)\sech^2{\kappa d}\right] \\
+	       &=\frac{mk}{\hbar\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
+\end{flalign}
+\end{proof}
+
+\noindent Note in taking $\frac{\partial\Delta\phi}{\partial\kappa}$, one assumes $k \text{ and } \kappa $ are no longer related by the equation in (\ref{wavefunction}) such that taking the derivative with respect to $\kappa$ whilst keeping $k$ constant makes sense.
+
+\begin{figure}[ht]
+\centering
+\includegraphics{plot3.pdf}
+\label{fig:tzvst0}
+\end{figure}
+
+\noindent One can define characteristic reflection times $\tau_{zR}, \tau_{yR}, \tau_{xR}$ analogous to those in (\ref{characteristictransmissiontimes}) such that:
+
+\begin{subequations}
+\begin{flalign}
+	\langle S_z \rangle_R &= \frac{\hbar}{2}\omega_L\tau_{zR}& \\
+	\langle S_y \rangle_R &= -\frac{\hbar}{2}\omega_L\tau_{yR} \\
+	\langle S_x \rangle_R &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_{xR}^2}{2}\right)
+\end{flalign}
+\end{subequations}
+
+\noindent By application of equations (\ref{stsrrelations}), one arrives at:
+
+\begin{subequations}
+\begin{flalign}
+	\tau_{zR}&=-\tau_{zT} \frac{T}{R}&\\
+	\tau_{yR}&=\tau_{yT}\\
+\tau_{xR}&=(\tau_{yR}^2+\tau_{zR}^2)^{\frac{1}{2}}=\left(\tau_{yT}^2+\tau_{zT}^2 \frac{T^2}{R^2}\right)^{\frac{1}{2}}
+\end{flalign}
+\end{subequations}
 
 
 

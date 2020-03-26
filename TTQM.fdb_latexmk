@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1584581787 "TTQM.tex" "TTQM.pdf" "TTQM" 1584581788
+["pdflatex"] 1584906747 "TTQM.tex" "TTQM.pdf" "TTQM" 1585228139
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -94,6 +94,8 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty" 1525197427 318 019510c713feab56160631df4423d2aa ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/import/import.sty" 1238175524 5149 44c7223e2a76dc66e41be8c1fb1477de ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty" 1515449928 53430 0411f0481da6078e76fd7de46531d2e0 ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1496786006 5317 cf75154a8a7e6436f05a5be497f0b05e ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty" 1463608860 3834 4363110eb0ef1eb2b71c8fcbcdb6c357 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty" 1463608860 12095 5337833c991d80788a43d3ce26bd1c46 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty" 1463608860 7075 2fe3d848bba95f139de11ded085e74aa ""
@@ -115,10 +117,11 @@
   "Figures/potentialbarrier.pdf_tex" 1584484565 2577 9f26d736f80f6d83d2d8e7b5ac00f528 ""
   "Figures/potentialbarrierplusfield.pdf" 1584548799 1300 900efce4a197bdb34179fcacde514ba1 ""
   "Figures/potentialbarrierplusfield.pdf_tex" 1584548799 2364 ca860a94b3c70a4ab34caebcf8399ee4 ""
-  "Mathematica/plot1.pdf" 1584454465 81768 c28032fe200864f72211e83c56ecb58b ""
-  "TTQM.aux" 1584581788 3491 347e409a507bebca99f9cd6205acf902 "pdflatex"
-  "TTQM.tex" 1584581786 50107 e08bebf6b6c3e13bc8dc35287fa87056 ""
+  "Mathematica/plot1.pdf" 1584905616 81768 afff7703646a44188725b13100587644 ""
+  "Mathematica/plot3.pdf" 1584905616 97019 9f51422737ee6c6a5877be86e05a657c ""
+  "TTQM.aux" 1584906748 3869 6ec6fd4542bf3cfb03829024908d96fd "pdflatex"
+  "TTQM.tex" 1584906747 55935 d2d5b0ff27d286870efa1b1bfd0bbb34 ""
   (generated)
+  "TTQM.log"
   "TTQM.aux"
   "TTQM.pdf"
-  "TTQM.log"
