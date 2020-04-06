@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{verbatim}
 \DeclareMathOperator{\sech}{sech}
 \usepackage{braket}
 \usepackage{bbold}
@@ -18,6 +19,12 @@
     \def\svgwidth{10cm}
     \import{./Figures/}{#1.pdf_tex}
 }
+
+\newcommand{\incfigsize}[2]{%
+    \def\svgwidth{#2cm}
+    \import{./Figures/}{#1.pdf_tex}
+}
+
 \graphicspath{{./Mathematica/}}
 \title{Tunnelling Times in Quantum Mechanics}
 \author{James Puleston}
@@ -29,7 +36,7 @@
 \section{Time in Quantum Mechanics}
 
 \subsection{Time in Classical Mechanics}
-In the Hamiltonian formulation of classical mechanics, a system with $n$ degrees of freedom possesses $2n$ independent first-order differential equations in terms of $2n$ independent variables. These variables are the coordinates of the \textit{phase space} of the system, and the $2n$ equations of motion describe the evolution of system in the phase space. $n$ of the independent variables are conventionally chosen to be the generalised coordinates $q_i$ and the other $n$ set to be the conjugate momenta $p_i$, which obey the Poisson bracket relations: \cite{Goldstein}
+In the Hamiltonian formulation of classical mechanics, a system with $n$ degrees of freedom possesses $2n$ independent first-order differential equations in terms of $2n$ independent variables. These variables are the coordinates of the \textit{phase space} of the system, and the $2n$ equations of motion describe the evolution of system in the phase space. $n$ of the independent variables are conventionally chosen to be the generalised coordinates $q_i$ and the other $n$ set to be the conjugate momenta $p_i$, which obey the Poisson bracket relations (Goldstein 2002):
 
 \begin{equation}
 	\{q_i, p_j\}=\delta_{ij} \quad \{q_i, q_j\}=\{p_i,p_j\}=0, \quad i,j=\{1,\dots,n\}
@@ -53,9 +60,9 @@ In the Hamiltonian formulation of classical mechanics, a system with $n$ degrees
 \noindent $q_i$ and $p_i$ are generalised variables; they are not necessarily positions and momenta, but in the case of a dynamical system comprised of a collection of point particles, the canonical variables are usually the particles' positions $(\boldsymbol{q_i})$ and momenta $(\boldsymbol{p_i})$. 
 
 In classical mechanics, physical systems are embedded in a 4-dimensional continuous space-time background, the points of which are assigned coordinates $(t,x,y,z) = (t, \boldsymbol{x})$.
-It is essential that the \textit{definitions} of these two spaces and their associated coordinates are not conflated. In particular we must distinguish the position variable $\boldsymbol{q}$ from the space-time coordinate $\boldsymbol{x}$. The former defines a point in the phase space of the system (when accompanied by its associated momentum $\boldsymbol{p}$) and is a property of a point particle, whereas the latter is the coordinate of a fixed point in the space-time background in which the dynamical system is embedded. Note we can still introduce both sets of quantities in to equations and relate them, as equations (\ref{timeevolution}) and (\ref{timetranslation}) show.
+It is essential that the \textit{definitions} of these two spaces and their associated coordinates are not conflated (Hilgevoord 2002). In particular we must distinguish the position variable $\boldsymbol{q}$ from the space-time coordinate $\boldsymbol{x}$. The former defines a point in the phase space of the system (when accompanied by its associated momentum $\boldsymbol{p}$) and is a property of a point particle, whereas the latter is the coordinate of a fixed point in the space-time background in which the dynamical system is embedded. Note we can still introduce both sets of quantities in to equations and relate them, as equations (\ref{timeevolution}) and (\ref{timetranslation}) show.
 
-Immediately this raises the question of whether there exists physical systems that possess a dynamical variable that \textit{resembles} the time coordinate of space-time. Such systems are called \textit{clocks}, more precisely defined as physical systems with a dynamical `clock' or `time' variable that behaves similarly to the space-time time coordinate $t$ under time translations. For example, under time translation in which the space-time coordinates transform as:
+Immediately this raises the question of whether there exists physical systems that possess a dynamical variable that \textit{resembles} the time coordinate of space-time. Such systems are called \textit{clocks}, more precisely defined as physical systems with a dynamical `clock' or `time' variable that behaves similarly to the space-time time coordinate $t$ under time translations. For example, under time translation in which the space-time coordinates transform as (cf. Hilgevoord 2002, (9), (10), (11)):
 
 \begin{equation}
 \boldsymbol{x} \rightarrow \boldsymbol{x} \quad t \rightarrow t+\tau
@@ -87,15 +94,13 @@ Immediately this raises the question of whether there exists physical systems th
 
 \subsection{Time in Quantum Mechanics}
 \textcolor{red}{3 definitions for time in QM?}
-In quantum mechanics the state of a particle is encoded in a vector $\ket{\psi}$ in Hilbert space $\mathcal{H}$. Introducing a 1-dimensional continuum position basis to $\mathcal{H}, \{\ket{q}\}, q \in \mathbb{R}$, the state vector $\ket{\psi}$ can be expanded as the integral:
+In quantum mechanics the state of a particle is encoded in a vector $\ket{\psi}$ in Hilbert space $\mathcal{H}$. Introducing a 1-dimensional continuum position basis to $\mathcal{H}, \{\ket{q}\}, q \in \mathbb{R}$, the state vector $\ket{\psi}$ can be expanded as the integral Sakurai (2017):
 
 \begin{equation}
 	\ket{\psi} = \int_{\mathbb{R}}dq\psi(q)\ket{q}
 \end{equation}
 
-\noindent where $\psi(q)$ is the wave function of the particle. More generally, to describe a system in 3 dimensions requires a wave function $\psi(q_x,q_y,q_z)$. It is important to note that the domain of the wave function is the \textit{configuration space} of the system, $\mathbb{R}^3$, whose coordinates are the generalised coordinates $q_i$ of the system. It is common in elementary quantum mechanics literature for elements of the domain of the wave function to be expressed as $(x,y,z), \text{ i.e. } \psi = \psi(x,y,z)$. This is clearly in notational conflict with the denotation of coordinates of points of the background space-time in which the quantum system resides. 
-
-\textcolor{red}{should I then implement this in the following equations}
+\noindent where $\psi(q)$ is the wave function of the particle. More generally, to describe a system in 3 dimensions requires a wave function $\psi(q_x,q_y,q_z)$. It is important to note that the domain of the wave function is the \textit{configuration space} of the system, $\mathbb{R}^3$, whose coordinates are the generalised coordinates $q_i$ of the system. It is common in elementary quantum mechanics literature for elements of the domain of the wave function to be expressed as $(x,y,z), \text{ i.e. } \psi = \psi(x,y,z)$. This is clearly in notational conflict with the use of $(x,y,z)$ as coordinates of points of the background space-time in which the quantum system resides. In agreement with the literature surveyed in this essay I retain this notation throughout, but the distinction between space-time coordinates and dynamical variables should be maintained.
 
 Measurable quantities or `observables' are represented by operators on $\mathcal{H}$:
 
@@ -103,27 +108,31 @@ Measurable quantities or `observables' are represented by operators on $\mathcal
 	\mathcal{O}: \mathcal{H} \rightarrow \mathcal{H}
 \end{equation}
 
-Such operators arise through a procedure called canonical quantisation, which prescribes that \textit{dynamical variables} of the Hamiltonian formalism are promoted to operators on $\mathcal{H}$ and their Poisson bracket relations replaced by commutation relations according to:
+\noindent Such operators arise through a procedure called canonical quantisation, which prescribes that \textit{dynamical variables} of the Hamiltonian formalism are promoted to operators on $\mathcal{H}$ and their Poisson bracket relations replaced by commutation relations according to:
 
 \begin{equation}
 \{,\} \rightarrow \frac{1}{i\hbar}[,]
 \end{equation}
 
-One notable omission in this process is the promotion of the time coordinate $t$ to an operator. Given the emphasis placed on distinguishing between space-time coordinates and dynamical variables, the reason is clear: time t is a \textit{space-time coordinate}, and canonical quantisation prescribes that \textit{dynamical variables} are promoted to operators. However this raises the question of whether a time operator exists in quantum mechanics. Resolution to this problem has been historically hindered by a `proof' offered by Wolfgang Pauli showing that the introduction of a time operator in quantum mechanics is forbidden. It proceeds roughly along the following lines:
+One notable omission in this process is the promotion of the time coordinate $t$ to an operator. Given the emphasis placed on distinguishing between space-time coordinates and dynamical variables, the reason is clear: time $t$ is a \textit{space-time coordinate}, and canonical quantisation prescribes that \textit{dynamical variables} are promoted to operators. However this raises the question of whether a time operator exists in quantum mechanics. The resolution of this problem has been historically hindered by a `proof' offered by Wolfgang Pauli showing that the introduction of a time operator in quantum mechanics is forbidden. It proceeds roughly along the following lines:
 
 \textcolor{red}{Add Pauli proof c.f. Butterfield On Time in Quantum Physics}
 
-Observing that this issue arose from attempts to erroneously quantise the \textit{space-time} coordinate t, the problem becomes void and progress can be made by considering the quantisation of timelike \textit{dynamical variables} of physical systems, namely clocks in analogue with the case in classical mechanics mentioned above. 
+Observing that this issue arose from attempts to erroneously quantise the \textit{space-time} coordinate $t$, the problem becomes void and progress can be made by considering the quantisation of timelike \textit{dynamical variables} of physical systems, namely clocks in analogy with the case in classical mechanics mentioned above. 
 
-\section{Tunnelling Time Candidates}
+Despite this clarification, approaches to the question \textit{how long does a quantum particle take to tunnel through a classically forbidden potential barrier?} have not yielded a satisfactory answer universally agreed upon by the physics community. The question can be more formally posed as \textit{when a particle with energy less than the barrier potential traverses the barrier region and is ultimately transmitted, how much time did it, on the average, spend in the barrier region?} Many solutions to this question have been offered within the orthodox interpretation of quantum mechanics. In section \ref{subsection:quantumbarrier} I describe the physical system (quantum tunnelling experiment) of interest, and in sections \ref{subsection:phasetime}-\ref{subsection:larmorprecession} I survey of definitions within the orthodox viewpoint. The de Broglie-Bohm interpretation of quantum mechanics offers a clear and unambiguous answer to the question at hand. In section \ref{subsection:dBBtheory} I introduce the requisite theory, in section \ref{subsection:dBBtime} I present the natural definition of tunnelling time within the de Broglie-Bohm interpretation, and in section \ref{subsection:dBBexample} I conclude with a numerical analysis of a quantum tunnelling experiment.
 
-In this section I survey a number of contenders for calculating the tunnelling time through a barrier. The first of these are theoretical definitions of the time taken to tunnel through a barrier, whereas the remainder are theoretical constructions of quantum clocks that can be used to measure tunnelling times.
+\section{Tunnelling Times in the Orthodox Interpretation}
+\label{section:Orthodox}
+
+In this section I survey a number of contenders for calculating the tunnelling time through a barrier. The definitions in sections \ref{subsection:phasetime}-\ref{subsection:dcqc} are `intrinsic' quantities, in that they make no reference to a measuring apparatus (other than the implied particle detector to determine whether or not an incident electron is eventually transmitted) (Leavens 1996). Section \ref{subsection:larmorprecession} offers an `experimental' definition, making reference to a specific physical system.
 
 \subsection{Tunnelling Through a Quantum Barrier}
-\label{section:quantumbarrier}
-\noindent \textcolor{red}{I use Buttiker as the reference barrier, adjusting all other sources accordingly.}
+\label{subsection:quantumbarrier}
 
-\noindent Consider the case of scattering in one dimension with particles of mass $m$, velocity $v(k) = \frac{\hbar k}{m}$ and kinetic energy $E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis and interact with a rectangular barrier:
+Throughout this essay I use the physical system described in (B{\"u}ttiker 1983). The systems used in other literature surveyed in this essay differ by choice of coordinates and/or barrier location and have been recalculated for the physical system used throughout.
+
+\noindent Consider the case of scattering in one dimension with particles of mass $m$, velocity $v(k) = \frac{\hbar k}{m}$ and kinetic energy $E = \frac{\hbar^2k^2}{2m}$. The particles move in the positive $y$ direction and interact with a rectangular barrier:
 
 \begin{equation}
 	V = 
@@ -140,9 +149,11 @@ In this section I survey a number of contenders for calculating the tunnelling t
     \label{fig:potentialbarrier}
 \end{figure}
 
+\noindent Note that $E<V_0$ such that this system describes a quantum tunnelling experiment.
+
 \noindent The wave function is of the form:
 \begin{equation}
-	\psi = 
+	\psi(y,k) = 
 	\begin{cases}
 		e^{iky} + Ae^{-iky} & y \leq -\frac{d}{2} \\
 		Be^{\kappa y} + Ce^{-\kappa y} & -\frac{d}{2} \leq y \leq \frac{d}{2} \\
@@ -150,48 +161,124 @@ In this section I survey a number of contenders for calculating the tunnelling t
 	\end{cases}
 	\label{wavefunction}
 \end{equation}
-\noindent where $k = \frac{\sqrt{2mE}}{\hbar}$, $\kappa := \frac{\sqrt{2m(V_0-E)}}{\hbar} = \sqrt{k_0^2-k^2} \text{ where } k_0 = \frac{\sqrt{2mV_0}}{\hbar}$. 
+\noindent where $k = \frac{\sqrt{2mE}}{\hbar}$, $\kappa := \frac{\sqrt{2m(V_0-E)}}{\hbar} = \sqrt{k_0^2-k^2} \text{ where } k_0 = \frac{\sqrt{2mV_0}}{\hbar}$ and $A,B,C,D$ are functions of the variables of the system.
 
 \noindent The coefficient of the incident wave is set to one, corresponding to one particle per unit length in the incident beam. Note there is no $e^{-iky}$ term on the right of the barrier, as no particles are reflected after being transmitted through the barrier.
 
-\noindent It is instructive to calculate the wave function coefficients A, B, C, D using the continuity of the wave function and its first derivative at the barrier boundaries. This is a lengthy calculation but the results are used so frequently that it is necessary to include a derivation. The results are stated here and derived below:
+\noindent Calculation of the wave function coefficients $A,B,C,D$ uses the continuity of the wave function and its first derivative at the barrier boundaries. The results are frequently stated without proof in the literature, but will be used so frequently in this essay that I provide a derivation:
 
 \begin{align}
-	D &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd} & A &= R^{\frac{1}{2}}e^{-\frac{i\pi}{2}}e^{i\Delta\phi}e^{-ikd} \nonumber \\
-	B &= \frac{\kappa+ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{-\kappa d}{2}}D & C &= \frac{\kappa-ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{\kappa d}{2}}D \label{cont0}
+	D &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd} & A &= R^{\frac{1}{2}}e^{-i\pi/2}e^{i\Delta\phi}e^{-ikd} \nonumber \\
+	B &= \frac{\kappa+ik}{2\kappa}e^{ikd/2}e^{-\kappa d/2}D & C &= \frac{\kappa-ik}{2\kappa}e^{ikd/2}e^{\kappa d/2}D \label{cont0}
 \end{align}
-where $T$ is the transmission probability and $R = 1-T$ is the reflection probability.
+where $T$ is the transmission probability and $R = 1-T$ is the reflection probability (B{\"u}ttiker 1983).
 
-\noindent First I introduce a new coordinate system so that the boundaries of our barrier become 0, d. Then, denoting our wave functions before, inside and after the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
+\begin{proof}
+	\noindent First I introduce a new coordinate system so that the boundaries of the barrier become $0,d \text{ i.e. } \tilde{y} = y+\frac{d}{2}$. Then, denoting the wave functions to the left of, inside and to the right of the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
 
+\begin{subequations}
+\begin{align}
+	\psi_{1} &= e^{-ikd/2}e^{ik\tilde{y}} + \tilde{A}e^{-ik\tilde{y}} & \psi_{1}^{'} &= ike^{ikd/2}e^{ik\tilde{y}} - ik\tilde{A}e^{-ik\tilde{y}} \\
+	\psi_{2} &= \tilde{y}Be^{\kappa\tilde{y}} + \tilde{C}e^{-\kappa\tilde{y}} & \psi_{2}^{'} &= \kappa\tilde{B}e^{\kappa\tilde{y}} -\kappa \tilde{C}e^{-\kappa \tilde{y}} \\
+	\psi_{3} &= \tilde{D}e^{ik\tilde{y}} & \psi_{3}^{'} &= ik\tilde{D}e^{ik\tilde{y}}
+\end{align}
+\end{subequations}
+
+\noindent where $\tilde{A} = Ae^{ikd/2}, \tilde{B} = Be^{-\kappa d/2}, \tilde{C} = Ce^{\kappa d/2}, \tilde{D} = D^{-ikd/2}$.
+
+\noindent Imposing continuity of the wave function and its first derivative at the barrier boundaries:
+\begin{subequations}
+\begin{align}
+	\psi_{1}(0) = \psi_{2}(0) &\implies e^{\frac{-ikd}{2}}+\tilde{A} = \tilde{B}+\tilde{C} \label{cont1}\\
+	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ike^{\frac{-ikd}{2}} - ik\tilde{A} = \kappa \tilde{B} - \kappa \tilde{C} \label{cont2}\\
+	\psi_{2}(d) = \psi_{3}(d) &\implies e^{\kappa d}\tilde{B} + e^{-\kappa d}\tilde{C} = e^{ikd}\tilde{D} \label{cont3}\\
+	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies \kappa e^{\kappa d}\tilde{B} + -\kappa e^{-\kappa d}\tilde{C} = ike^{ikd}\tilde{D} \label{cont4}\\
+	\\
+	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ike^{-ikd/2} = (ik+\kappa)\tilde{B}+(ik-\kappa)\tilde{C} \label{cont5}\\
+	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa e^{\kappa d}\tilde{B} = (\kappa+ik)e^{ikd}\tilde{D} \label{cont7}\\
+	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa e^{-\kappa d}\tilde{C} = (\kappa-ik)e^{ikd}\tilde{D} \label{cont8}.
+	\end{align}
+\end{subequations}
+
+\noindent Inserting equations (\ref{cont7}) and (\ref{cont8}) into equation (\ref{cont5}) one arrives at:
+\begin{subequations}
+\begin{align}
+	2ike^{-ikd/2} &= -\frac{(ik-\kappa)^2}{2\kappa}e^{(ik+\kappa)d}\tilde{D}+\frac{(ik+\kappa)^2}{2\kappa}e^{(ik-\kappa)d}\tilde{D} \label{cont9} \\
+	\implies 4ik\kappa e^{-ikd}e^{-ikd/2} &= \tilde{D}[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \label{cont10}\\
+						      &= \tilde{D}[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] \label{cont11}.
+\end{align}
+\end{subequations}
+
+\noindent Hence one arrives at the first result, the transmission probability $T = |\tilde{D}|^2 \;(=|D|^2)$:
+\begin{equation}
+	T = \left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}
+	\label{transmissionprobability}
+\end{equation}
+
+\noindent $\tilde{D}$ can be written in polar form $\tilde{D} = |\tilde{D}|e^{i\theta} = T^{\frac{1}{2}}e^{i\theta}$.
+
+\begin{subequations}
+\begin{align}
+	\tilde{D}&=\frac{2ik\kappa e^{-ikd}e^{-ikd/2}\left[(k^2-\kappa^2)\sinh{\kappa d}-2ik\kappa\cosh{\kappa d}\right]}{(k^2-\kappa^2)^2\sinh^2{\kappa d}+4k^2\kappa^2\cosh^2{\kappa d}}\\
+		 \implies \theta &= arg(\tilde{D})=\arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = -\frac{3ikd}{2}+\arctan\left(\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right)
+\end{align}
+\end{subequations}
+
+\noindent Evaluating the phase change across the barrier:
+
+\begin{subequations}
+\begin{align}
+	\Delta\phi :=& Arg(|\tilde{D}|e^{i\theta}e^{ikd})-Arg(e^{-ikd/2})=-\frac{3ikd}{2}+\arctan\left(\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right)+ikd-\frac{-ikd}{2}\\
+	=& \arctan\left(\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right) \label{phasechange}
+\end{align}
+\end{subequations}
+
+\noindent Hence
+
+\begin{subequations}
+\begin{align}
+\tilde{D} &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-3ikd/2}\\
+	D&=T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd}
+\end{align}
+\end{subequations}
+
+\noindent The result for $A$ follows along similar lines and results for $B \text{ and } C$ follow immediately from equations (\ref{cont7}) and (\ref{cont8}).
+\end{proof}
+
+\begin{comment}
+\begin{proof}	\noindent First I introduce a new coordinate system so that the boundaries of our barrier become $0,d \text{ i.e. } \tilde{y} = y+\frac{d}{2}$. Then, denoting the wave functions to the left of, inside and to the right of the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
+
+\begin{subequations}
 \begin{align}
 	\psi_{1} &= e^{iky} + Ae^{-iky} & \psi_{1}^{'} &= ike^{iky} - ikAe^{-iky} \\
 	\psi_{2} &= Be^{-\kappa y} + Ce^{\kappa y} & \psi_{2}^{'} &= -\kappa Be^{-\kappa y} + \kappa Ce^{\kappa y} \\
 	\psi_{3} &= De^{iky} & \psi_{3}^{'} &= ikDe^{iky}
 \end{align}
+\end{subequations}
 
 \noindent Imposing continuity of the wave function and its first derivative at the barrier boundaries:
+\begin{subequations}
 \begin{align}
 	\psi_{1}(0) = \psi_{2}(0) &\implies 1+A = B+C \label{cont1}\\
 	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ik - ikA = -\kappa B + \kappa C \label{cont2}\\
 	\psi_{2}(d) = \psi_{3}(d) &\implies Be^{-\kappa d} + Ce^{\kappa d} = De^{ikd} \label{cont3}\\
-	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Be^{-\kappa d} + \kappa Ce^{\kappa d} = ikD e^{ikd} \label{cont4}
-\end{align}
-
-\begin{align}
+	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Be^{-\kappa d} + \kappa Ce^{\kappa d} = ikD e^{ikd} \label{cont4}\\
+	\\
 	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ik = B(ik-\kappa)+C(ik+\kappa) \label{cont5}\\
 	ik(\ref{cont1})-(\ref{cont2}) &\implies 2ikA = B(ik+\kappa)+C(ik-\kappa) \label{cont6}\\
 	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa Be^{\kappa d} = De^{ikd}(\kappa-ik) \label{cont7}\\
-	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = De^{ikd}(\kappa+ik) \label{cont8}
+	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = De^{ikd}(\kappa+ik) \label{cont8}.
 \end{align}
+\end{subequations}
 
 \noindent Inserting equations (\ref{cont7}) and (\ref{cont8}) into equation (\ref{cont5}) one arrives at:
-
+\begin{subequations}
 \begin{align}
-	2ik &= -\frac{(ik-\kappa)^2}{2\kappa}De^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2p}De^{(ik-\kappa)d} \label{cont9} \\
+	2ik &= -\frac{(ik-\kappa)^2}{2\kappa}De^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2\kappa}De^{(ik-\kappa)d} \label{cont9} \\
 	\implies 4\kappa ike^{-ikd} &= D[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \label{cont10}\\
-				     &= D[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] \label{cont11}
+				     &= D[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] \label{cont11}.
 \end{align}
+\end{subequations}
 
 \noindent Hence one arrives at the first result, the transmission probability $T = |D|^2$:
 \begin{equation}
@@ -201,43 +288,64 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 
 \noindent and by writing $D$ in polar form $D = |D|e^{i\theta}$, the phase change across the barrier:
 
+\begin{subequations}
 \begin{align}
 	D &\propto 4k^2\kappa^2 \cosh{\kappa d}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d} \\
 	  &\implies \Delta \phi := arg(D) = \arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \label{phasechange}
 \end{align}
+\end{subequations}
 
 \noindent Rearranging (\ref{cont11}) for $D$ yields the final result in (\ref{cont0}). The result for $A$ follows along similar lines and results for $B \text{ and } C$ follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
 
+\end{proof}
+\end{comment}
+
 \subsection{Phase Times}
+\label{subsection:phasetime}
 
-\noindent Consider a wave packet sharply localised in momentum ($k$) space incident on the barrier. Accounting for time evolution under the time evolution operator $U(t)=e^{-\frac{iEt}{\hbar}}$, the incident wave packet has a peak $y_p(t)$ where the phase of the wave has an extremum when differentiated with respect to $k$:
+Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{cont0}) are delocalised over all space. Superposition of plane waves with different momenta $k$ yields waves which are localised in space, called wave packets. For example, one can construct a Gaussian wave packet from plane waves $e^{iky}$:
 
-\begin{equation}
-	-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)=0
-	\label{incidentpeak}
-\end{equation}
+\begin{subequations}
+\begin{align}
+	\psi(t,y)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\,\phi(k)e^{i(ky-w(k)t)} \quad w(k)=\frac{\hbar k^2}{2m} \label{gauss1}\\
+	\phi(k)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dy\,\psi(0,y)e^{-iky} \quad \psi(0,y) = e^{-y^2+ik_0y}\\
+	&= \frac{1}{\sqrt{2}}e^{-(k-k_0)^2/4}
+	\end{align}
+\end{subequations}
+\noindent where $\psi(0,y)$ is the initial profile of the wave function and $\phi(k)$ is the Fourier coefficient which is assumed to be sharply localised around $k_0$. 
 
-\noindent This contrasts with the peak of the transmitted wave packet which satisfies:
+\begin{figure}[ht]
+\centering
+\includegraphics{plot4.pdf}
+\caption{Gaussian wave packet (\ref{gauss1}) showing the carrier wave (black) and amplitude modulating envelope wave (red).}
+\end{figure}
 
-\begin{equation}
-	\frac{d\Delta\phi}{dk}-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)-d=0
-	\label{transmittedpeak}
-\end{equation}
+\noindent In this instance the integral in (\ref{gauss1}) can be accurately calculated by Taylor expansion of the dispersion relation around $k_0$ to first order. However this will not necessarily work for other plane waves, for example those in (\ref{wavefunction}). To progress one can use the stationary phase approximation; given Fourier coefficient $\phi(k)$ sharply localised around $k=k_0$, the integral (cf. (\ref{gauss1})) has non-zero value by dint of contributions from the integrand only in the region $k\approx k_0$, only if the plane wave term oscillates on scales larger than the region around $k_0$ (the wave phase is 'stationary` in $k-$space). 
 
-\noindent Solving equations (\ref{incidentpeak}) and (\ref{transmittedpeak}) for $t$ at $y_p(t) = -\frac{d}{2} \text{ and } \frac{d}{2}$ respectively, one finds the traversal time of the peak across the barrier for the transmitted wave to be:
+\noindent Applying this method to the incident and transmitted plane waves in (\ref{wavefunction})(\ref{cont0}) (accounting for time evolution under the time evolution operator $U(t)=e^{-iEt/\hbar}$) yields:
+
+\begin{subequations}
+\begin{flalign}
+	&\text{Incident:} && -\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)=0 \label{incidentpeak}&\\
+	\intertext{from which one derives the group velocity of the wave packet $v_g = \frac{1}{\hbar}\frac{dE}{dk} = \frac{\hbar k}{m}$. This is the propagation velocity of the envelope wave and is identified with the particle velocity. This differs from the phase velocity $v_p = \frac{w}{k}$ which is the propagation velocity of the carrier wave.}
+	&\text{Transmitted:} && \frac{d\Delta\phi}{dk}-\frac{1}{\hbar}\frac{dE}{dk}t+y_p(t)-d=0 \label{transmittedpeak}
+\end{flalign}
+\end{subequations}
+
+\noindent (cf. Hauge and St{\o}vneng 1989 (2.3)). Solving equations (\ref{incidentpeak}) and (\ref{transmittedpeak}) for $t$ at $y_p(t) = -\frac{d}{2} \text{ and } \frac{d}{2}$ respectively, one finds that the difference of these times, i.e. the traversal time of the peak across the barrier for the transmitted wave, is:
 
 \begin{equation}
 	\tau_\phi = \hbar \frac{d\Delta\phi}{dE} = \frac{m}{\hbar k}\frac{d\Delta\phi}{dk}
 	\label{buttikerphasetime}
 \end{equation}
 
-\noindent An identical result is obtained for a wave packet reflected from the barrier.
+\noindent (An identical result is obtained for a wave packet reflected from the barrier.) (cf. B{\"u}ttiker 1983 (3.1)).
 
-\noindent This can be calculated explicitly using equation (\ref{phasechange}):
+\noindent Equation (\ref{buttikerphasetime}) can be calculated explicitly using equation (\ref{phasechange}):
 
 \begin{align}
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{\hbar k}\frac{d}{dk}\left(\arctan{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]}\right) \\
-					       &=\frac{m}{\hbar k}\frac{1}{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]^2+1}\frac{1}{2}\frac{d}{dk}\left(\frac{k^2-\kappa^2}{k\kappa}\tanh{\kappa d}\right) \\ \intertext{The derivative term evaluates to:}
+					       &=\frac{m}{\hbar k}\frac{1}{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]^2+1}\frac{1}{2}\frac{d}{dk}\left(\frac{k^2-\kappa^2}{k\kappa}\tanh{\kappa d}\right) \\ \intertext{Recalling the relation between $k$ and $\kappa$ in (\ref{wavefunction}), the derivative term evaluates to:}
 					       &\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\tanh{\kappa d} + d\left(-\frac{k^2}{\kappa^2}+1\right)\sech^2{\kappa d}\\ \intertext{Hence}
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{2\hbar k}\frac{4k^2\kappa^2\sech^2{\kappa d}}{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\sinh{\kappa d}\cosh{\kappa d}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\}\\
 					       &=\frac{2mk\kappa^2}{\hbar}\frac{1}{k_0^4\sinh^2{\kappa d}+4k^2\kappa^2}\left\{\left[2\kappa^{-1}+\frac{k^2}{\kappa^3}+\frac{\kappa}{k^2}\right]\frac{\sinh{2\kappa d}}{2}-\frac{kd}{\kappa}\left(\frac{k}{\kappa}-\frac{\kappa}{k}\right)\right\} \\ \intertext{The term in \{\dots\} is easily shown to be:}
@@ -245,12 +353,10 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}} \label{phasedelaytime}
 \end{align}
 
-\textcolor{red}{check this, you were tired...}
-
-\noindent B{\"u}ttiker defines this as the phase-delay time of the scattering process. Hauge and St{\o}vneng take an alternative approach and introduce an interval $(x_1, x_2)$ containing the barrier (i.e. $x_1<b,x_2>a$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
+\noindent B{\"u}ttiker 1983 defines this as the phase-delay time of the scattering process. Hauge and St{\o}vneng 1989 take an alternative approach and introduce an interval $(y_1, y_2)$ containing the barrier (i.e. $y_1<\frac{-d}{2},y_2>\frac{d}{2}$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define (cf. Hauge and St{\o}vneng 1989 (2.4)) the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
 
 \begin{equation}
-	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right]
+	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right] \quad \text{where $v(k) = \frac{\hbar k}{m}$ is the group velocity.}
 	\label{transmittedphaseshift}
 \end{equation}
 
@@ -261,7 +367,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 	\label{reflectedphaseshift}
 \end{equation}
 
-\noindent They subsequently define the total phase time for transmission:
+\noindent They subsequently define (cf. Hauge and St{\o}vneng 1989 (2.5, 2.6)) the total phase time for transmission:
 
 \begin{equation}
 	\tau_T(x_1,x_2;k) = \frac{1}{v(k)}[x_2-x_1+\delta y_T]
@@ -275,7 +381,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 
 \noindent where the minus sign before the spatial delay is picked up due to the wave packet travelling in the opposite direction.
 
-\noindent By linearly extrapolating the interval $(x_1,x_2) \rightarrow (-\frac{d}{2},\frac{d}{2})$, one defines the \textit{extrapolated phase times}:
+\noindent By linearly extrapolating the interval $(y_1,y_2) \rightarrow (-\frac{d}{2},\frac{d}{2})$, one defines the \textit{extrapolated phase times} (cf. Hauge and St{\o}vneng 1989 (2.7, 2.8)):
 
 \begin{align}
 	\Delta\tau_T(-\frac{d}{2},\frac{d}{2};k) &= \frac{1}{v(k)}[d+\delta y_T] \\
@@ -285,6 +391,7 @@ where $T$ is the transmission probability and $R = 1-T$ is the reflection probab
 \noindent Substituting in equations (\ref{transmittedphaseshift}) and (\ref{reflectedphaseshift}) to these results recovers (\ref{buttikerphasetime}).
 
 \subsection{Dwell Time}
+\label{subsection:dwelltime}
 
 The dwell time $\tau_D$ is defined as the ratio of the number of particles within the barrier to the incident flux, $\tau_D = \frac{N}{j}$. Clearly this does not distinguish between the scattering channels (reflected or transmitted), so the dwell time is the time a particle spends in the barrier region, averaged over scattering channels.
 
@@ -297,7 +404,7 @@ The dwell time $\tau_D$ is defined as the ratio of the number of particles withi
 	\implies N &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation (\ref{transmissionprobability}) for $T$:}
 		 N &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\\ \intertext{and for the incident flux with $\psi = e^{iky}$:
 }
-	j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{\partial \psi^{*}}{\partial y}\right) \\ 
+j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{\partial \psi^{*}}{\partial y}\right) \label{1dflux}\\ 
 	  &= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k) \\ \intertext{such that:}
 	\tau_D &= \frac{1}{v(k)}\frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
 	\label{dwelltime}
@@ -307,11 +414,13 @@ The dwell time $\tau_D$ is defined as the ratio of the number of particles withi
 
 \begin{equation}
 	\tau_D = T\tau_T+R\tau_R
+	\label{dwellcondition}
 \end{equation}
 
 \noindent where $T \text{ and } R = 1-T$ are transmission and reflection probabilities respectively. Comparison of equations (\ref{phasedelaytime}) and (\ref{dwelltime}) show this consistency check is not satisfied. Resolution of this issue comes from noticing that attaching \textit{physical significance} to the time in (\ref{phasedelaytime}) is incorrect, as it requires the assumption that motion outside of the barrier is that of a free particle. This is valid on the transmitted side of the barrier, however during approach to the barrier the incoming wave packet interferes with the reflected wave packet and hence motion can no longer be assumed to be free.
 
 \subsection{Continuous Cyclic Quantum Clock}
+\label{subsection:ccqc}
 
 In this section I present a theoretical model of a continuous cyclic quantum clock as provided by Hilgevoord. The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
 
@@ -364,6 +473,7 @@ In this section I present a theoretical model of a continuous cyclic quantum clo
 \noindent by setting $\omega = 1, \space \phi$ plays exactly the same role as a time variable $t$.
 
 \subsection{Discrete Cyclic Quantum Clock}
+\label{subsection:dcqc}
 A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$, as presented by Peres in [...]. Hence the clock has an odd number $N = 2j+1$ of states represented by wave functions
 
 \begin{equation}
@@ -527,7 +637,8 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 \noindent This result can be recognised as the Fourier series expansion of $\frac{2\pi e^{-\frac{\theta}{\alpha}}}{N\alpha\left(1-e^{-\frac{2\pi}{\alpha}}\right)}$, and hence the clocks stop (atoms decay) according to the exponential decay law as expected.
 
 \subsection{Larmor Precession}
-In this section I consider the quantum barrier experiment as in section \ref{section:quantumbarrier}, but now with the additional constraints that the particles carry spin $s=\frac{1}{2}$ polarised in the x-direction, and with the presence of a small magnetic field $\boldsymbol{B_0}$ parallel with the z-axis and confined to the width of the barrier:
+\label{subsection:larmorprecession}
+In this section I consider the quantum barrier experiment as in section \ref{subsection:quantumbarrier}, but now with the additional constraints that the particles carry spin $s=\frac{1}{2}$ polarised in the x-direction, and with the presence of a small magnetic field $\boldsymbol{B_0}$ parallel with the z-axis and confined to the width of the barrier:
 
 \begin{figure}[ht]
     \centering
@@ -846,152 +957,177 @@ In this section I report the study of polarisation of the transmitted and reflec
 \end{flalign}
 \end{subequations}
 
+\section{Tunnelling Times in the de Broglie-Bohm Interpretation}
+\label{section:dBB}
 
+\subsection{de Broglie-Bohm Theory}
+\label{subsection:dBBtheory}
+\noindent It is clear from the previous section that no definitive answer to the equation \textit{`How long does a particle take to tunnel through a quantum barrier'} has been agreed upon within the orthodox interpretation of quantum mechanics. In contrast, the de Broglie-Bohm (dBB) interpretation yields a unique and well-defined prescription for defining tunnelling times. The dBB theory is an interpretation of quantum mechanics built upon the following postulates:
 
-We consider the case of scattering in one dimension with particles of mass $m$, spin $\frac{1}{2}$ and kinetic energy $
-E = \frac{\hbar^2k^2}{2m}$. The particles move along the y-axis with spins polarised with the x-axis and interact with a rectangular barrier,
+\begin{itemize}
+\item [P1] Individual physical systems comprise a wave propagating in space and time, and a point particle, the motion of which is guided by the wave.
+\item [P2] The wave is mathematically described by $\psi(t,\boldsymbol{x}) = Re^{\frac{iS}{\hbar}}, R=R(t,\boldsymbol{x}) \text{ is a real amplitude function, } \\S=S(t,\boldsymbol{x}) \text{ is a real phase function and} \psi(t,\boldsymbol{x}) \text{ satisfies the time dependent Schr{\"o}dinger equation.}$
+\item [P3] The velocity of the particle is given by $\boldsymbol{v} = \frac{1}{m}\nabla{S}$. The particle motion is obtained by solving this equation along with the specification of the initial condition of the particle, $\boldsymbol{x}(0)$.
+\item [P4] The probability of a particle \textit{being} between points $\boldsymbol{x} \text{ and } \boldsymbol{x + dx}$ at time $t$ is given by:
+\begin{equation}
+	|\psi(t,\boldsymbol{x})|^2d^3x = R(t,\boldsymbol{x})^2d^3x
+\end{equation}
+The effect of this postulate is to extract from all possible motions of the particle those compatible with the initial distribution $R(0,\boldsymbol{x})$. Note how this differs from the orthodox interpretation in which $|\psi(t,\boldsymbol{x})|^2$ determines the probability density of finding a particle \textit{upon measurement}.
+\end{itemize}
+
+\noindent Substituting in $\psi = Re^{\frac{iS}{\hbar}}$ into the time dependent Schr{\"o}dinger equation yields:
+
+\begin{subequations}
+\begin{flalign}
+	&\frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0& \label{dBBHJ} \\
+	&\frac{\partial R^2}{\partial t}+\nabla\cdot\left(\frac{R^2\nabla S}{m}\right)=0 \label{dBBcontinuity}
+\end{flalign}
+\end{subequations}
+
+\begin{proof}
+\begin{subequations}
+\begin{flalign}
+i\hbar \frac{\partial\psi}{\partial t} &= \frac{-\hbar^2}{2m}\nabla^2\psi+V\psi&\\
+i\hbar\left(\dot{R}+\frac{i}{\hbar}R\dot{S}\right) &= -\frac{\hbar^2}{2m}\left(\nabla^2R+\frac{2i}{\hbar}\nabla R \nabla S-\frac{1}{\hbar^2}R(\nabla S)^2+\frac{i}{\hbar}R\nabla^2 S\right)+VR\\\intertext{Isolating real and imaginary parts yields:}
+-R\dot{S}&=-\frac{\hbar^2}{2m}\left(\nabla^2 R-\frac{R}{\hbar^2}(\nabla S)^2\right)+VR&\\
+	 &\implies \frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0\\
+\hbar\dot{R} &= -\frac{\hbar}{2m}\left(2\nabla R\nabla S+R\nabla^2S\right)\\
+	     &\implies \frac{\partial R^2}{\partial t}+\nabla\cdot\left(\frac{R^2\nabla S}{m}\right)=0
+\end{flalign}
+\end{subequations}
+\end{proof}
+
+\noindent Note that (\ref{dBBcontinuity}) can be written as:
 
 \begin{equation}
-	V = 
-	\begin{cases}
-	V_0 & -\frac{d}{2}<y<\frac{d}{2}\\
-		0 & \text{otherwise}
-	\end{cases}
+	\frac{\partial P(t,\boldsymbol{x})}{\partial t}+\nabla \cdot \boldsymbol{j}(t,\boldsymbol{x})=0
 \end{equation}
 
-A small magnetic field $\vec{B_{0}}$ points along the z-axis and is confined to the barrier. As particles enter the barrier, the magnetic field induces a Larmor precession with frequency $\omega_{L}=\frac{g \mu B_{0}}{\hbar}$, where $g$ is the gyromagnetic ratio, $\mu$ is the absolute value of the magnetic moment. The polarisations of the transmitted and reflected particles are compared with the polarisation of the incident particles.
+\noindent where $P$ is the probability density and $\boldsymbol{j}$ is the 3-dimensional generalisation of the flux (\ref{1dflux}), and hence takes the form of the continuity equation. Note also equation (\ref{dBBHJ}) is a modified Hamilton-Jacobi equation, with additional term $Q=-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}$, the `quantum potential energy'.
 
-Particles initially polarised in the x direction obtain a y and z components when tunnelling through the barrier. We know from the Stern-Gerlach experiment that particles polarised int eh x direction can be represented as combinations of particles with z polarisations, $\ket{x; \pm} = \frac{1}{\sqrt{2}}\ket{z;+} \pm \frac{1}{\sqrt{2}}\ket{z;-}$. Outside the barrier, particles have kinetic energy $E$, independent of their spin. Inside the barrier, the kinetic energy differs by the Zeeman contribution $\pm \frac{\hbar \omega_{L}}{2}$. The wavefunction inside the barrier will contain an exponentially decaying term $Exp(\kappa_{\pm})$, where $\kappa_{\pm} = (k^{2}_{0}-k^{2} \pm \frac{m \omega_L}{\hbar})^{\frac{1}{2}}$, where $\kappa = (k_{0}^2-k^2)^{\frac{1}{2}}$ and the sign indicates spin parallel or antiparallel to the field.  
+\noindent As in P3 one defines the vector field $\boldsymbol{v} = \frac{1}{m}\nabla S$, which defines at each point in space at each instant in time the tangent to the particle's trajectory passing through that point. Given the gradient $\nabla S$ is orthogonal to level surfaces, the trajectories are orthogonal to surfaces $S=constant$, and are given by the solution of $\dot{\boldsymbol{x}}=\frac{1}{m}\nabla S(t,\boldsymbol{x})$, requiring specification of the initial condition $\boldsymbol{x}_0$. Hence the motion of the particle is completely deterministic once its initial position has been specified. Note one does not have to specify an initial velocity $\boldsymbol{v}_0$ as this is encoded in the initial wave $\psi_0(\boldsymbol{x})$ and is calculated using P2. Note also the important fact that no two different trajectories with the same wave $\psi(t,\boldsymbol{x})$ intersect. This is because at the point of intersection, both trajectories have the same velocity and position at the same point in time. As the motion of a particle is deterministic given the specification of an initial condition, the two trajectories will subsequently coincide for all times after the time of intersection. By time reversal invariance, the two trajectories must also have coincided for all anticedent times, a contradiction with our initial assumption.
 
-We can approximate this in the small $\omega_L$ limit as
-	\begin{align*}
-		\kappa_{\pm} &= \left(k^{2}_{0}-k^{2} \mp \frac{m \omega_{L}}{\hbar}\right)^{\frac{1}{2}}\\	
-			     &= \kappa \left(1 \mp \frac{m \omega_{L}}{\hbar \kappa^{2}}\right)^{\frac{1}{2}}\\
-			     &\approx \kappa \left(1 \mp \frac{m \omega_{L}}{2\hbar \kappa^{2}}\right)\\
-			      &= \kappa \mp \frac{m \omega_{L}}{2\hbar \kappa}
-	\end{align*}
+From P3 it is clear that an ensemble of possible motions associated with the same wave is generated by varying the initial condition $\boldsymbol{x}_0$. Once specified, the laws governing the evolution of a physical system are entirely deterministic. The probabilistic nature of quantum mechanics, familiar from experiments such as the double-slit experiment, is recovered from the fact that giving a particle a precisely defined initial condition is empirically unrealisable. Hence given an ensemble of identical physical systems (a wave and point particle), it is the uncertainty of the initial position of the particles that gives rise to the probabilistic nature of quantum mechanics. 
 
-Here we examine tunnelling through a barrier in a magnetic field. In this case our Hamiltonian is
+\subsection{A Natural Definition of Tunnelling Time}
+\label{subsection:dBBtime}
+
+The notion of a particle trajectory in the dBB theory leads one to a natural definition of reflection and transmission times. For a particle with initial condition (restricting to the one-dimensional case) $y=y_0$ at $t=0$, the time spent in the region $y_1 \leq y \leq y_2$ is given by:
+
 \begin{equation}
-	H = 
-	\begin{cases}
-	\left(\frac{p^2}{2m} + V_0\right)\mathbb{1}-\left(\frac{\hbar \omega_L}{2}\right) \sigma_z & |y| \leq \frac{d}{2}\\
-	\left(\frac{p^2}{2m}\right)\mathbb{1} & |y| \geq \frac{d}{2}
-	\end{cases}
-	\end{equation}
-where $\mathbb{1}$ is the $2 \times 2$ identity matrix and $\sigma_{x}, \sigma_{y}, \sigma_{z}$ are the Pauli spin matrices.
-
-H acts on spinors
-\begin{align}
-	\psi &= \begin{pmatrix}
-		\psi_{+}(y) \\
-		\psi_{-}(y)
-		\end{pmatrix}
-\end{align}
-
-As usual $|\psi_{\pm}(y)|^{2}dy$ is the probability of finding a particle \textit{upon measurement} with spin $\pm \frac{\hbar}{2}$ in the interval $y, y+dy$. We emphasise the 'upon measurement' here as this is an important point of distinction between the orthodox and pilot-wave interpretations addressed in this essay. The incident beam is polarised in the x direction,
-\begin{align}
-	\psi &= \frac{1}{\sqrt{2}}
-	\begin{pmatrix}
-	1\\
-	1
-	\end{pmatrix}
-	e^{i k y}
-\end{align}
-i.e. $\psi$ is an eigenvector of $S_{x}$
-
-H is diagonal in the spinor basis so we can solve the scattering problem for particles with spin $\frac{\hbar}{2}$ and $-\frac{\hbar}{2}$ separately. 
-Our wavefunction is of the form
-\begin{equation}
-	\psi = 
-	\begin{cases}
-		A_{\pm}e^{i k y} + B_{\pm}e^{-i k y} & y \leq -\frac{d}{2} \\
-		C_{\pm}e^{\kappa_{\pm}y} + D_{\pm}e^{-\kappa_{\pm}y} & -\frac{d}{2} \leq y \leq \frac{d}{2} \\
-		F_{\pm}e^{i k y} & y \geq \frac{d}{2}
-	\end{cases}
+	t(y_0;y_1,y_2) = \int_0^\infty dt \Theta(y(t,y_0)-y_1)\Theta(y_2-y(t,y_0)) \label{tclassical}
 \end{equation}
 
-We will soon set $A_{\pm} = 1$, corresponding to 1 particle per ??, but maintain it for now to aid a future calculation. Note there is no $e^{-i k y}$ term on the right of the barrier, as no particles are reflected. 
+\noindent where $y(t,y_0)$ denotes the trajectory of a particle with initial condition $y=y_0 \text{ at } t=0$ and $\Theta$ is the Heaviside step function. This definition is intuitively clear: $\Theta(y(t,y_0)-y_1)$ has support for particle trajectories $> y_1$, and $\Theta(y_2-y(t,y_0)$ has support for particle trajectories $<y_2$. When a trajectory satisfies both of these conditions, the particle resides within the interval of interest $(y_1,y_2)$ and increments the measured time.
 
-The effect of the magnetic field $B_0$ is simply to adjust the height of the barrier, $V_0^{'} = V_0 \pm \frac{\hbar \omega_L}{2}$. Hence we can solve the scattering problem initially assuming no magnetic field, and then adjusting our solution by replacing $\kappa$ in the field-free problem with $\kappa_{\pm}$. Our job now is to calculate the wavefunction coefficients A, B, C, D, F using the continuity of the wavefunction and its first derivative at the boundaries.
-This is a lengthy calculation but the results are used so frequently that it is necessary to include a derivation. The results are stated here and derived below:
+For empirical purposes, the precise specification of the particle's initial condition is not possible. For an ensemble of identical systems, one can use P4 at $t=0$ to state the probability distribution of initial positions, and hence define the mean dwell time:
 
-\begin{align}
-	F &= T^{\frac{1}{2}}e^{i\Delta\phi}e^{-ikd} & B &= R^{\frac{1}{2}}e^{-\frac{i\pi}{2}}e^{i\Delta\phi}e^{-ikd} \nonumber \\
-	C &= \frac{\kappa+ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{-\kappa d}{2}}F & D &= \frac{\kappa-ik}{2\kappa}e^{\frac{ikd}{2}}e^{\frac{\kappa d}{2}}F
-\end{align}
-where $T$ is t:he transmission probability and $R = 1-T$ is the reflection probability.
+\begin{subequations}
+\begin{flalign}
+	\tau_D(y_1,y_2) &= \langle t(y_0;y_1,y_2) \rangle = \int_{-\infty}^{\infty}dy_{0}|\psi(0,y_0)|^2t(y_0;y_1,y_2)&\\
+			&\stackrel{\mathclap{(\ref{tclassical})}}{=} \int_{-\infty}^{\infty}dy_{0}|\psi(0,y_0)|^2 \int_0^\infty dt \Theta(y(t,y_0)-y_1)\Theta(y_2-y(t,y_0)) \\
+			&= \int_{-\infty}^{\infty}dy_{0}|\psi(0,y_0)|^2 \int_0^\infty dt \int_{-\infty}^\infty \Theta(y-y_1)\Theta(y_2-y)\delta(y-y(t,y_0))\\
+			&= \int_0^\infty \int_{y_1}^{y_2} \int_{-\infty}^\infty dy_{0}|\psi(0,y_0)|^2\delta(y-y(t,y_0))\\
+			&= \int_0^\infty \int_{y_1}^{y_2}|\psi(t,y)|^2
+\end{flalign}
+\end{subequations}
 
-First we introduce a new coordinate system so that the boundaries of our barrier become 0, d. Then, denoting our wavefunctions before, inside and after the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, we have:
+\noindent where $|\psi(t,y)|^2 = \langle \delta(y-y(t,y_0)) \rangle$. This is in agreement with the dwell time derived by Sokolovski and Baskin.
 
-\begin{align}
-	\psi_{1} &= Ae^{iky} + Be^{-iky} & \psi_{1}^{'} &= Aike^{iky} - ikBe^{-iky} \\
-	\psi_{2} &= Ce^{-\kappa y} + De^{\kappa y} & \psi_{2}^{'} &= -\kappa Ce^{-\kappa y} + \kappa De^{\kappa y} \\
-	\psi_{3} &= Fe^{iky} & \psi_{3}^{'} &= ikFe^{iky}
-\end{align}
+One can use the fact that particle trajectories do not intersect each other to define a starting point $y_0^c$ such that only trajectories $y(t,y_0)$ with $y_0 > y_0^c$ are ultimately transmitted, and trajectories with $y_0 < y_0^c$ are ultimately reflected. $y_0^c$ is defined by:
 
-Imposing continuity of the wavefunction and its first derivative at the barrier boundaries:
-\begin{align}
-	\psi_{1}(0) = \psi_{2}(0) &\implies A+B = C+D \\
-	\psi_{1}^{'}(0) = \psi_{2}^{'}(0) &\implies ikA - ikB = -\kappa C + \kappa D \\
-	\psi_{2}(d) = \psi_{3}(d) &\implies Ce^{-\kappa d} + De^{\kappa d} = Fe^{ikd} \\
-	\psi_{2}^{'}(d) = \psi_{3}^{'}(d) &\implies -\kappa Ce^{-\kappa d} + \kappa De^{\kappa d} = ikF e^{ikd} 
-\end{align}
+\begin{equation}
+	\int_{y_0^c}^\infty dy_0 |\psi(0,y_0)|^2=|T|^2
+\end{equation}
 
-\begin{align}
-	ik(\ref{cont1})+(\ref{cont2}) &\implies 2ikA = C(ik-\kappa)+D(ik+\kappa) \\
-	ik(\ref{cont1})-(\ref{cont2}) &\implies 2ikB = C(ik+\kappa)+D(ik-\kappa) \\
-	\kappa(\ref{cont3})-(\ref{cont4}) &\implies 2\kappa Ce^{\kappa d} = Fe^{ikd}(\kappa-ik)\\
-	\kappa(\ref{cont3})+(\ref{cont4}) &\implies 2\kappa De^{\kappa d} = Fe^{ikd}(\kappa+ik) 
-\end{align}
+\noindent This definition is intuitively clear - the left hand side is the probability a particle starts in a region that guarantees it will be ultimately transmitted, and this is equal to the transmission probability.
 
-Inserting equations (\ref{cont7}) and (\ref{cont8}) into equation (\ref{cont5}) we arrive at:
+\begin{figure}[ht]
+    \centering
+    \incfig{Trajectory}
+    \caption{$y_0^c$ separates reflected and transmitted trajectories.}
+    \label{fig:trajectories}
+\end{figure}
+
+\noindent Subsequently one can calculate the mean transmission and reflection times, uniquely given by:
 
 \begin{align}
-	2ikA &= -\frac{(ik-\kappa)^2}{2\kappa}Fe^{(ik+\kappa)d}+\frac{(ik+\kappa)^2}{2p}Fe^{(ik-\kappa)d} \\
-	\implies 4\kappa ikAe^{-ikd} &= F[(k^2-\kappa^2)(e^{\kappa d}-e^{-\kappa d})+2ik\kappa(e^{\kappa d}+e^{-\kappa d})] \\
-				     &= F[2(k^2-\kappa^2)\sinh{\kappa d}+4ik\kappa \cosh{\kappa d}] 
+	\tau_T(y_1,y_2)&=\frac{\langle(t(y_0;y_1,y_2)\Theta(y_0-y_0^c)\rangle}{\langle\Theta(y_0-y_0^c)\rangle}\\
+	\tau_R(y_1,y_2)&=\frac{\langle(t(y_0;y_1,y_2)\Theta(y_0^c-y_0)\rangle}{\langle\Theta(y_0^c-y_0)\rangle}.
 \end{align}
 
-One arrive at the first result, the transmission probability $T = \frac{|F|^2}{|A|^2}$:
-\[
-	T = [1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}]^{-1}
-.\] 
+\noindent where $|T|^2 = \langle\Theta(y_0-y_0^c)\rangle \text{ and } |R|^2 = \langle\Theta(y_0^c-y_0)\rangle$. These are real-valued, non-negative quantities obeying the consistency condition (\ref{dwellcondition}):
 
-and, by writing $D$ in polar form $D = |D|e^{i\theta}$, the phase change across the barrier:
-i
+\begin{subequations}
 \begin{align}
-	D &\propto 4k^2\kappa^2 \cosh{\kappa d}e^{-ikd}+i2k\kappa(k^2-\kappa^2)\sinh{\kappa d}e^{-ikd} \\
-	  &\implies \Delta \phi := arg(D) = \arctan\left(\frac{\operatorname{Im}(D)}{\operatorname{Re}(D)}\right) = \arctan\left(\frac{(k^2-\kappa^2)}{2k\kappa}\tanh{\kappa d}\right) \\
-	  &\implies De^{ikx}\rvert_{x=d}-e^{ikx}\rvert_{x=0} = |D|e^{i\Delta \phi}e^{ik(d-d)}-1 \\
-	  \text{and so the phase change} = \Delta \phi
+	|T|^2\tau_T(y_1,y_2)+|R|^2\tau_R(y_1,y_2) &= \langle(t(y_0;y_1,y_2)\Theta(y_0-y_0^c)\rangle+\langle(t(y_0;y_1,y_2)\Theta(y_0^c-y_0)\rangle\\
+						  &= \langle(t(y_0;y_1,y_2)(\Theta(y_0-y_0^c)+\Theta(y_0^c-y_0))\rangle\\
+						  &= \langle t(y_0;y_1,y_2) \rangle = \tau_D
 \end{align}
+\end{subequations}
 
-It is clear now why we left the coefficient A explicit, but from now on it will be set to A = 1.
+\noindent The probability distributions of the transmission and reflection times,$P_T \text{ and } P_R$ are also of interest. These are defined by:
 
-Rearranging (\ref{cont11}) for $F$, we can compare with the final result in (\ref{cont0}) and factorise out $T^\frac{1}{2}$:
+\begin{equation}
+	\tau_T(y_1,y_2) = \int_0^\infty dt P_T(t(y_1,y_2))t, \quad \tau_R(y_1,y_2) = \int_0^\infty dt P_R(t(y_1,y_2))t.
+\end{equation}
 
-\[
-	F = T^{\frac{1}{2}}e^{-ikd} \times \frac{(k^2-\kappa^2)i\sinh{\kappa d}+2k\kappa \cosh(\kappa d)}{\sqrt{(k^2+\kappa^2)^2\sinh^{2}{\kappa d}+4k^2\kappa^2}}
-\] 
-This yields the identification
+\noindent and hence are given by
 
-\begin{align}
-	e^{i\Delta\phi} &= \frac{(k^2-\kappa^2)i\sinh{\kappa d}+2k\kappa \cosh{\kappa d}}{\sqrt{(k^2+\kappa^2)\sinh^{2}(\kappa d)+4k^2\kappa^2}} \\
-			&= \frac{(k^2-\kappa^2)i\tanh{\kappa d}+2k\kappa}{\sqrt{(k^2-\kappa^2)^2\tanh^2{\kappa d}+4k^2\kappa^2}}
-\end{align}
+\begin{subequations}
+\begin{flalign}
+	P_T(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0-y_0^c))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0-y_0^c)\rangle}&\\
+	P_R(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0^c-y_0))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0^c-y_0)\rangle}&
+\end{flalign}
+\end{subequations}
 
-Expanding the left hand side into real and imaginary parts and comparing coefficients we deduce:
+\subsection{Numerical Example}
+\label{subsection:dBBexample}
+\noindent Consider tunnelling through barrier with boundaries shifted to $[0, d]$ and an electron with initial Gaussian wave function:
 
-\[
-	\tan{\Delta\phi} = \frac{(k^2-\kappa^2)\tanh(\kappa d)}{2k\kappa}
-\] 
+\begin{equation}
+	\psi(t=0,y) = \frac{1}{(2\pi(\Delta y)^2)^{\frac{1}{4}}}exp\left(-\left(\frac{(y-y_0)^2}{2\Delta y}\right)^2+ik_0y\right)
+\end{equation}
 
-The result for B follows along similar lines and results for C and D follow immediately from equations (\ref{cont7}) and (\ref{cont8}). We note that our final results are independent of the coordinate system used (up to scaling by a multiplicative constant) so the result also holds in our other coordinate system.
+\noindent where $y_0$ is the centroid of $|\psi(0,y)|^2$ and $k_0$ is the centroid of $|\phi(k)|^2$, the Fourier transform of the wave function into momentum space. This is a minimum-uncertainty product wave function and hence the uncertainties of its position and momentum satisfy $\Delta y\Delta p_y = \frac{1}{2} (\hbar = 1)$. Note that $y_0$ is chosen such that the wave function is sufficiently far to the left of the barrier region $0\leq y\leq d$ such that the initial probability density $|\psi(0,y)|^2$ is negligible for $y \geq 0$. Mathematically this is formulated as:
+
+\begin{equation}
+	\int_0^\infty dy |\psi(0,y)|^2 = 10^{-4}|T|^2
+\end{equation}
+
+\noindent The barrier has height $V_0 = 10eV$ and unfixed width d. The problem is solved numerically. For $E_0 = \frac{1}{2}V_0$, momenta uncertainties $\Delta k = 0.04 \text{ and } 0.08 \text{{\AA}}$ and trajectory starting points $y_0$ near the transmission-reflection bifurcation point $y_0^c$, a collection of results are presented below:
+
+\begin{figure}[ht]
+    \centering
+    \incfigsize{LAcombined2}{15}
+    \caption{$y_0^c$ separates reflected and transmitted trajectories.}
+    \label{fig:trajectories111wrwd}
+\end{figure}
+
+
+
+\clearpage
 
 \begin{thebibliography}{100}
 \bibitem{Goldstein}
-Goldstein
+Goldstein, H., Safko, J.L., Poole, C.P. (2002), \textit{Classical Mechanics} (3rd ed.), Addison-Wesley
+
+\bibitem{Hilgevoord}
+Hilgevoord, J. (2002), Time in quantum mechanics, \textit{American Journal of Physics} \textbf{70}, 301-306
+
+\bibitem{Sakurai}
+Sakurai, J.J., Napolitano, J.J. (2017), \textit{Modern Quantum Mechanics}, Cambridge University Press
+
+\bibitem{Buttiker}
+B{\"u}ttiker, M. (1983), Larmor precession and the traversal time for tunnelling, \textit{Physical Review B} \textbf{27}, 6178-6188
+
+\bibitem{LeavensA}
+Leavens, C.R. (1996), The “Tunneling-Time Problem” for Electrons, in \textit{Bohmian Mechanics and Quantum Theory: An Appraisal}, Cushing J.T., Fine A., Goldstein S. (eds), Springer
+
+\bibitem{HandS}
+Hauge, E. and St{\o}vneng J. (1989), Tunneling times: a critical review, \textit{Reviews of Modern Physics} \textbf{61}, 917–936
+
+
 
 \end{thebibliography}
 \end{document}

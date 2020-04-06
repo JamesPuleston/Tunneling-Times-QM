@@ -1,0 +1,125 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'LAcombined.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{595.27559055bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{LAcombined.pdf}}%
+    \put(0.60485466,0.03159238){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.00$}}}%
+    \put(0.6996537,0.03159238){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.04$}}}%
+    \put(0.79445263,0.03159238){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.08$}}}%
+    \put(0.88293166,0.03159238){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.12$}}}%
+    \put(0.78054882,0.00721552){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta k \,(\text{{\AA}}^{-1})$}}}%
+    \put(0.5846554,0.0543441){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.0$}}}%
+    \put(0.5846554,0.13019148){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.2$}}}%
+    \put(0.5846554,0.20728644){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.4$}}}%
+    \put(0.5846554,0.28565354){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.6$}}}%
+    \put(0.57116002,0.09980265){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{$|X|^2\tau_X(0,d)\,(10^{-16}s)$}}}}%
+    \put(0.97274424,0.03323175){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.16$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{LAcombined.pdf}}%
+    \put(0.24833059,0.5215094){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$t \,(10^{-14}s)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{LAcombined.pdf}}%
+    \put(-0.01902997,0.80749507){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y \, \text{({\AA})}$}}}%
+    \put(0.03962586,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.0$}}}%
+    \put(0.10600431,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.2$}}}%
+    \put(0.17238278,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.4$}}}%
+    \put(0.24290985,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.6$}}}%
+    \put(0.30928832,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.8$}}}%
+    \put(0.37981539,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$1.0$}}}%
+    \put(0.44619391,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$1.2$}}}%
+    \put(0.5125723,0.55432035){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$1.4$}}}%
+    \put(0.00806544,0.57277264){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-10$}}}%
+    \put(0.0354772,0.73422939){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.02466005,0.90029931){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{LAcombined.pdf}}%
+    \put(0.51718791,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.7$}}}%
+    \put(0.85854594,0.1673895){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{LAcombined.pdf}}%
+    \put(0.61098698,0.36217601){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.73854174,0.36217601){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$4$}}}%
+    \put(0.86211264,0.36217601){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$8$}}}%
+    \put(0.97771556,0.36469581){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$12$}}}%
+    \put(0.73507996,0.33722723){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$t(0,d) \,(10^{-15}s)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{LAcombined.pdf}}%
+    \put(0.59147557,0.38672689){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.58391611,0.50127425){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$5$}}}%
+    \put(0.58391611,0.60533367){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10$}}}%
+    \put(0.59147568,0.70394527){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.5813963,0.82897996){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10$}}}%
+    \put(0.5813963,0.9460471){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$20$}}}%
+    \put(0.61497083,0.6783387){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.73959736,0.6783387){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$1$}}}%
+    \put(0.86463245,0.6783387){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$2$}}}%
+    \put(0.98925898,0.6783387){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$3$}}}%
+    \put(0.57090885,0.59988494){\color[rgb]{0,0,0}\rotatebox{89.431006}{\makebox(0,0)[lb]{\smash{$P_T(t(0,d)) \, (10^{14}s^{-1})$}}}}%
+    \put(0.72155035,0.93807933){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta k = 0.08 \text{{\AA}}^{-1}$}}}%
+    \put(0.81260252,0.84702701){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.02 \text{{\AA}}^{-1}$}}}%
+    \put(0.69553535,0.63134853){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta k = 0.08 \text{{\AA}}^{-1}$}}}%
+    \put(0.74756528,0.50127425){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.04 \text{{\AA}}^{-1}$}}}%
+    \put(0.85162492,0.44924425){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.02 \text{{\AA}}^{-1}$}}}%
+    \put(0.74756528,0.8860494){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.04 \text{{\AA}}^{-1}$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{LAcombined.pdf}}%
+    \put(0.03902337,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.0$}}}%
+    \put(0.10850028,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.1$}}}%
+    \put(0.17389027,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.2$}}}%
+    \put(0.24336717,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.3$}}}%
+    \put(0.31284405,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.4$}}}%
+    \put(0.38232102,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.5$}}}%
+    \put(0.44771104,0.0382487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0.6$}}}%
+    \put(0.00476129,0.05554926){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-10$}}}%
+    \put(0.02676275,0.20417604){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$0$}}}%
+    \put(0.01858896,0.35130346){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$10$}}}%
+    \put(-0.01410606,0.27120092){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$y \, \text{({\AA})}$}}}%
+    \put(0.24336717,0.00626017){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$t\,(10^{-14}s)$}}}%
+    \put(0.0132314,0.98522016){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\boldsymbol{1a)}$}}}%
+    \put(0.0132314,0.43085509){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\boldsymbol{1b)}$}}}%
+    \put(0.56759647,0.98522016){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\boldsymbol{2a)}$}}}%
+    \put(0.56759647,0.54424795){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\boldsymbol{2b)}$}}}%
+    \put(0.56759647,0.33006141){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\boldsymbol{3)}$}}}%
+  \end{picture}%
+\endgroup%
