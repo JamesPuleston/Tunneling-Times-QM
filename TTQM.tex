@@ -174,7 +174,7 @@ Throughout this essay I use the physical system described in (B{\"u}ttiker 1983)
 where $T$ is the transmission probability and $R = 1-T$ is the reflection probability (B{\"u}ttiker 1983).
 
 \begin{proof}
-	\noindent First I introduce a new coordinate system so that the boundaries of the barrier become $0,d \text{ i.e. } \tilde{y} = y+\frac{d}{2}$. Then, denoting the wave functions to the left of, inside and to the right of the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
+	\noindent First I introduce a new coordinate system so that the boundaries of the barrier become $0,d \text{ i.e. } \tilde{y} = y+\frac{d}{2}$. Then, denoting the wave functions to the left of, inside, and to the right of the barrier as $\psi_{1}, \psi_{2}, \psi_{3}$ respectively, yields:
 
 \begin{subequations}
 \begin{align}
@@ -320,7 +320,7 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 \caption{Gaussian wave packet (\ref{gauss1}) showing the carrier wave (black) and amplitude modulating envelope wave (red).}
 \end{figure}
 
-\noindent In this instance the integral in (\ref{gauss1}) can be accurately calculated by Taylor expansion of the dispersion relation around $k_0$ to first order. However this will not necessarily work for other plane waves, for example those in (\ref{wavefunction}). To progress one can use the stationary phase approximation; given Fourier coefficient $\phi(k)$ sharply localised around $k=k_0$, the integral (cf. (\ref{gauss1})) has non-zero value by dint of contributions from the integrand only in the region $k\approx k_0$, only if the plane wave term oscillates on scales larger than the region around $k_0$ (the wave phase is 'stationary` in $k-$space). 
+\noindent In this instance the integral in (\ref{gauss1}) can be accurately calculated by Taylor expansion of the dispersion relation around $k_0$ to first order. However this will not necessarily work for other plane waves, for example those in (\ref{wavefunction}). To progress one can use the stationary phase approximation; given Fourier coefficient $\phi(k)$ sharply localised around $k=k_0$, the integral (cf. (\ref{gauss1})) has non-zero value by dint of contributions from the integrand only in the region $k\approx k_0$, only if the plane wave term oscillates on scales larger than the region around $k_0$ (the wave phase is `stationary' in $k-$space). 
 
 \noindent Applying this method to the incident and transmitted plane waves in (\ref{wavefunction})(\ref{cont0}) (accounting for time evolution under the time evolution operator $U(t)=e^{-iEt/\hbar}$) yields:
 
@@ -342,7 +342,7 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 \noindent (An identical result is obtained for a wave packet reflected from the barrier.) (cf. B{\"u}ttiker 1983 (3.1)).
 
 \noindent Equation (\ref{buttikerphasetime}) can be calculated explicitly using equation (\ref{phasechange}):
-
+\begin{subequations}
 \begin{align}
 	\frac{m}{\hbar k}\frac{d\Delta\phi}{dk}&=\frac{m}{\hbar k}\frac{d}{dk}\left(\arctan{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]}\right) \\
 					       &=\frac{m}{\hbar k}\frac{1}{\left[\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right]^2+1}\frac{1}{2}\frac{d}{dk}\left(\frac{k^2-\kappa^2}{k\kappa}\tanh{\kappa d}\right) \\ \intertext{Recalling the relation between $k$ and $\kappa$ in (\ref{wavefunction}), the derivative term evaluates to:}
@@ -352,11 +352,11 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 	\{\dots\} &= \frac{k_0^4}{k^2\kappa^3}\frac{\sinh{2\kappa d}}{2}+\frac{d}{\kappa}(\kappa^2-k^2) \text{ where } k_0^2 := k^2+\kappa^2\\ \intertext{yielding the final result:}
 	\tau_\phi &= \frac{m}{\hbar k \kappa}\frac{2k^2\kappa d(\kappa^2-k^2)+k_0^4\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}} \label{phasedelaytime}
 \end{align}
-
-\noindent B{\"u}ttiker 1983 defines this as the phase-delay time of the scattering process. Hauge and St{\o}vneng 1989 take an alternative approach and introduce an interval $(y_1, y_2)$ containing the barrier (i.e. $y_1<\frac{-d}{2},y_2>\frac{d}{2}$). Using (\ref{incidentpeak}) and (\ref{transmittedpeak}) they define (cf. Hauge and St{\o}vneng 1989 (2.4)) the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
+\end{subequations}
+\noindent This is defined as the phase-delay time of the scattering process (cf. B{\"u}ttiker (1983) (3.2)). The same result is achieved via a different approach by Hauge and St{\o}vneng (1989); they introduce an interval $(y_1, y_2)$ containing the barrier (i.e. $y_1<\frac{-d}{2},y_2>\frac{d}{2}$) and using (\ref{incidentpeak}) and (\ref{transmittedpeak}) define (cf. Hauge and St{\o}vneng (1989) (2.4)) the spatial delay $\delta y_T$ as the change in phase induced by the barrier and corresponding temporal delay $\delta\tau_T$ for the transmitted wave packet:
 
 \begin{equation}
-	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right] \quad \text{where $v(k) = \frac{\hbar k}{m}$ is the group velocity.}
+	\delta y_T = \frac{d\Delta\phi}{dk}-d \quad \delta\tau_T=\frac{1}{v(k)} \left[\frac{d\Delta\phi}{dk}-d\right] \quad \text{where $v(k) = \frac{\hbar k}{m}$ is the group velocity}
 	\label{transmittedphaseshift}
 \end{equation}
 
@@ -367,7 +367,7 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 	\label{reflectedphaseshift}
 \end{equation}
 
-\noindent They subsequently define (cf. Hauge and St{\o}vneng 1989 (2.5, 2.6)) the total phase time for transmission:
+\noindent They subsequently define (cf. Hauge and St{\o}vneng (1989) (2.5, 2.6)) the total phase time for transmission:
 
 \begin{equation}
 	\tau_T(x_1,x_2;k) = \frac{1}{v(k)}[x_2-x_1+\delta y_T]
@@ -381,7 +381,7 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 
 \noindent where the minus sign before the spatial delay is picked up due to the wave packet travelling in the opposite direction.
 
-\noindent By linearly extrapolating the interval $(y_1,y_2) \rightarrow (-\frac{d}{2},\frac{d}{2})$, one defines the \textit{extrapolated phase times} (cf. Hauge and St{\o}vneng 1989 (2.7, 2.8)):
+\noindent By linearly extrapolating the interval $(y_1,y_2) \rightarrow (-\frac{d}{2},\frac{d}{2})$, one defines the \textit{extrapolated phase times} (cf. Hauge and St{\o}vneng (1989) (2.7, 2.8)):
 
 \begin{align}
 	\Delta\tau_T(-\frac{d}{2},\frac{d}{2};k) &= \frac{1}{v(k)}[d+\delta y_T] \\
@@ -393,22 +393,27 @@ Plane wave solutions to the quantum potential barrier (\ref{wavefunction})(\ref{
 \subsection{Dwell Time}
 \label{subsection:dwelltime}
 
-The dwell time $\tau_D$ is defined as the ratio of the number of particles within the barrier to the incident flux, $\tau_D = \frac{N}{j}$. Clearly this does not distinguish between the scattering channels (reflected or transmitted), so the dwell time is the time a particle spends in the barrier region, averaged over scattering channels.
+The dwell time $\tau_D$ is an expression of the average time spent by a particle in the barrier region, regardless of whether it it ultimately transmitted or reflected (Hauge and St{\o}vneng (1989)). Formally it is defined as the ratio of the average number of particles within the barrier region to the average number entering or leaving the barrier per unit time (quantified by the incident flux j) (B{\"u}ttiker (1983), Leavens and Aers (1989)):
 
-\noindent One finds for the number of particles in the barrier:
+\begin{equation}
+	\tau_D = \frac{\int_{-d/2}^{d/2}dy\,|\psi(t,y)|^2}{j(t,y)}
+	\label{dwelltimedef}
+\end{equation}
 
+\noindent Evaluating this quantity for the wave function inside the barrier region (\ref{wavefunction}) yields:
+\begin{subequations}
 \begin{align}
-	N&=\int_{\frac{-d}{2}}^{\frac{d}{2}}|\psi|^2dy \\
-	|\psi|^2 &= \frac{T}{4\kappa^2}\left[(\kappa+ik)(\kappa-ik)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+(\kappa+ik)^2+(\kappa-ik)^2\right] \\
-		 &= \frac{T}{4\kappa^2}\left[(\kappa^2+k^2)\left(e^{\kappa(2x-d)}+e^{-\kappa(2x-d)}\right)+2(\kappa^2-k^2)\right] \\
-	\implies N &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation (\ref{transmissionprobability}) for $T$:}
-		 N &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\\ \intertext{and for the incident flux with $\psi = e^{iky}$:
+	\int_{-d/2}^{d/2}\,dy|\psi(y)|^2&=\int_{-d/2}^{d/2}\,dy\frac{T}{4\kappa^2}\left[(\kappa+ik)(\kappa-ik)\left(e^{\kappa(2y-d)}+e^{-\kappa(2y-d)}\right)+(\kappa+ik)^2+(\kappa-ik)^2\right] \\
+		 &= \int_{-d/2}^{d/2}\,dy\frac{T}{4\kappa^2}\left[(\kappa^2+k^2)\left(e^{\kappa(2y-d)}+e^{-\kappa(2y-d)}\right)+2(\kappa^2-k^2)\right] \\
+		 &= \frac{T}{4\kappa^2}\left[\frac{k_0^2}{\kappa}\sinh{2\kappa d}+2(\kappa^2-k^2)d\right] \\ \intertext{using equation (\ref{transmissionprobability}) for $T$:}
+		 &= \frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\\ \intertext{and for the incident flux with $\psi(y) = e^{iky}$:
 }
 j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{\partial \psi^{*}}{\partial y}\right) \label{1dflux}\\ 
-	  &= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k) \\ \intertext{such that:}
+  &= -\frac{i\hbar}{2m}(2ik) = \frac{\hbar k}{m} = v(k) \\ \intertext{such that (cf. B{\"u}ttiker (1983) (3.6)):}
 	\tau_D &= \frac{1}{v(k)}\frac{k^2}{\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
 	\label{dwelltime}
 \end{align}
+\end{subequations}
 
 \noindent The phase times $\tau_T \text{ and } \tau_R$ represent conditional averages over mutually exclusive events (a particle cannot both reflect and transmit). The dwell time $\tau_D$ is the average over all scattering channels, and hence the conditional averages must obey the probabilistic rule:
 
@@ -417,12 +422,11 @@ j &= -\frac{i\hbar}{2m}\left(\psi^{*}\frac{\partial\psi}{\partial y}-\psi \frac{
 	\label{dwellcondition}
 \end{equation}
 
-\noindent where $T \text{ and } R = 1-T$ are transmission and reflection probabilities respectively. Comparison of equations (\ref{phasedelaytime}) and (\ref{dwelltime}) show this consistency check is not satisfied. Resolution of this issue comes from noticing that attaching \textit{physical significance} to the time in (\ref{phasedelaytime}) is incorrect, as it requires the assumption that motion outside of the barrier is that of a free particle. This is valid on the transmitted side of the barrier, however during approach to the barrier the incoming wave packet interferes with the reflected wave packet and hence motion can no longer be assumed to be free.
-
+\noindent where $T \text{ and } R = 1-T$ are transmission and reflection probabilities respectively. Comparison of equations (\ref{phasedelaytime}) and (\ref{dwelltime}) show this consistency check is not satisfied. Resolution of this issue comes from noticing that attaching \textit{physical significance} to the time in (\ref{phasedelaytime}) is incorrect, as it requires the assumption that motion outside of the barrier is that of a free particle (Hauge and St{\o}vneng (1989 pp. 924)). This is valid on the transmitted side of the barrier, however during approach to the barrier the incoming wave packet interferes with the reflected wave packet and hence motion can no longer be assumed to be free.
 \subsection{Continuous Cyclic Quantum Clock}
 \label{subsection:ccqc}
 
-In this section I present a theoretical model of a continuous cyclic quantum clock as provided by Hilgevoord. The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
+In this section I present a theoretical model of a continuous cyclic quantum clock as provided by Hilgevoord (2002). The angular variable $\phi$ plays the role of the clock variable and is represented by the operator $\hat{\Phi}$. An angular momentum operator $\hat{L}$ is also introduced and the two operators in the angular representation are given by:
 
 \begin{equation}
 	\hat{\Phi} = \phi \quad \hat{L} = -i \frac{d}{d\phi}
@@ -461,6 +465,7 @@ In this section I present a theoretical model of a continuous cyclic quantum clo
 
 \noindent Introducing the Hamiltonian $\hat{H}=\omega \hat{L}$, the time evolution operator $U(t) = e^{-iHt}$ acts as:
 
+\begin{subequations}
 \begin{align}
 \hat{L}e^{-im\phi}\ket{m} &= e^{-im\phi}\hat{L}\ket{m} \text{ by linearity of } \hat{L} \\
 				  &= me^{-im\phi}\ket{m} \\
@@ -469,34 +474,35 @@ In this section I present a theoretical model of a continuous cyclic quantum clo
 				   &= (2\pi)^{-\frac{1}{2}}\sum_{m=-\infty}^{\infty}e^{-i\omega mt}e^{-im\phi}\ket{m} \\
 				   &= \ket{\phi+\omega t}
 \end{align}
-
+\end{subequations}
 \noindent by setting $\omega = 1, \space \phi$ plays exactly the same role as a time variable $t$.
 
 \subsection{Discrete Cyclic Quantum Clock}
 \label{subsection:dcqc}
-A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$, as presented by Peres in [...]. Hence the clock has an odd number $N = 2j+1$ of states represented by wave functions
+A discrete cyclic quantum clock can be modelled by limiting the sum in equation (\ref{phiexpansion}) to values of \linebreak $m \text{ satisfying } -j \leq m \leq j$, as presented by in Peres (1980). The clock has an odd number $N = 2j+1$ of states represented by wave functions
 
 \begin{equation}
 	u_m(\phi) = (2\pi)^{-\frac{1}{2}}e^{im\phi}, m = -j,\dots, j \text{ and } 0 \leq \phi \leq 2\pi
 \end{equation}
 
 \noindent One can construct an alternative orthogonal basis for the clock's wave functions
-
+\begin{subequations}
 \begin{align}
-	v_k(\phi) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-\frac{2\pi ikm}{N}}u_m \label{vkexpansion}\\
-		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\phi-\frac{2\pi k}{N})}]^m \quad \tilde{m} = m+j \\
-		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}-j} \\
-		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\phi-\frac{2\pi k}{N})}]^{\tilde{m}} \\
-		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-\frac{2\pi k}{N})}]^{\frac{1-N}{2}}\left(\frac{1-(e^{i(\phi-\frac{2\pi k}{N})})^N}{1-e^{i(\phi-\frac{2\pi k}{N})}}\right) \\
+	v_k(\phi) &= N^{-\frac{1}{2}}\sum_{m=-j}^j e^{-2\pi ikm/N}u_m \label{vkexpansion}\\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{m=-j}^j [e^{i(\phi-2\pi k/N)}]^m \quad \tilde{m} = m+j \\
+		    &= (2\pi N)^{-\frac{1}{2}}\sum_{\tilde{m}=0}^{2j} [e^{i(\phi-2\pi k/N)}]^{\tilde{m}-j} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-2\pi k/N)}]^{\frac{1-N}{2}}\sum_{\tilde{m}=0}^{2j}[e^{i(\phi-2\pi k/N)}]^{\tilde{m}} \\
+		    &= (2\pi N)^{-\frac{1}{2}}[e^{i(\phi-2\pi k/N)}]^{\frac{1-N}{2}}\left(\frac{1-(e^{i(\phi-2\pi k/N)})^N}{1-e^{i(\phi-2\pi k/N)}}\right) \\
 		    &= (2\pi N)^{-\frac{1}{2}}\frac{\sin{\frac{N}{2}(\phi-\frac{2\pi k}{N})}}{\sin{\frac{1}{2}(\phi-\frac{2\pi k}{N})}} \text{ for } k = 0,\dots,N-1.
 \end{align}
+\end{subequations}
 
 \noindent For large $N$ these functions have a sharp peak at $\phi = \frac{2\pi k}{N}$ which we visualise as pointing to the $k^{th}$ hour with angle uncertainty $\pm \frac{\pi}{N}$:
 
 \begin{figure}[ht]
 \centering
 \includegraphics{plot1.pdf}
-\caption{hello}
+\caption{The wave functions of the discrete cyclic quantum clock are sharply peaked around $\phi = \frac{2\pi k}{N}$}
 \end{figure}
 
 \noindent One can then define projection operators $P_kv_m=\delta_{km}v_m$ and a clock time operator $T_c = \tau\sum{kP_k}$ where $\tau$ is the resolution of the clock. The eigenvectors of $T_c$ are $v_k$ with eigenvalues $t_k = k\tau, k=0,\dots,N-1$. Hence measuring $T_c$ yields discrete approximations to the true time, just as analog and digital clocks do. 
@@ -516,42 +522,45 @@ A discrete cyclic quantum clock can be modelled by limiting the sum in equation 
 \end{equation}
 
 \noindent whence expanding the time evolution operator as a Taylor series gives:
-
+\begin{subequations}
 \begin{align}
-	e^{-\frac{iH_ct}{\hbar}}u_m &= e^{-im\omega t}u_m = (2\pi)^{-\frac{1}{2}}e^{im(\theta-\omega t)} \\
-	\implies e^{-\frac{iH_c\tau}{\hbar}}v_k &= N^{-\frac{1}{2}}\sum_{m}e^{-\frac{2\pi ikm}{N}}e^{-\frac{2\pi im}{N}}u_m \\
-						       &= N^{-\frac{1}{2}}\sum_{m}e^{-2\pi i \frac{m}{N}(k+1)}u_m \\
+	e^{-iH_ct/\hbar}u_m &= e^{-im\omega t}u_m = (2\pi)^{-\frac{1}{2}}e^{im(\theta-\omega t)} \\
+	\implies e^{-iH_c\tau/\hbar}v_k &= N^{-\frac{1}{2}}\sum_{m}e^{-2\pi ikm/N}e^{-2\pi im/N}u_m \\
+						       &= N^{-\frac{1}{2}}\sum_{m}e^{-2\pi im(k+1)/N}u_m \\
 						       &= v_{k+1}
 \end{align}
+\end{subequations}
 
 \subsubsection{Application: Atomic Decay}
-One can apply the construction of the quantum clock to model atomic decay. The atom-clock system has Hamiltonian $H=H_a+P_0H_c$ where $H_a$ is the Hamiltonian of the atom, $H_c$ the Hamiltonian of the clock and $P_0$ the projection operator for the atom's undecayed state, such that the clock stops running when the atom decays. $H_a$ is of the form $H_a=H_0+V$ where $H_0$ has a continuous spectrum $H_0\phi(E) = E\phi(E) \quad E>E_{min}$, plus one discrete eigenstate $\phi_0$ with energy $E_0>E_{min}$. The non vanishing matrix elements of $V$ are denoted $V(E) := \braket{\phi(E)|V|\phi_0}$, which is assumed to be almost constant in $E$ over a large domain on both sides of $E_0$.
+One can apply the construction of the quantum clock to model atomic decay (Peres (1980 Section 4)). The atom-clock system has Hamiltonian $H=H_a+P_0H_c$ where $H_a$ is the Hamiltonian of the atom, $H_c$ the Hamiltonian of the clock and $P_0$ the projection operator for the atom's undecayed state, such that the clock stops running when the atom decays. $H_a$ is of the form $H_a=H_0+V$ where $H_0$ has a continuous spectrum $H_0\phi(E) = E\phi(E) \quad E>E_{min}$, plus one discrete eigenstate $\phi_0$ with energy $E_0>E_{min}$. The non vanishing matrix elements of $V$ are denoted $V(E) := \braket{\phi(E)|V|\phi_0}$, which is assumed to be almost constant in $E$ over a large domain on both sides of $E_0$.
 
 \noindent The wave function for the atom can be expressed as:
 
 \begin{equation}
-	\psi = a_0\phi_0e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)\phi(E)e^{-\frac{iEt}{\hbar}}
+	\psi = a_0\phi_0e^{-iE_0t/\hbar}+\int dE\, a(E)\phi(E)e^{-iEt/\hbar}
 \end{equation}
 
 \noindent Application of the Schr{\"o}dinger equation for the atom yields:
 
 \begin{equation}
-	i\hbar \dot{a}(E) = V(E)a_0e^{\frac{i(E-E_0)t}{\hbar}}
+	i\hbar \dot{a}(E) = V(E)a_0e^{i(E-E_0)t/\hbar}
 	\label{aODE}
 \end{equation}
 
-\noindent Proof:
 
+\begin{proof}
+\begin{subequations}
 \begin{align}
-	\ket{\psi} &= a_0\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\,a(E)\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \\
-	\implies (H_0+V)\ket{\psi} &= a_0E_0\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)E\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \\ 
-				   &+a_0V\ket{\phi_0}e^{-\frac{iE_0t}{\hbar}}+\int dE\, a(E)V\ket{\phi(E)}e^{-\frac{iEt}{\hbar}} \nonumber\\
+	\ket{\psi} &= a_0\ket{\phi_0}e^{-iE_0t/\hbar}+\int dE\,a(E)\ket{\phi(E)}e^{-iEt/\hbar} \\
+	\implies (H_0+V)\ket{\psi} &= a_0E_0\ket{\phi_0}e^{-iE_0t/\hbar}+\int dE\, a(E)E\ket{\phi(E)}e^{-iEt/\hbar} \\ 
+				   &+a_0V\ket{\phi_0}e^{-iE_0t/\hbar}+\int dE\, a(E)V\ket{\phi(E)}e^{-iEt/\hbar} \nonumber\\
 				   &= i\hbar \frac{d\ket{\psi}}{dt}
 \end{align}
+\end{subequations}
 
 \noindent Taking the inner product with $\bra{\phi(E')}$ on both sides and using the orthogonality conditions yields the final result.
-
-\noindent $a_0$ is given by the Weisskopf-Wigner ansatz, $a_0 = e^{-\frac{\gamma t}{\hbar}}$. Substitution into (\ref{aODE}) and taking the limit as $t \rightarrow \infty$ yields:
+\end{proof}
+\noindent $a_0$ is given by the Weisskopf-Wigner ansatz, $a_0 = e^{-\gamma t/\hbar}$. Substitution into (\ref{aODE}) and taking the limit as $t \rightarrow \infty$ yields:
 
 \begin{equation}
 	\lim_{t\to\infty}a(E) = \frac{V(E)}{E-E_0+i\gamma}
@@ -560,7 +569,7 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 \noindent and 
 
 \begin{equation}
-	\lim_{t\to\infty}\psi(t) = \int dE\,\frac{V(E)\phi(E)e^{-\frac{iEt}{\hbar}}}{E-E_0+i\gamma}
+	\lim_{t\to\infty}\psi(t) = \int dE\,\frac{V(E)\phi(E)e^{-iEt/\hbar}}{E-E_0+i\gamma}
 \end{equation}
 
 \noindent Normalisation of the wave function implies:
@@ -589,21 +598,22 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 \noindent In the limit of large $t$ the combined state of the atom and clock is:
 
 \begin{equation}
-	\psi = N^{-\frac{1}{2}}\sum u_n \int dE \, \frac{V(E)\phi(E)e^{-\frac{iEt}{\hbar}}}{E-E_0-n\hbar\omega+i\gamma}
+	\psi = N^{-\frac{1}{2}}\sum u_n \int dE \, \frac{V(E)\phi(E)e^{-iEt/\hbar}}{E-E_0-n\hbar\omega+i\gamma}
 \end{equation}
 
-\noindent Peres subsequently derives the density matrix representing the state of the clock:
+\noindent The density matrix representing the state of the clock is given by (Peres (1980 pp. 555)):
 
 \begin{equation}
 	\rho = Tr_a(\ket{\psi}\bra{\psi}) = \frac{1}{N}\sum \frac{\ket{u_n}\bra{u_m}}{1+i\alpha(n-m)}
 \end{equation}
 
 \noindent where $Tr_a$ indicates the trace is to be taken over the atom degrees of freedom only, and $\alpha = \frac{\hbar\omega}{2\gamma}$ is the angle through which the pointer turns during an average atom lifetime $\frac{\hbar}{2\gamma}$. From this the probability $\langle P_k \rangle$ of finding the clock stopped at time $t_k = k\tau \stackrel{(\ref{clockhamiltonian})}{=} \frac{2\pi k}{N\omega}$ is given by:
-
+\begin{subequations}
 \begin{align}
 	Tr(\rho P_k) &= \frac{1}{N}\sum_{m,n} \frac{\braket{v_k|u_n}\braket{u_m|v_k}}{1+i\alpha(n-m)} \\
-		     &\stackrel{(\ref{vkexpansion})}{=} \frac{1}{N^2}\sum_{m,n=-j}^j \frac{e^{\frac{2\pi ik(n-m)}{N}}}{1+i\alpha(n-m)}
+		     &\stackrel{\mathclap{(\ref{vkexpansion})}}{=} \frac{1}{N^2}\sum_{m,n=-j}^j \frac{e^{2\pi ik(n-m)/N}}{1+i\alpha(n-m)}
 \end{align}
+\end{subequations}
 
 \noindent The double summation can be evaluated as follows: Let $p=n-m \text{ and } q=n+m$. The summation becomes:
 
@@ -628,17 +638,19 @@ One can apply the construction of the quantum clock to model atomic decay. The a
 
 \noindent Next noting that for fixed $p$ of given parity, all $q \in \{q_1(p),\dots,q_2(p)\}$ have the same parity and hence:
 
+\begin{subequations}
 \begin{align}
 	Tr(\rho P_k) &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}\sum_{q=-2j+|p|}^{2j-|p|}1 \\
 		     &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}\left[\frac{2j-|p|-(-2j+|p|)}{2}+1\right] \\
 		     &= \frac{1}{N^2}\sum_{p=-2j}^{2j}\frac{(N-|p|)e^{i\theta p}}{1+i\alpha p} \approx \frac{1}{N}\sum_{p=-2j}^{2j}\frac{e^{i\theta p}}{1+i\alpha p}
 \end{align}
+\end{subequations}
 
-\noindent This result can be recognised as the Fourier series expansion of $\frac{2\pi e^{-\frac{\theta}{\alpha}}}{N\alpha\left(1-e^{-\frac{2\pi}{\alpha}}\right)}$, and hence the clocks stop (atoms decay) according to the exponential decay law as expected.
+\noindent This result can be recognised as the Fourier series expansion of $\frac{2\pi e^{-\theta/\alpha}}{N\alpha\left(1-e^{-2\pi/\alpha}\right)}$, and hence the clocks stop (atoms decay) according to the exponential decay law as expected.
 
 \subsection{Larmor Precession}
 \label{subsection:larmorprecession}
-In this section I consider the quantum barrier experiment as in section \ref{subsection:quantumbarrier}, but now with the additional constraints that the particles carry spin $s=\frac{1}{2}$ polarised in the x-direction, and with the presence of a small magnetic field $\boldsymbol{B_0}$ parallel with the z-axis and confined to the width of the barrier:
+In this section I consider the quantum barrier experiment as in section \ref{subsection:quantumbarrier}, but now with the additional constraints that the particles carry spin $s=\frac{1}{2}$ polarised in the x-direction, and with the presence of a small magnetic field $\boldsymbol{B_0}$ parallel with the z-axis and confined to the width of the barrier (B{\"u}ttiker (1983)):
 
 \begin{figure}[ht]
     \centering
@@ -659,7 +671,7 @@ In this section I consider the quantum barrier experiment as in section \ref{sub
 	\ket{x; \pm} = \frac{1}{\sqrt{2}}\ket{z;+} \pm \frac{1}{\sqrt{2}}\ket{z;-}
 \end{equation}
 
-\noindent with z-components $\pm \frac{\hbar}{2}$ each with probability $\frac{1}{2}$. Inside the barrier the magnetic field induces a Zeeman shift $\pm \frac{\hbar\omega_L}{2}$ to the energies of the particles, giving rise to different exponential decays of the wave functions inside the barrier (\ref{wavefunction})\footnote{Note I ignore the exponentially growing term in (\ref{wavefunction}) because it is multiplied by a suppressive pre-factor $e^{-\frac{\kappa d}{2}}$ in equation (\ref{cont0}).}:
+\noindent with z-components $\pm \frac{\hbar}{2}$ each with probability $\frac{1}{2}$. Inside the barrier the magnetic field induces a Zeeman shift $\pm \frac{\hbar\omega_L}{2}$ to the energies of the particles, giving rise to different exponential decays of the wave functions inside the barrier (\ref{wavefunction})\footnote{Note I ignore the exponentially growing term in (\ref{wavefunction}) because it is multiplied by a suppressive pre-factor $e^{-\kappa d/2}$ in equation (\ref{cont0}).}:
 
 \begin{equation}
 	\kappa_{\pm}=(k_0^2-k^2\mp \frac{m\omega_L}{\hbar})^{\frac{1}{2}}
@@ -668,18 +680,19 @@ In this section I consider the quantum barrier experiment as in section \ref{sub
 \noindent where $\kappa_{+}(\kappa_{-})$ corresponds to particles with spin z parallel(antiparallel) to the magnetic field.
 
 \noindent In the limit $\boldsymbol{B_0} \propto \omega_L \text{ is small}, \kappa_{\pm}$ can be approximated as:
-
+\begin{subequations}
 \begin{align}
    \kappa_{\pm} &= \left(k^{2}_{0}-k^{2} \mp \frac{m \omega_{L}}{\hbar}\right)^{\frac{1}{2}}\\	
 		&= \kappa \left(1 \mp \frac{m \omega_{L}}{\hbar \kappa^{2}}\right)^{\frac{1}{2}}\\
 		&\approx \kappa \left(1 \mp \frac{m \omega_{L}}{2\hbar \kappa^{2}}\right)\\
 		&= \kappa \mp \frac{m \omega_{L}}{2\hbar \kappa} \label{smallfieldkappa}
 \end{align}
+\end{subequations}
 
 \noindent As $\kappa_{+} < \kappa_{-}$, particles with spin aligned with the magnetic field penetrate more easily than particles with spin anti-aligned with the field, reflected in the transmission probability:
 
 \begin{align}
-	T &\stackrel{(\ref{transmissionprobability})}{=} \left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}\\
+	T &\stackrel{\mathclap{(\ref{transmissionprobability})}}{=} \left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}\\
 	  &\approx \left[\frac{(k^2+\kappa^2)^2}{4k^2\kappa^2}\frac{e^{2\kappa d}}{4}\right]^{-1} \\
 	&= \frac{16k^2\kappa^2}{k^2+\kappa^2}e^{-2\kappa d} \\
 	\implies T_{\pm} &= Te^{\pm\omega_L \tau_z} 
@@ -710,7 +723,7 @@ where $\mathbb{1}$ is the $2 \times 2$ identity matrix and $\sigma_{x}, \sigma_{
 		\end{pmatrix}
 \end{align}
 
-As usual $|\psi_{\pm}(y)|^{2}dy$ is the probability of finding a particle \textit{upon measurement} with spin $\pm \frac{\hbar}{2}$ in the interval $y, y+dy$. I emphasise 'upon measurement' here as this is an important point of distinction between the orthodox and pilot-wave interpretations addressed in this essay. The incident beam is polarised in the x-direction:
+As usual $|\psi_{\pm}(y)|^{2}dy$ is the probability of finding a particle \textit{upon measurement} with spin $\pm \frac{\hbar}{2}$ in the interval $y, y+dy$. I emphasise 'upon measurement' here as this is an important point of distinction between the orthodox and pilot-wave interpretations addressed in this essay. The incident beam is polarised in the $x$-direction:
 \begin{align}
 	\psi = \frac{1}{\sqrt{2}}
 	\begin{pmatrix}
@@ -762,12 +775,13 @@ The transmitted particles have spinor:
 \end{equation}
 
 \noindent one finds for the expectation values of spin for the transmitted particles:
-
+\begin{subequations}
 \begin{align}
 	\langle S_z \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_z|\psi_T}=\frac{\hbar}{2}\frac{|D_+|^2+|D_-|^2}{|D_+|^2+|D_-|^2} \\
 	\langle S_y \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_y|\psi_T}=i\frac{\hbar}{2}\frac{D_+D_-^*-D_+^*D_-}{|D_+|^2+|D_-|^2} \\
 	\langle S_x \rangle_T &= \frac{\hbar}{2}\braket{\psi_T|\sigma_x|\psi_T}=\frac{\hbar}{2}\frac{D_+D_-^*+D_+^*D_-}{|D_+|^2+|D_-|^2}
 \end{align}
+\end{subequations}
 
 \noindent Using (\ref{cont0}) and the adjustments for the magnetic field outlined above, one finds:
 
@@ -787,11 +801,13 @@ Follows immediately from the fact that $T=|D|^2$.
 \end{equation}
 
 \begin{proof}
+\begin{subequations}
 \begin{align}
 	\langle S_y \rangle_T &= i\frac{\hbar}{2}\left(\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\right)\left(e^{i(\Delta\phi_+-\Delta\phi_-)}-e^{-i(\Delta\phi_+-\Delta\phi_-)}\right) \\
 			    &= i\frac{\hbar}{2}\left(\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\right)(2i\sin{(\Delta\phi_+-\Delta\phi_-)}) \\
 			    &=-\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}
 \end{align}
+\end{subequations}
 \end{proof}
 
 \begin{equation}
@@ -820,21 +836,22 @@ Follows immediately from the fact that $T=|D|^2$.
 \end{equation}
 
 \noindent one arrives at the analogous results for the reflected wave:
-
+\begin{subequations}
 \begin{align}
 	\langle S_z \rangle_R &= \frac{\hbar}{2}\frac{R_+-R_-}{R_++R_-}\\
 	\langle S_y \rangle_R &= -\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(R_+R_-)^{\frac{1}{2}}}{R_++R_-}\\
 	\langle S_x \rangle_R &= \hbar \cos{(\Delta\phi_+-\Delta\phi_-)}\frac{(R_+R_-)^{\frac{1}{2}}}{R_++R_-}
 \end{align}
-
+\end{subequations}
 \noindent Using the statement of particle conservation $R_+-R_-=-(T_+-T_-)$, one finds that:
 
-\begin{subequations}\label{stsrrelations}
-\begin{flalign}
-	\langle S_z \rangle_R &= -\langle S_z \rangle_T \frac{T_++T_-}{R_++R_-}&\\
+\begin{subequations}
+\label{stsrrelations}
+\begin{align}
+	\langle S_z \rangle_R &= -\langle S_z \rangle_T \frac{T_++T_-}{R_++R_-}\\
 	\langle S_y \rangle_R &= \langle S_y \rangle_T \left(\frac{R_+R_-}{T_+T_-}\right)^{\frac{1}{2}}\frac{T_++T_-}{R_++R_-} \\
 	\langle S_x \rangle_R &= \langle S_x \rangle_T \left(\frac{R_+R_-}{T_+T_-}\right)^{\frac{1}{2}}\frac{T_++T_-}{R_++R_-}
-\end{flalign}
+\end{align}
 \end{subequations}
 
 \noindent and hence $\langle S_z \rangle_R + \langle S_z \rangle_T = 0$, the statement of conservation of angular momentum. 
@@ -842,18 +859,22 @@ Follows immediately from the fact that $T=|D|^2$.
 \subsubsection{Infinitesimal Field}
 In this section I report the study of polarisation of the transmitted and reflected waves in the limit of an infinitesimal field. Using (\ref{smallfieldkappa}), one finds the result:
 
+\begin{subequations}
 \begin{align}
 	T_+-T_- &= T(\kappa_+)-T(\kappa_-)\\
 		&= \frac{T(k-\frac{m\omega_L}{2\hbar\kappa})-T(k+\frac{m\omega_L}{2\hbar\kappa})}{\frac{m\omega_L}{\hbar\kappa}}\times \frac{m\omega_L}{\hbar\kappa} \\
 		&=-\left(\frac{m\omega_L}{\hbar\kappa}\right)\frac{\partial T}{\partial \kappa} \label{netT}
 \end{align}
+\end{subequations}
 
 \noindent In equation (\ref{netT}) the Larmor frequency $\omega_L$ is multiplied by a time $\frac{m}{\hbar\kappa}\frac{\partial T}{\partial \kappa}$. This motivates the definition of the characteristic times $\tau_{zT}, \tau_{yT}, \tau_{xT}$ such that:
 
-\begin{subequations}  \label{characteristictransmissiontimes}
-	\begin{align}	\langle S_z \rangle_T &= \frac{\hbar}{2}\omega_L\tau_{zT} \\
-		\langle S_y \rangle_T &= -\frac{\hbar}{2}\omega_L\tau_{yT} \\
-		\langle S_x \rangle_T &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_{xT}^2}{2}\right)
+\begin{subequations}  
+\label{characteristictransmissiontimes}
+\begin{align}	
+	\langle S_z \rangle_T &= \frac{\hbar}{2}\omega_L\tau_{zT} \\
+	\langle S_y \rangle_T &= -\frac{\hbar}{2}\omega_L\tau_{yT} \\
+	\langle S_x \rangle_T &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_{xT}^2}{2}\right)
 \end{align}
 \end{subequations}
 
@@ -864,6 +885,7 @@ In this section I report the study of polarisation of the transmitted and reflec
 \end{equation}
 
 \begin{proof}
+\begin{subequations}
 \begin{align}
 	\langle S_z \rangle_T &\stackrel{\mathclap{(\ref{szT})}}{=}\,\frac{\hbar}{2}\frac{T_+-T_-}{T_++T_-}\\
 	&\approx \frac{\hbar}{4}\frac{T_+-T_-}{T}\\
@@ -871,6 +893,7 @@ In this section I report the study of polarisation of the transmitted and reflec
 	&=-\frac{m\omega_L}{\hbar\kappa}\frac{\hbar}{2}\frac{\partial\ln{T^{\frac{1}{2}}}}{d\kappa} \\
 	&=\frac{\hbar}{2}\omega_L\tau_{zT}
 \end{align}
+\end{subequations}
 \end{proof}
 
 \begin{equation}
@@ -878,6 +901,7 @@ In this section I report the study of polarisation of the transmitted and reflec
 \end{equation}
 
 \begin{proof}
+\begin{subequations}
 \begin{align}
 	\langle S_y \rangle_T &\stackrel{\mathclap{(\ref{syT})}}{=}\,-\hbar \sin{(\Delta\phi_+-\Delta\phi_-)}\frac{(T_+T_-)^{\frac{1}{2}}}{T_++T_-}\\
 	\sin{(\Delta\phi_+-\Delta\phi_-)} &\approx \Delta\phi_+-\Delta\phi_- \approx \Delta(\Delta\phi) \text{ where } \Delta\phi := \phi_+-\phi_-\\
@@ -886,6 +910,7 @@ In this section I report the study of polarisation of the transmitted and reflec
 \implies \langle S_y \rangle_T &= -\frac{\partial\Delta\phi}{\partial\kappa}\left(\frac{m\omega_L}{\hbar\kappa}\right) \\
 			       &=-\frac{\hbar}{2}\omega_L\tau_{yT}
 \end{align}
+\end{subequations}
 \end{proof}
 
 \begin{subequations}\label{taux}
@@ -905,15 +930,17 @@ In this section I report the study of polarisation of the transmitted and reflec
 \end{equation}
 
 \begin{proof}
-\begin{flalign}
-	\tau_{zT} &\stackrel{\mathclap{(\ref{tauz})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa} &\\
+\begin{subequations}
+\begin{align}
+	\tau_{zT} &\stackrel{\mathclap{(\ref{tauz})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial \ln{T^{\frac{1}{2}}}}{\partial\kappa} \\
 	\ln{T^{\frac{1}{2}}}&=\frac{m}{2\hbar\kappa}\frac{\partial}{\partial\kappa}\ln{\left[1+\frac{(k^2+\kappa^2)^2\sinh^2{\kappa d}}{4k^2\kappa^2}\right]} \\
 			    &=\frac{m}{2\hbar\kappa}\left[1+\frac{k_0^4\sinh^2{\kappa d}}{4k^2\kappa^2}\right]^{-1}\frac{1}{4k^2}\frac{\partial}{\partial\kappa}\left[\frac{k_0^4\sinh^2{\kappa d}}{\kappa^2}\right]\\ \intertext{the derivative term evaluates to:}
 	\frac{\partial}{\partial\kappa}[\dots]&=2\left(-\frac{k^4}{\kappa^3}+\kappa\right)\sinh^2{\kappa d}+\left(\frac{k^4}{\kappa^2}+2k^2+\kappa^2\right)d\sinh{2\kappa d} \\
 	\implies \tau_{zT} &= \frac{m}{2\hbar} \frac{\kappa}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\left[2\frac{\kappa^4-k^4}{\kappa^3}\sinh^2{\kappa d}+\frac{k^4\kappa+2k^2\kappa^3+\kappa^5}{\kappa^3}d\sinh{2\kappa d}\right] \\
 			&= \frac{m}{\hbar\kappa^2} \frac{1}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}\left[(\kappa^2-k^2)k_0^2\sinh^2{\kappa d}+\frac{1}{2}k_0^4\kappa d\sinh{2\kappa d}\right] \\
 			&= \frac{mk_0^2}{\hbar\kappa^2}\frac{(\kappa^2-k^2)\sinh^2{\kappa d}+\frac{1}{2}k_0^2\kappa d\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
-\end{flalign}
+\end{align}
+\end{subequations}
 \end{proof}
 
 \begin{equation}
@@ -921,12 +948,14 @@ In this section I report the study of polarisation of the transmitted and reflec
 \end{equation}
 
 \begin{proof}
-\begin{flalign}
-	\tau_{yT} &\stackrel{\mathclap{(\ref{tauy})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial\Delta\phi}{\partial\kappa} &\\
+\begin{subequations}
+\begin{align}
+	\tau_{yT} &\stackrel{\mathclap{(\ref{tauy})}}{=} -\left(\frac{m}{\hbar\kappa}\right)\frac{\partial\Delta\phi}{\partial\kappa} \\
 	       &=-\frac{m}{\hbar\kappa}\frac{1}{1+\left(\frac{k^2-\kappa^2}{2k\kappa}\tanh{\kappa d}\right)^2} \frac{\partial}{\partial\kappa}\left[\left(\frac{k}{2\kappa}-\frac{\kappa}{2k}\right)\tanh{\kappa d}\right] \\
 	       &=-\frac{m}{\hbar\kappa}\frac{4k^2\kappa^2}{4k^2\kappa^2+(k^2-\kappa^2)^2\tanh^2{\kappa d}}\left[-\left(\frac{k}{2\kappa^2}+\frac{1}{2k}\right)\tanh{\kappa d}+\left(\frac{k}{2\kappa}-\frac{\kappa}{2k}\right)\sech^2{\kappa d}\right] \\
 	       &=\frac{mk}{\hbar\kappa}\frac{2\kappa d(\kappa^2-k^2)+k_0^2\sinh{2\kappa d}}{4k^2\kappa^2+k_0^4\sinh^2{\kappa d}}
-\end{flalign}
+\end{align}
+\end{subequations}
 \end{proof}
 
 \noindent Note in taking $\frac{\partial\Delta\phi}{\partial\kappa}$, one assumes $k \text{ and } \kappa $ are no longer related by the equation in (\ref{wavefunction}) such that taking the derivative with respect to $\kappa$ whilst keeping $k$ constant makes sense.
@@ -935,79 +964,80 @@ In this section I report the study of polarisation of the transmitted and reflec
 \centering
 \includegraphics{plot3.pdf}
 \label{fig:tzvst0}
+\caption{Dependence of the characteristic transmission times and transmission probability on wavenumber.}
 \end{figure}
 
 \noindent One can define characteristic reflection times $\tau_{zR}, \tau_{yR}, \tau_{xR}$ analogous to those in (\ref{characteristictransmissiontimes}) such that:
 
 \begin{subequations}
-\begin{flalign}
-	\langle S_z \rangle_R &= \frac{\hbar}{2}\omega_L\tau_{zR}& \\
+\begin{align}
+	\langle S_z \rangle_R &= \frac{\hbar}{2}\omega_L\tau_{zR} \\
 	\langle S_y \rangle_R &= -\frac{\hbar}{2}\omega_L\tau_{yR} \\
 	\langle S_x \rangle_R &= \frac{\hbar}{2}\left(1-\frac{\omega_L^2\tau_{xR}^2}{2}\right)
-\end{flalign}
+\end{align}
 \end{subequations}
 
 \noindent By application of equations (\ref{stsrrelations}), one arrives at:
 
 \begin{subequations}
-\begin{flalign}
-	\tau_{zR}&=-\tau_{zT} \frac{T}{R}&\\
+\begin{align}
+	\tau_{zR}&=-\tau_{zT} \frac{T}{R}\\
 	\tau_{yR}&=\tau_{yT}\\
 \tau_{xR}&=(\tau_{yR}^2+\tau_{zR}^2)^{\frac{1}{2}}=\left(\tau_{yT}^2+\tau_{zT}^2 \frac{T^2}{R^2}\right)^{\frac{1}{2}}
-\end{flalign}
+\end{align}
 \end{subequations}
 
+\pagebreak
 \section{Tunnelling Times in the de Broglie-Bohm Interpretation}
 \label{section:dBB}
-
 \subsection{de Broglie-Bohm Theory}
 \label{subsection:dBBtheory}
-\noindent It is clear from the previous section that no definitive answer to the equation \textit{`How long does a particle take to tunnel through a quantum barrier'} has been agreed upon within the orthodox interpretation of quantum mechanics. In contrast, the de Broglie-Bohm (dBB) interpretation yields a unique and well-defined prescription for defining tunnelling times. The dBB theory is an interpretation of quantum mechanics built upon the following postulates:
+\noindent It is clear from the previous section that no definitive answer to the equation \textit{`How long does a particle take to tunnel through a quantum barrier'} has been agreed upon within the orthodox interpretation of quantum mechanics. In contrast, the de Broglie-Bohm (dBB) interpretation yields a unique and well-defined prescription for defining tunnelling times. The dBB theory is an interpretation of quantum mechanics built upon the following postulates (Holland (1993)):
 
 \begin{itemize}
 \item [P1] Individual physical systems comprise a wave propagating in space and time, and a point particle, the motion of which is guided by the wave.
-\item [P2] The wave is mathematically described by $\psi(t,\boldsymbol{x}) = Re^{\frac{iS}{\hbar}}, R=R(t,\boldsymbol{x}) \text{ is a real amplitude function, } \\S=S(t,\boldsymbol{x}) \text{ is a real phase function and} \psi(t,\boldsymbol{x}) \text{ satisfies the time dependent Schr{\"o}dinger equation.}$
-\item [P3] The velocity of the particle is given by $\boldsymbol{v} = \frac{1}{m}\nabla{S}$. The particle motion is obtained by solving this equation along with the specification of the initial condition of the particle, $\boldsymbol{x}(0)$.
-\item [P4] The probability of a particle \textit{being} between points $\boldsymbol{x} \text{ and } \boldsymbol{x + dx}$ at time $t$ is given by:
+\item [P2] The wave is mathematically described by $\psi(t,\boldsymbol{y}) = Re^{iS/\hbar}, R=R(t,\boldsymbol{y}) \text{ is a real amplitude function, } \\S=S(t,\boldsymbol{y}) \text{ is a real phase function and} \psi(t,\boldsymbol{y}) \text{ satisfies the time dependent Schr{\"o}dinger equation.}$
+\item [P3] The velocity of the particle is given by $\boldsymbol{v} = \frac{1}{m}\nabla{S}$. The particle motion is obtained by solving this equation along with the specification of the initial condition of the particle, $\boldsymbol{y}(0)$.
+\item [P4] The probability of a particle \textit{being} between points $\boldsymbol{y} \text{ and } \boldsymbol{y + dy}$ at time $t$ is given by:
 \begin{equation}
-	|\psi(t,\boldsymbol{x})|^2d^3x = R(t,\boldsymbol{x})^2d^3x
+	|\psi(t,\boldsymbol{y})|^2d^3y = R(t,\boldsymbol{y})^2d^3y
 \end{equation}
-The effect of this postulate is to extract from all possible motions of the particle those compatible with the initial distribution $R(0,\boldsymbol{x})$. Note how this differs from the orthodox interpretation in which $|\psi(t,\boldsymbol{x})|^2$ determines the probability density of finding a particle \textit{upon measurement}.
+The effect of this postulate is to extract from all possible motions of the particle those compatible with the initial distribution $R(0,\boldsymbol{y})$. Note how this differs from the orthodox interpretation in which $|\psi(t,\boldsymbol{y})|^2$ determines the probability density of finding a particle \textit{upon measurement}.
 \end{itemize}
 
-\noindent Substituting in $\psi = Re^{\frac{iS}{\hbar}}$ into the time dependent Schr{\"o}dinger equation yields:
+\noindent Substituting in $\psi = Re^{iS/\hbar}$ into the time dependent Schr{\"o}dinger equation yields:
 
 \begin{subequations}
-\begin{flalign}
-	&\frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0& \label{dBBHJ} \\
+\begin{align}
+	&\frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0 \label{dBBHJ} \\
 	&\frac{\partial R^2}{\partial t}+\nabla\cdot\left(\frac{R^2\nabla S}{m}\right)=0 \label{dBBcontinuity}
-\end{flalign}
+\end{align}
 \end{subequations}
 
 \begin{proof}
 \begin{subequations}
-\begin{flalign}
-i\hbar \frac{\partial\psi}{\partial t} &= \frac{-\hbar^2}{2m}\nabla^2\psi+V\psi&\\
+\begin{align}
+i\hbar \frac{\partial\psi}{\partial t} &= \frac{-\hbar^2}{2m}\nabla^2\psi+V\psi\\
 i\hbar\left(\dot{R}+\frac{i}{\hbar}R\dot{S}\right) &= -\frac{\hbar^2}{2m}\left(\nabla^2R+\frac{2i}{\hbar}\nabla R \nabla S-\frac{1}{\hbar^2}R(\nabla S)^2+\frac{i}{\hbar}R\nabla^2 S\right)+VR\\\intertext{Isolating real and imaginary parts yields:}
 -R\dot{S}&=-\frac{\hbar^2}{2m}\left(\nabla^2 R-\frac{R}{\hbar^2}(\nabla S)^2\right)+VR&\\
-	 &\implies \frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0\\
+\implies &\frac{\partial S}{\partial t}+\frac{(\nabla S)^2}{2m}-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}+V=0\\
 \hbar\dot{R} &= -\frac{\hbar}{2m}\left(2\nabla R\nabla S+R\nabla^2S\right)\\
-	     &\implies \frac{\partial R^2}{\partial t}+\nabla\cdot\left(\frac{R^2\nabla S}{m}\right)=0
-\end{flalign}
+\implies &\frac{\partial R^2}{\partial t}+\nabla\cdot\left(\frac{R^2\nabla S}{m}\right)=0
+\end{align}
 \end{subequations}
 \end{proof}
 
 \noindent Note that (\ref{dBBcontinuity}) can be written as:
 
 \begin{equation}
-	\frac{\partial P(t,\boldsymbol{x})}{\partial t}+\nabla \cdot \boldsymbol{j}(t,\boldsymbol{x})=0
+	\frac{\partial P(t,\boldsymbol{y})}{\partial t}+\nabla \cdot \boldsymbol{j}(t,\boldsymbol{y})=0
 \end{equation}
 
 \noindent where $P$ is the probability density and $\boldsymbol{j}$ is the 3-dimensional generalisation of the flux (\ref{1dflux}), and hence takes the form of the continuity equation. Note also equation (\ref{dBBHJ}) is a modified Hamilton-Jacobi equation, with additional term $Q=-\frac{\hbar^2}{2m}\frac{\nabla^2 R}{R}$, the `quantum potential energy'.
 
-\noindent As in P3 one defines the vector field $\boldsymbol{v} = \frac{1}{m}\nabla S$, which defines at each point in space at each instant in time the tangent to the particle's trajectory passing through that point. Given the gradient $\nabla S$ is orthogonal to level surfaces, the trajectories are orthogonal to surfaces $S=constant$, and are given by the solution of $\dot{\boldsymbol{x}}=\frac{1}{m}\nabla S(t,\boldsymbol{x})$, requiring specification of the initial condition $\boldsymbol{x}_0$. Hence the motion of the particle is completely deterministic once its initial position has been specified. Note one does not have to specify an initial velocity $\boldsymbol{v}_0$ as this is encoded in the initial wave $\psi_0(\boldsymbol{x})$ and is calculated using P2. Note also the important fact that no two different trajectories with the same wave $\psi(t,\boldsymbol{x})$ intersect. This is because at the point of intersection, both trajectories have the same velocity and position at the same point in time. As the motion of a particle is deterministic given the specification of an initial condition, the two trajectories will subsequently coincide for all times after the time of intersection. By time reversal invariance, the two trajectories must also have coincided for all anticedent times, a contradiction with our initial assumption.
+\noindent As in P3 one defines the vector field $\boldsymbol{v} = \frac{1}{m}\nabla S$, which defines at each point in space at each instant in time the tangent to the particle's trajectory passing through that point. Given the gradient $\nabla S$ is orthogonal to level surfaces, the trajectories are orthogonal to surfaces $S=constant$, and are given by the solution of $\dot{\boldsymbol{y}}=\frac{1}{m}\nabla S(t,\boldsymbol{y})$, requiring specification of the initial condition $\boldsymbol{y}_0$. Hence the motion of the particle is completely deterministic once its initial position has been specified. Note one does not have to specify an initial velocity $\boldsymbol{v}_0$ as this is encoded in the initial wave $\psi_0(\boldsymbol{y})$ and is calculated using P2. Note also the important fact that no two different trajectories with the same wave $\psi(t,\boldsymbol{y})$ intersect. This is because at the point of intersection, both trajectories have the same velocity and position at the same point in time. As the motion of a particle is deterministic given the specification of an initial condition, the two trajectories will subsequently coincide for all times after the time of intersection. By time reversal invariance, the two trajectories must also have coincided for all anticedent times, a contradiction with our initial assumption.
 
-From P3 it is clear that an ensemble of possible motions associated with the same wave is generated by varying the initial condition $\boldsymbol{x}_0$. Once specified, the laws governing the evolution of a physical system are entirely deterministic. The probabilistic nature of quantum mechanics, familiar from experiments such as the double-slit experiment, is recovered from the fact that giving a particle a precisely defined initial condition is empirically unrealisable. Hence given an ensemble of identical physical systems (a wave and point particle), it is the uncertainty of the initial position of the particles that gives rise to the probabilistic nature of quantum mechanics. 
+From P3 it is clear that an ensemble of possible motions associated with the same wave is generated by varying the initial condition $\boldsymbol{y}_0$. Once specified, the laws governing the evolution of a physical system are entirely deterministic. The probabilistic nature of quantum mechanics, familiar from experiments such as the double-slit experiment, is recovered from the fact that giving a particle a precisely defined initial condition is empirically unrealisable. Hence given an ensemble of identical physical systems (a wave and point particle), it is the uncertainty of the initial position of the particles that gives rise to the probabilistic nature of quantum mechanics. 
 
 \subsection{A Natural Definition of Tunnelling Time}
 \label{subsection:dBBtime}
@@ -1032,7 +1062,7 @@ For empirical purposes, the precise specification of the particle's initial cond
 \end{flalign}
 \end{subequations}
 
-\noindent where $|\psi(t,y)|^2 = \langle \delta(y-y(t,y_0)) \rangle$. This is in agreement with the dwell time derived by Sokolovski and Baskin.
+\noindent where $|\psi(t,y)|^2 = \langle \delta(y-y(t,y_0)) \rangle$. Leavens and Aers (1989 pp. 1204) argue this to be identical to the time derived above (\ref{dwelltimedef}).
 
 One can use the fact that particle trajectories do not intersect each other to define a starting point $y_0^c$ such that only trajectories $y(t,y_0)$ with $y_0 > y_0^c$ are ultimately transmitted, and trajectories with $y_0 < y_0^c$ are ultimately reflected. $y_0^c$ is defined by:
 
@@ -1075,10 +1105,10 @@ One can use the fact that particle trajectories do not intersect each other to d
 \noindent and hence are given by
 
 \begin{subequations}
-\begin{flalign}
-	P_T(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0-y_0^c))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0-y_0^c)\rangle}&\\
-	P_R(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0^c-y_0))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0^c-y_0)\rangle}&
-\end{flalign}
+\begin{align}
+	P_T(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0-y_0^c))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0-y_0^c)\rangle}\\
+	P_R(t(y_1,y_2))&:=\frac{\langle(\Theta(y_0^c-y_0))\delta[t(y_1,y_2)-t(y_0;y_1,y_2)]\rangle}{\langle\Theta(y_0^c-y_0)\rangle}
+\end{align}
 \end{subequations}
 
 \subsection{Numerical Example}
@@ -1122,10 +1152,22 @@ Sakurai, J.J., Napolitano, J.J. (2017), \textit{Modern Quantum Mechanics}, Cambr
 B{\"u}ttiker, M. (1983), Larmor precession and the traversal time for tunnelling, \textit{Physical Review B} \textbf{27}, 6178-6188
 
 \bibitem{LeavensA}
-Leavens, C.R. (1996), The “Tunneling-Time Problem” for Electrons, in \textit{Bohmian Mechanics and Quantum Theory: An Appraisal}, Cushing J.T., Fine A., Goldstein S. (eds), Springer
+Leavens, C.R. (1996), The “tunneling-time problem” for electrons, in \textit{Bohmian Mechanics and Quantum Theory: An Appraisal}, Cushing J.T., Fine A., Goldstein S. (eds), Springer
+
+\bibitem{LeavensB}
+Leavens, C.R. (1990), Traversal times for rectangular barriers within Bohm's causal interpretation of quantum mechanics, \textit{Solid State Communications} \textbf{76}, 253-261
 
 \bibitem{HandS}
 Hauge, E. and St{\o}vneng J. (1989), Tunneling times: a critical review, \textit{Reviews of Modern Physics} \textbf{61}, 917–936
+
+\bibitem{LandA}
+Leavens, C.R., Aers, G.C. (1989), Dwell time and phase times for transmission and reflection, \textit{Physical Review B} \textbf{39}, 1202-1206
+
+\bibitem{Peres}
+Peres, A. (1980), Measurement of time by quantum clocks, \textit{American Journal of Physics} \textbf{48}, 552–557
+
+\bibitem{Holland}
+Holland, P.R. (1993), \textit{The Quantum Theory of Motion}, Cambridge University Press
 
 
 

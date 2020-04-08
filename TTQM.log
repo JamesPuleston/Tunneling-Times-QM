@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.1)  6 APR 2020 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.1)  7 APR 2020 20:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,7 +350,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 <./Mathematica/plot1.pdf, id=140, 361.35pt x 153.57375pt>
 File: ./Mathematica/plot1.pdf Graphic file (type pdf)
 <use ./Mathematica/plot1.pdf>
-Package pdftex.def Info: ./Mathematica/plot1.pdf  used on input line 498.
+Package pdftex.def Info: ./Mathematica/plot1.pdf  used on input line 504.
 (pdftex.def)             Requested size: 361.34912pt x 153.57336pt.
  [9] [10 <./Mathematica/plot1.pdf>] [11] (./Figures/doublesumdiagram.pdf_tex
 <./Figures/doublesumdiagram.pdf, id=242, page=1, 284.52756pt x 284.52756pt>
@@ -408,20 +408,20 @@ Package pdftex.def Info: ./Figures/potentialbarrierplusfield.pdf , page1 used on
 <./Mathematica/plot3.pdf, id=285, 361.35pt x 266.9975pt>
 File: ./Mathematica/plot3.pdf Graphic file (type pdf)
 <use ./Mathematica/plot3.pdf>
-Package pdftex.def Info: ./Mathematica/plot3.pdf  used on input line 936.
+Package pdftex.def Info: ./Mathematica/plot3.pdf  used on input line 965.
 (pdftex.def)             Requested size: 361.34912pt x 266.99683pt.
- [18] [19 <./Mathematica/plot3.pdf>] [20] (./Figures/Trajectory.pdf_tex
-<./Figures/Trajectory.pdf, id=386, page=1, 225.84375pt x 75.42342pt>
+ [18] [19 <./Mathematica/plot3.pdf>] [20] [21] (./Figures/Trajectory.pdf_tex
+<./Figures/Trajectory.pdf, id=389, page=1, 225.84375pt x 75.42342pt>
 File: ./Figures/Trajectory.pdf Graphic file (type pdf)
 <use ./Figures/Trajectory.pdf, page 1>
 Package pdftex.def Info: ./Figures/Trajectory.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 284.52756pt x 95.03398pt.
-<./Figures/Trajectory.pdf, id=387, page=2, 225.84375pt x 75.42342pt>
+<./Figures/Trajectory.pdf, id=390, page=2, 225.84375pt x 75.42342pt>
 File: ./Figures/Trajectory.pdf Graphic file (type pdf)
 <use ./Figures/Trajectory.pdf, page 2>
 Package pdftex.def Info: ./Figures/Trajectory.pdf , page2 used on input line 56.
 (pdftex.def)             Requested size: 284.52756pt x 95.03398pt.
-) [21] [22 <./Figures/Trajectory.pdf> <./Figures/Trajectory.pdf
+) [22 <./Figures/Trajectory.pdf> <./Figures/Trajectory.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/Trajectory.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] (./Figures/LAcombined2.pdf_tex
@@ -430,22 +430,22 @@ File: ./Figures/LAcombined2.pdf Graphic file (type pdf)
 <use ./Figures/LAcombined2.pdf, page 1>
 Package pdftex.def Info: ./Figures/LAcombined2.pdf , page1 used on input line 52.
 (pdftex.def)             Requested size: 426.79134pt x 409.21985pt.
-) [23 <./Figures/LAcombined2.pdf>] [24
+) [23] [24 <./Figures/LAcombined2.pdf>] [25
 
 ] (./TTQM.aux) ) 
 Here is how much of TeX's memory you used:
- 4767 strings out of 492616
- 71308 string characters out of 6129482
- 169518 words of memory out of 5000000
- 8549 multiletter control sequences out of 15000+600000
+ 4772 strings out of 492616
+ 71355 string characters out of 6129482
+ 169533 words of memory out of 5000000
+ 8554 multiletter control sequences out of 15000+600000
  12746 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,35p,1381b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on TTQM.pdf (24 pages, 747198 bytes).
+ 41i,14n,35p,1385b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on TTQM.pdf (25 pages, 747754 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
+ 490 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
